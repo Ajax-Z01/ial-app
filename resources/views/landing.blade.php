@@ -1,7 +1,6 @@
 @extends('layouts.landing')
 
 @section('content')
-
     <!--Hero-->
     <div class="pt-24">
       <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
@@ -9,7 +8,7 @@
         <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
           <p class="uppercase tracking-loose w-full">Online Accelerator Experiment</p>
           <h1 class="my-4 text-5xl font-bold leading-tight">
-            Valuable Internet Accelerator Laboratory of Indonesia
+            Internet Accelerator Laboratory
           </h1>
           <p class="leading-normal text-2xl mb-8">
             Laboratorium pendidikan berbasis internet dengan metode aplikasi pembelajaran akselerator jarak jauh.
