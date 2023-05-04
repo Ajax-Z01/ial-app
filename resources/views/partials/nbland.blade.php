@@ -3,7 +3,7 @@
       <div class="pl-4 flex items-center">
         <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
           <span class="md:text-4xl text-3xl pl-2 flex">
-            <img src="img/logo-brin.jpg" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
+            <img src="img/electron.png" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
             IAL
           </span>
         </a>
@@ -30,7 +30,7 @@
         </ul>
         <button
           id="navAction"
-          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
+          class="mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
           Login
         </button>
       </div>

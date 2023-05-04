@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
-      Landing Page IAL
+      IAL | Internet Accelerator Laboratory 
     </title>
-    <meta name="description" content="Simple landind page" />
+    <meta name="description" content="Simple landing page" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
