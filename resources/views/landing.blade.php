@@ -42,7 +42,7 @@
     <section class="bg-white border-b py-8">
       <div class="container max-w-5xl mx-auto m-8">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          VIALI
+          IAL
         </h2>
         <div class="w-full mb-4">
           <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -54,10 +54,10 @@
           <div class="w-full md:w-1/2 sm:w-1/2 p-6 mt-6">
             <div class="align-middle">
               <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                Konsep VIALI
+                Konsep IAL
               </h3>
               <p class="text-gray-600 mb-8">
-                VIALI (Valuable Internet Accelerator Laboratory of Indonesia) merupakan laboratorium pendidikan berbasis internet dengan metode aplikasi pembelajaran akselerator jarak jauh sesuai dengan program Teaching Laboratory. VIALI dikembangkan dengan model live video webcasting berbasis smart Classroom.
+                IAL (Internet Accelerator Laboratory) merupakan laboratorium pendidikan berbasis internet dengan metode aplikasi pembelajaran akselerator jarak jauh sesuai program Teaching Laboratory. IAL dikembangkan dengan model live video webcasting berbasis smart Classroom.
               </p>
             </div>
           </div>
@@ -65,12 +65,10 @@
         <div class="flex flex-wrap">
           <div class="w-5/6 sm:w-1/2 p-6">
             <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-              Mesin Berkas Elektron (MBE)
+              Linear Accelerator (LINAC)
             </h3>
             <p class="text-gray-600 mb-8">
-              Mesin Berkas Elektron (MBE) adalah suatu perangkat yang berguna untuk menghasilkan arus berkas elektron dengan energi tinggi.
-              <br />
-              Berkas elektron di dalam MBE dihasilkan oleh sumber elektron secara emisi termionik pada filamen yang dipanaskan. Setelah keluar dari sumber elektron berkas elektron dilewatkan melalui tabung pemercepat untuk dinaikkan energinya hingga mencapai energi yang diinginkan.
+              Linear accelerator (LINAC) adalah sebuah alat yang digunakan dalam bidang kedokteran, penelitian, dan industri untuk menghasilkan sinar partikel berkecepatan tinggi. LINAC bekerja dengan mengakselerasikan partikel, seperti elektron atau ion, melalui serangkaian tabung akselerator linier yang panjang. Partikel-partikel ini diberikan energi tambahan saat mereka melewati resonator radiofrekuensi yang terletak di dalam tabung akselerator. Proses ini berulang hingga partikel mencapai energi yang diinginkan.
             </p>
           </div>
           <div class="w-full sm:w-1/2 mx-auto my-4">
@@ -118,7 +116,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-landing py-8">
+    <section class="bg-white py-8">
       <div class="container mx-auto flex flex-wrap pt-4 pb-12">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Arjuna 1.0
@@ -218,16 +216,16 @@
     </svg>
     <section class="container mx-auto text-center py-6 mb-12">
       <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
-        Call to Action
+        Dashboard
       </h2>
       <div class="w-full mb-4">
         <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
       </div>
       <h3 class="my-4 text-3xl leading-tight">
-        Main Hero Message to sell yourself!
+        Buat Akun Sekarang!
       </h3>
       <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-        Action!
+        Registrasi!
       </button>
     </section>
 
