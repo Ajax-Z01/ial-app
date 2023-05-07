@@ -24,11 +24,11 @@
   </head>
   <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
-    @include('partials.nbland')
+    @include('partials.headland')
     <!--Hero-->
     @yield('content')
     <!--Footer-->
-    @include('partials.ftland')
+    @include('partials.footland')
   </body>
   <!-- jQuery if you need it
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

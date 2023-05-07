@@ -28,11 +28,13 @@
             <a class="md:text-xl inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Contact</a>
           </li>
         </ul>
-        <button
-          id="navAction"
-          class="mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
-          Login
-        </button>
+        <a href="login">
+          <button
+            id="navAction"
+            class="mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
+            Login
+          </button>
+        </a>
       </div>
     </div>
     <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />

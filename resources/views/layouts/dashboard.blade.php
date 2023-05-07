@@ -18,9 +18,9 @@
     <link href="assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4" rel="stylesheet" />    
   </head>
   <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
-    @include('partials.sbdash')
+    @include('partials.sidedash')
     @yield('content')
-    @include('partials.ftdash')
+    @include('partials.footdash')
   </body>
   <!-- plugin for charts  -->
   <script src="assets/js/plugins/chartjs.min.js" async></script>

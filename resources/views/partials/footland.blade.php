@@ -6,7 +6,7 @@
           <a class="text-gray-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
             <!--Icon from: http://www.potlabicons.com/ -->
             <span class="text-2xl pl-2 flex">
-              <img src="img/logo-brin.jpg" alt="" class="w-8 h-8 mr-2">
+              <img src="img/electron.png" alt="" class="w-8 h-8 mr-2">
               IAL
             </span>
           </a>
