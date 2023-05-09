@@ -16,7 +16,7 @@
         </div>
         <!--Right Col-->
         <div class="w-full md:w-3/5 py-3 text-center">
-          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="img/electron-.png" />
+          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="img/electron.png" />
         </div>
       </div>
     </div>
@@ -224,8 +224,8 @@
       <h3 class="my-4 text-3xl leading-tight">
         Buat Akun Sekarang Untuk Melihat Data Sistem Akuisisi!
       </h3>
-      <a href="{{ route('register') }}">
-        <button class="mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+      <a href="/register">
+        <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
           Bergabung!
         </button>
       </a>

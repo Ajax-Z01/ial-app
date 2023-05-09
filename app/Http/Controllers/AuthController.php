@@ -17,9 +17,9 @@ class AuthController extends Controller
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             if (Auth::user()->type == 'admin') {
-                return redirect()->route('admin.admin')->withSuccess("Welcome to Dashboard Admin");
+                return redirect()->route('dashboard')->withSuccess("Welcome to Dashboard Admin");
             } else if (Auth::user()->type == 'user') {
-                return redirect()->route('user.user')->withSuccess("Welcome to Dashboard User");
+                return redirect()->route('dashboard')->withSuccess("Welcome to Dashboard User");
             } else {
                 return redirect()->route('login')->withUnsuccess("Your account is not verified. Please contact the administrator.");
             }

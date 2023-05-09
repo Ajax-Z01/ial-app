@@ -1,75 +1,77 @@
-var chartOne = document.getElementById('chartOne');
-var myChart = new Chart(chartOne, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
+var scrollpos = window.scrollY;
+var header = document.getElementById("header");
+var navcontent = document.getElementById("nav-content");
+var navaction = document.getElementById("navAction");
+var brandname = document.getElementById("brandname");
+var toToggle = document.querySelectorAll(".toggleColour");
 
-var chartTwo = document.getElementById('chartTwo');
-var myLineChart = new Chart(chartTwo, {
-    type: 'line',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
+document.addEventListener("scroll", function () {
+/*Apply classes for slide in bar*/
+scrollpos = window.scrollY;
+
+if (scrollpos > 10) {
+    header.classList.add("bg-white");
+    navaction.classList.remove("bg-white");
+    navaction.classList.add("gradient");
+    navaction.classList.remove("text-gray-800");
+    navaction.classList.add("text-white");
+    //Use to switch toggleColour colours
+    for (var i = 0; i < toToggle.length; i++) {
+    toToggle[i].classList.add("text-gray-800");
+    toToggle[i].classList.remove("text-white");
     }
+    header.classList.add("shadow");
+    navcontent.classList.remove("bg-gray-100");
+    navcontent.classList.add("bg-white");
+} else {
+    header.classList.remove("bg-white");
+    navaction.classList.remove("gradient");
+    navaction.classList.add("bg-white");
+    navaction.classList.remove("text-white");
+    navaction.classList.add("text-gray-800");
+    //Use to switch toggleColour colours
+    for (var i = 0; i < toToggle.length; i++) {
+    toToggle[i].classList.add("text-white");
+    toToggle[i].classList.remove("text-gray-800");
+    }
+
+    header.classList.remove("shadow");
+    navcontent.classList.remove("bg-white");
+    navcontent.classList.add("bg-gray-100");
+}
 });
+/*Toggle dropdown list*/
+/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+var navMenuDiv = document.getElementById("nav-content");
+var navMenu = document.getElementById("nav-toggle");
+
+document.onclick = check;
+function check(e) {
+var target = (e && e.target) || (event && event.srcElement);
+
+//Nav Menu
+if (!checkParent(target, navMenuDiv)) {
+    // click NOT on the menu
+    if (checkParent(target, navMenu)) {
+    // click on the link
+    if (navMenuDiv.classList.contains("hidden")) {
+        navMenuDiv.classList.remove("hidden");
+    } else {
+        navMenuDiv.classList.add("hidden");
+    }
+    } else {
+    // click both outside link and outside menu, hide menu
+    navMenuDiv.classList.add("hidden");
+    }
+}
+}
+function checkParent(t, elm) {
+while (t.parentNode) {
+    if (t == elm) {
+    return true;
+    }
+    t = t.parentNode;
+}
+return false;
+}

@@ -23,7 +23,7 @@ class PostController extends Controller
             $posts = $posts->where('status', request()->get('status'));
         }
         $posts = $posts->get();
-        return view('admin.posts', compact('posts'));
+        return view('posts', compact('posts'));
     }
 
     /**
@@ -33,7 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.post-create');
+        return view('post-create');
     }
 
     /**
@@ -58,7 +58,7 @@ class PostController extends Controller
         }
 
         $post->save();
-        return redirect()->route('admin.posts.index')->withSuccess('Wow... Rocket !!');
+        return redirect()->route('posts.index')->withSuccess('Wow... Rocket !!');
     }
 
     /**
@@ -81,7 +81,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id) ?? abort(404, 'Oopss...');
-        return view('admin.post-edit', compact('post'));
+        return view('post-edit', compact('post'));
     }
 
     /**
@@ -108,7 +108,7 @@ class PostController extends Controller
         }
         $post->save();
 
-        return redirect()->route('admin.posts.index')->withSuccess("Awesome....");
+        return redirect()->route('posts.index')->withSuccess("Awesome....");
     }
 
     /**
@@ -120,6 +120,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         Post::find($id)->delete();
-        return redirect()->route('admin.posts.index')->withSuccess('Is Die.....');
+        return redirect()->route('posts.index')->withSuccess('Is Die.....');
     }
 }

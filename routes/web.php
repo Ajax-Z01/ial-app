@@ -18,24 +18,11 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+Route::get('/', [MainController::class, 'landing'])->name('landing');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/about', [MainController::class, 'about'])->name('about');
 
-Route::get('/blog', [MainController::class, 'index'])->name('home');
-
-Route::get('post/{slug}', [MainController::class, 'post'])->name('post');
-
-Route::get('contact', function () {
-    return view('contact');
-});
-Route::get('about', function () {
-    return view('about');
-});
+Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
@@ -45,10 +32,16 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'registerPost')->name('register.post');
 });
 
-Route::middleware(['IsAdmin', 'IsApproved'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [DashboardController::class, 'admin'])->name('admin');
+Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/chart', [DashboardController::class, 'chart'])->name('chart');
+    Route::get('/posts', [DashboardController::class, 'post'])->name('posts');
+    Route::get('/users', [DashboardController::class, 'user'])->name('users');
+    Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::get('/setting', [DashboardController::class, 'setting'])->name('settings');
 });
 
 Route::middleware(['IsUser', 'IsApproved'])->prefix('user')->name('user.')->group(function () {
-    Route::get('/', [DashboardController::class, 'user'])->name('user');
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/chart', [DashboardController::class, 'chart'])->name('chart');
 });
