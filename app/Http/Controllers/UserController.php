@@ -10,6 +10,9 @@ class UserController extends Controller
     public function index()
     {
         $users = new User();
+        if (request()->get('username')) {
+            $users = $users->where('username', 'LIKE', '%' . request()->get('username') . '%');
+        }
         if (request()->get('name')) {
             $users = $users->where('name', 'LIKE', '%' . request()->get('name') . '%');
         }

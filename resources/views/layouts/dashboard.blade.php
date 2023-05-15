@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="{{ asset('/img/electron.png')}}" />
-  <title>IAL Dashboard</title>
+  <title>IA-Lab Dashboard</title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Font Awesome Icons -->
@@ -22,11 +22,19 @@
 
 <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
   @include('partials.sidedash')
+  @if (request()->is('profile'))
+  @include('partials.headprofile')
+  @yield('content')
+  @include('partials.footprofile')
+  @include('partials.setdash')
+  @else
   <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
     @include('partials.headdash')
     @yield('content')
     @include('partials.footdash')
+    @include('partials.setdash')
   </main>
+  @endif
 </body>
 <!-- plugin for charts  -->
 <script src="{{ asset('/assets/js/plugins/chartjs.min.js') }}" async></script>

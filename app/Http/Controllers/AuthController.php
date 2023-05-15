@@ -21,7 +21,7 @@ class AuthController extends Controller
             } else if (Auth::user()->type == 'user') {
                 return redirect()->route('dashboard')->withSuccess("Welcome to Dashboard User");
             } else {
-                return redirect()->route('login')->withUnsuccess("Your account is not verified. Please contact the administrator.");
+                return redirect()->route('login')->withUnsuccess("Your account is not approved. Please contact the administrator.");
             }
         }
         return redirect()->route('login');
@@ -39,6 +39,7 @@ class AuthController extends Controller
     public function registerPost(Request $request)
     {
         $user = new User();
+        $user->username = $request->username;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);

@@ -4,7 +4,7 @@
       <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
         <span class="md:text-4xl text-3xl pl-2 flex">
           <img src="{{asset('img/electron.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
-          IAL
+          IA-Lab
         </span>
       </a>
     </div>
@@ -21,21 +21,21 @@
         <li class="mr-3">
           <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
           @if (Request::is('/'))  font-bold 
-          @elseif (Request::is('about') || Request::is('contact'))  hover:text-gray-800 hover:text-underline
+          @else hover:text-gray-800 hover:text-underline
           @endif
           " href="{{ route('landing') }}">Home</a>
         </li>
         <li class="mr-3">
           <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
-          @if (Request::is('/'))  font-bold 
-          @elseif (Request::is('about') || Request::is('contact'))  hover:text-gray-800 hover:text-underline
+          @if (Request::is('about'))  font-bold 
+          @else hover:text-gray-800 hover:text-underline
           @endif
           " href="{{ route('about') }}">About Us</a>
         </li>
         <li class="mr-3">
           <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
-          @if (Request::is('/'))  font-bold 
-          @elseif (Request::is('about') || Request::is('contact'))  hover:text-gray-800 hover:text-underline
+          @if (Request::is('contact'))  font-bold 
+          @else hover:text-gray-800 hover:text-underline
           @endif
           " href="{{ route('contact') }}">Contact</a>
         </li>

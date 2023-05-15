@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="{{ asset('img/electron.png')}}" />
-    <title>IAL Login</title>
+    <title>IA-Lab Login</title>
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Font Awesome Icons -->
@@ -25,7 +25,7 @@
           <nav class="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 mx-6 my-4 shadow-soft-2xl rounded-blur bg-white/80 backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start">
             <div class="flex items-center justify-between w-full p-0 pl-6 mx-auto flex-wrap-inherit">
               <a class="py-2.375 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-gray-800 lg:ml-0" href="{{ route('landing') }}">
-                <span class="md:text-4xl text-3xl pl-2 flex"><img src="{{ asset('/img/electron.png')}}" alt="" class="md:w-10 md:h-10 md:mt-0 w-6 h-6 mt-1 mr-2"> Internet Accelerator Laboratory (IAL) </span>
+                <span class="md:text-4xl text-3xl pl-2 flex"><img src="{{ asset('/img/electron.png')}}" alt="" class="md:w-10 md:h-10 md:mt-0 w-6 h-6 mt-1 mr-2"> Internet Accelerator Laboratory (IA-Lab) </span>
               </a>
             </div>
           </nav>

@@ -16,7 +16,7 @@
         </div>
         <!--Right Col-->
         <div class="w-full md:w-3/5 py-3 text-center">
-          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="img/electron-.png" />
+          <img class="w-full md:w-2/3 z-50 md:ml-60 mb-12" src="img/electron-.png" />
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
     <section class="bg-white border-b py-8">
       <div class="container max-w-5xl mx-auto m-8">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          IAL
+          IA-Lab
         </h2>
         <div class="w-full mb-4">
           <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -54,10 +54,10 @@
           <div class="w-full md:w-1/2 sm:w-1/2 p-6 mt-6">
             <div class="align-middle">
               <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                Konsep IAL
+                Konsep IA-Lab
               </h3>
               <p class="text-gray-600 mb-8">
-                IAL (Internet Accelerator Laboratory) merupakan laboratorium pendidikan berbasis internet dengan metode aplikasi pembelajaran akselerator jarak jauh sesuai program Teaching Laboratory. IAL dikembangkan dengan model live video webcasting berbasis smart Classroom.
+                IA-Lab (Internet Accelerator Laboratory) merupakan laboratorium pendidikan berbasis internet dengan metode aplikasi pembelajaran akselerator jarak jauh sesuai program Teaching Laboratory. IA-Lab dikembangkan dengan model live video webcasting berbasis smart Classroom.
               </p>
             </div>
           </div>
@@ -216,7 +216,7 @@
     </svg>
     <section class="container mx-auto text-center py-6 mb-12">
       <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
-        Dashboard IAL
+        Dashboard IA-Lab
       </h2>
       <div class="w-full mb-4">
         <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>

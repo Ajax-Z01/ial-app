@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChartJSController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -39,6 +40,24 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/users', [DashboardController::class, 'user'])->name('users');
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     Route::get('/setting', [DashboardController::class, 'setting'])->name('settings');
+
+    Route::get('chart_test', [ChartJSController::class, 'index']);
+
+    Route::get('/posts', [PostController::class, 'index'])->name('posts');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    Route::post('/posts/create', [PostController::class, 'store'])->name('posts.store');
+    Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->whereNumber('id')->name('posts.edit');
+    Route::post('/posts/{id}/edit', [PostController::class, 'update'])->whereNumber('id')->name('posts.update');
+    Route::get('/posts/{id}/delete', [PostController::class, 'destroy'])->whereNumber('id')->name('posts.delete');
+
+    Route::get('/users', [UserController::class, 'index'])->name('users');
+    Route::get('/user/{id}/approve', [UserController::class, 'approve'])->whereNumber('id')->name('user.approve');
+    Route::get('/user/{id}/unapprove', [UserController::class, 'unapprove'])->whereNumber('id')->name('user.unapprove');
+    Route::get('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
+    Route::get('/user/{id}/edit', [UserController::class, 'edit'])->whereNumber('id')->name('user.edit');
+    Route::post('/user/{id}/edit', [UserController::class, 'update'])->whereNumber('id')->name('user.update');
+    Route::get('/user/{id}/profile', [UserController::class, 'profile'])->whereNumber('id')->name('user.profile');
+    Route::get('/user/{id}/setting', [UserController::class, 'setting'])->whereNumber('id')->name('user.setting');
 });
 
 Route::middleware(['IsUser', 'IsApproved'])->prefix('user')->name('user.')->group(function () {

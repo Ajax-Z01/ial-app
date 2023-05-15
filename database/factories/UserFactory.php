@@ -27,6 +27,7 @@ class UserFactory extends Factory
     {
         $type = ['admin', 'user'];
         return [
+            'username' => fake()->unique()->userName(),
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'type' => $type[rand(0, 1)],

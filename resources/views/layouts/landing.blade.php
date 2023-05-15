@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="{{ asset('img/electron.png') }}" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
-      IAL | Internet Accelerator Laboratory 
+      IA-Lab | Internet Accelerator Laboratory 
     </title>
     <meta name="description" content="Simple landing page" />
     <meta name="keywords" content="" />

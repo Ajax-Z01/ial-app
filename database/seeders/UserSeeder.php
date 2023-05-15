@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+
 class UserSeeder extends Seeder
 {
     /**
@@ -13,11 +14,12 @@ class UserSeeder extends Seeder
     public function run()
     {
         \App\Models\User::insert([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
+            'username' => 'Azura',
+            'name' => 'Azhar Abdul Ala',
+            'email' => 'azura@gmail.com',
             'type' => 'admin',
             'status' => 'approved',
-            'password' => ('12345678'),
+            'password' => ('$2y$10$WCVI32GnFcYOOaIasofpiOxLnZ1TEgfWU80ZNRKGXAsXxtLiTCDim'),
         ]);
         \App\Models\User::factory(10)->create();
     }

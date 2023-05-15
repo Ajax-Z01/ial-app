@@ -18,12 +18,12 @@ class DashboardController extends Controller
 
     public function post()
     {
-        return view('post');
+        return view('posts');
     }
 
     public function user()
     {
-        return view('user');
+        return view('users');
     }
 
     public function profile()

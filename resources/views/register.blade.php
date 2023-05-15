@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="{{ asset('/img/electron.png')}}" />
-    <title>IAL Register</title>
+    <title>IA-Lab Register</title>
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Font Awesome Icons -->
@@ -22,7 +22,7 @@
     <nav class="absolute top-0 z-30 flex flex-wrap items-center justify-between w-full px-4 py-2 mt-6 mb-4 shadow-none lg:flex-nowrap lg:justify-start">
       <div class="container flex items-center justify-between py-0 flex-wrap-inherit">
         <a class="py-2.375 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-white lg:ml-0" href="{{ route('landing') }}">
-          <span class="md:text-4xl text-3xl pl-2 flex"><img src="img/electron-.png" alt="" class="md:w-10 md:h-10 md:mt-0 w-6 h-6 mt-1 mr-2"> Internet Accelerator Laboratory (IAL) </span>
+          <span class="md:text-4xl text-3xl pl-2 flex"><img src="img/electron-.png" alt="" class="md:w-10 md:h-10 md:mt-0 w-6 h-6 mt-1 mr-2"> Internet Accelerator Laboratory (IA-Lab) </span>
         </a>
       </div>
     </nav>
@@ -50,12 +50,15 @@
                   <form role="form text-left" action="{{ route('register.post') }}" method="post" class="user">
                     @csrf
                     <div class="mb-4">
-                      <input type="text" name="name" id="name" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Name" aria-label="Name" aria-describedby="email-addon" />
+                      <input type="text" name="username" id="username" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Username" aria-label="Username" aria-describedby="username-addon" />
+                    </div>
+                    <div class="mb-4">
+                      <input type="text" name="name" id="name" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Name" aria-label="Name" aria-describedby="name-addon" />
                     </div>
                     <div class="mb-4">
                       <input type="email" name="email" id="email" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Email" aria-label="Email" aria-describedby="email-addon" />
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-2">
                       <input type="password" name="password" id="password" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Password" aria-label="Password" aria-describedby="password-addon" />
                     </div>
                     {{-- <div class="min-h-6 pl-6.92 mb-0.5 block">
@@ -73,7 +76,7 @@
           </div>
         </div>
       </section>
-      <footer class="py-12">
+      <footer class="py-6">
         <div class="container">
           <div class="flex flex-wrap -mx-3">
             <div class="w-8/12 max-w-full px-3 mx-auto mt-1 text-center flex-0">

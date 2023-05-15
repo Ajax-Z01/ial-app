@@ -7,7 +7,7 @@
             <!--Icon from: http://www.potlabicons.com/ -->
             <span class="text-2xl pl-2 flex">
               <img src="{{asset('img/electron.png') }}" alt="" class="w-8 h-8 mr-2">
-              IAL
+              IA-Lab
             </span>
           </a>
         </div>

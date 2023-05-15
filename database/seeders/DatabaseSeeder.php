@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             PostSeeder::class,
+            OpticSeeder::class,
+            VakumSeeder::class,
+            FilamenSeeder::class,
         ]);
     }
 }
