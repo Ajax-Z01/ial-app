@@ -15,6 +15,23 @@
   <link href="{{ asset('/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
   <!-- Popper -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+  @if (request()->is('chart'))
+  <script>
+  var labels_filamen =  {{ Js::from($labels_filamen) }};
+  var filamen =  {{ Js::from($filamen) }};
+  var potensio =  {{ Js::from($potensio) }};
+  var labels_optic =  {{ Js::from($labels_optic) }};
+  var a_pemayar =  {{ Js::from($a_pemayar) }};
+  var a_pemfokus =  {{ Js::from($a_pemfokus) }};
+  var t_pemayar =  {{ Js::from($t_pemayar) }};
+  var t_pemfokus =  {{ Js::from($t_pemfokus) }};
+  var labels_vakum =  {{ Js::from($labels_vakum) }};
+  var penning =  {{ Js::from($penning) }};
+  var pirani =  {{ Js::from($pirani) }};
+  </script>
+  @endif
+
   <!-- Main Styling -->
   <link href="{{ asset('/assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4') }}" rel="stylesheet" />
   <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" />

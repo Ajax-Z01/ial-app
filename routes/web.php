@@ -1,12 +1,17 @@
 <?php
 
+use App\Events\DataDummy;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OpticController;
+use App\Http\Controllers\VakumController;
 use App\Http\Controllers\ChartJSController;
+use App\Http\Controllers\FilamenController;
 use App\Http\Controllers\DashboardController;
+use App\Models\ChartJSModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +46,8 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     Route::get('/setting', [DashboardController::class, 'setting'])->name('settings');
 
-    Route::get('chart_test', [ChartJSController::class, 'index']);
+    Route::get('dashboard', [ChartJSController::class, 'index'])->name('dashboard');
+    Route::get('chart', [ChartJSController::class, 'all_chart'])->name('chart');
 
     Route::get('/posts', [PostController::class, 'index'])->name('posts');
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
@@ -63,4 +69,12 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
 Route::middleware(['IsUser', 'IsApproved'])->prefix('user')->name('user.')->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/chart', [DashboardController::class, 'chart'])->name('chart');
+});
+
+Route::get('/dummy', function () {
+    DataDummy::dispatch('test');
+});
+
+Route::get('/welcome', function () {
+    return view('welcome');
 });

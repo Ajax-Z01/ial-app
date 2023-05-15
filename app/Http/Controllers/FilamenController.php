@@ -12,18 +12,25 @@ class FilamenController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function filamen()
     {
-        $filamens = Filamen::select(DB::raw("arus_filamen as arus_filamen"), DB::raw("tegangan_potensio as tegangan_potensio"), DB::raw("register as register"), DB::raw("waktu_operasi_detik as waktu_operasi_detik"), DB::raw("MONTHNAME(created_at) as month_name"))
-            ->whereYear('created_at', date('Y'))
-            ->groupBy(DB::raw("month_name"))
+        $filamens = Filamen::select('arus_filamen', DB::raw('TIME(created_at) as time'))
+            ->groupBy('arus_filamen', DB::raw('TIME(created_at)'))
             ->orderBy('id', 'ASC')
-            ->pluck('count', 'month_name');
+            ->get();
 
-        $labels = $filamens->keys();
-        $data = $filamens->values();
+        $labels_filamen = $filamens->pluck('time');
+        $filamen = $filamens->pluck('arus_filamen');
 
-        return view('chart', compact('labels', 'data'));
+        $potensios = Filamen::select('tegangan_potensio', DB::raw('TIME(created_at) as time'))
+            ->groupBy('tegangan_potensio', DB::raw('TIME(created_at)'))
+            ->orderBy('id', 'ASC')
+            ->get();
+
+        $labels_filamen = $potensios->pluck('time');
+        $potensio = $potensios->pluck('tegangan_potensio');
+
+        return view('chart', compact('labels_filamen', 'filamen', 'potensio'));
     }
 
     /**

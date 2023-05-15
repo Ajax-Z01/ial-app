@@ -50,4 +50,6 @@
     );
   
 </script>
+<script src="{{ asset('/assets/js/plugins/chartjs.min.js') }}" async></script>
+<script src="{{ asset('/assets/js/chart.js') }}" async></script>
 </html>

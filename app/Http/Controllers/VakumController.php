@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vakum;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreVakumRequest;
 use App\Http\Requests\UpdateVakumRequest;
 
@@ -11,11 +12,25 @@ class VakumController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function vakum()
     {
-        $vakum = new Vakum();
-        $vakum = $vakum->get();
-        return view('vakum', compact('vakum'));
+        $pennings = Vakum::select('tekanan_vakum_penning_mbar', DB::raw('TIME(created_at) as time'))
+            ->groupBy('tekanan_vakum_penning_mbar', DB::raw('TIME(created_at)'))
+            ->orderBy('id', 'ASC')
+            ->get();
+
+        $labels_vakum = $pennings->pluck('time');
+        $penning = $pennings->pluck('tekanan_vakum_penning_mbar');
+
+        $piranis = Vakum::select('tekanan_vakum_pirani_mbar', DB::raw('TIME(created_at) as time'))
+            ->groupBy('tekanan_vakum_pirani_mbar', DB::raw('TIME(created_at)'))
+            ->orderBy('id', 'ASC')
+            ->get();
+
+        $labels_vakum = $piranis->pluck('time');
+        $pirani = $piranis->pluck('tekanan_vakum_pirani_mbar');
+
+        return view('chart', compact('labels_vakum', 'penning', 'pirani'));
     }
 
     /**

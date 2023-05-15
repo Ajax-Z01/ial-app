@@ -1,8 +1,8 @@
 // chart 1
 
-var ctx = document.getElementById("chart-bars").getContext("2d");
+var ctx1 = document.getElementById("chart-bars").getContext("2d");
 
-new Chart(ctx, {
+new Chart(ctx1, {
   type: "bar",
   data: {
     labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
