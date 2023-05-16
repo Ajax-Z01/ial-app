@@ -16,7 +16,7 @@ class DashboardController extends Controller
         return view('chart');
     }
 
-    public function post()
+    public function posts()
     {
         return view('posts');
     }

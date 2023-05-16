@@ -4,15 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Filamen extends Migration
+class Dummy extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('data_filamen', function (Blueprint $table) {
+        Schema::create('dummies', function (Blueprint $table) {
             $table->id();
+            $table->double('data_dummy');
             $table->timestamps();
         });
     }
@@ -22,6 +23,6 @@ class Filamen extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_filamen');
+        Schema::dropIfExists('dummies');
     }
 };

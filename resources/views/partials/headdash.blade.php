@@ -20,6 +20,7 @@
             Profile
           @elseif (request()->is('setting'))
             Settings
+          @else Admin Page
           @endif
           </li>
         </ol>
@@ -36,6 +37,7 @@
             Profile
           @elseif (request()->is('setting'))
             Settings
+          @else Admin Page
           @endif
         </h4>
       </nav>

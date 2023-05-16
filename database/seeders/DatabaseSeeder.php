@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Dummy;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,6 +26,7 @@ class DatabaseSeeder extends Seeder
             OpticSeeder::class,
             VakumSeeder::class,
             FilamenSeeder::class,
+            DummySeeder::class,
         ]);
     }
 }

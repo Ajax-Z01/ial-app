@@ -50,11 +50,11 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('chart', [ChartJSController::class, 'all_chart'])->name('chart');
 
     Route::get('/posts', [PostController::class, 'index'])->name('posts');
-    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-    Route::post('/posts/create', [PostController::class, 'store'])->name('posts.store');
-    Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->whereNumber('id')->name('posts.edit');
-    Route::post('/posts/{id}/edit', [PostController::class, 'update'])->whereNumber('id')->name('posts.update');
-    Route::get('/posts/{id}/delete', [PostController::class, 'destroy'])->whereNumber('id')->name('posts.delete');
+    Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+    Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
+    Route::get('/post/{id}/edit', [PostController::class, 'edit'])->whereNumber('id')->name('post.edit');
+    Route::put('/post/{id}/edit', [PostController::class, 'update'])->whereNumber('id')->name('post.update');
+    Route::get('/post/{id}/delete', [PostController::class, 'destroy'])->whereNumber('id')->name('post.delete');
 
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::get('/user/{id}/approve', [UserController::class, 'approve'])->whereNumber('id')->name('user.approve');
@@ -68,7 +68,8 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
 
 Route::middleware(['IsUser', 'IsApproved'])->prefix('user')->name('user.')->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::get('/chart', [DashboardController::class, 'chart'])->name('chart');
+    Route::get('dashboard', [ChartJSController::class, 'index'])->name('dashboard');
+    Route::get('chart', [ChartJSController::class, 'all_chart'])->name('chart');
 });
 
 Route::get('/dummy', function () {

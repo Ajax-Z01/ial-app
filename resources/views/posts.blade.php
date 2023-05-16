@@ -28,7 +28,7 @@
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div>
-                        <img src="../assets/img/team-2.jpg" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="user1" />
+                        <img src="{{ asset('img/default-post.png') }}" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="user1" />
                       </div>
                       <div class="flex flex-col justify-center">
                         <h6 class="mb-0 leading-normal text-sm">{{ $post->title }}</h6>
@@ -50,7 +50,7 @@
                     <span class="font-semibold leading-tight text-xs text-slate-400">{{ $post->updated_at }}</span>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <a href="javascript:;" class="font-semibold leading-tight text-xs text-slate-400"> Edit </a>
+                    <a href="{{ route('post.edit', ['id' => $post->id]) }}" class="font-semibold leading-tight text-xs text-slate-400"> Edit </a>
                   </td>
                 </tr>
                 @endforeach

@@ -58,7 +58,7 @@ class PostController extends Controller
         }
 
         $post->save();
-        return redirect()->route('posts.index')->withSuccess('Wow... Rocket !!');
+        return redirect()->route('posts')->withSuccess('Wow... Rocket !!');
     }
 
     /**
@@ -69,7 +69,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('post-show', compact('post'));
     }
 
     /**
@@ -80,7 +81,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id) ?? abort(404, 'Oopss...');
+        $post = Post::find($id);
         return view('post-edit', compact('post'));
     }
 
@@ -108,7 +109,7 @@ class PostController extends Controller
         }
         $post->save();
 
-        return redirect()->route('posts.index')->withSuccess("Awesome....");
+        return redirect()->route('posts')->withSuccess("Awesome....");
     }
 
     /**
@@ -120,6 +121,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         Post::find($id)->delete();
-        return redirect()->route('posts.index')->withSuccess('Is Die.....');
+        return redirect()->route('posts')->withSuccess('Is Die.....');
     }
 }

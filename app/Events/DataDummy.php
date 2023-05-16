@@ -14,14 +14,14 @@ class DataDummy implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $dataDummy;
+    public $data_dummy;
 
     /**
      * Create a new event instance.
      */
-    public function __construct($dataDummy)
+    public function __construct($data_dummy)
     {
-        $this->dataDummy = $dataDummy;
+        $this->data_dummy = $data_dummy;
     }
 
     /**
@@ -29,11 +29,9 @@ class DataDummy implements ShouldBroadcast
      *
      * @return array<int, \Illuminate\Broadcasting\Channel>
      */
-    public function broadcastOn(): array
+    public function broadcastOn(): Channel
     {
-        return [
-            new Channel('data-dummy'),
-        ];
+        return new Channel('data-dummy');
     }
 
     public function broadcastAs(): string
