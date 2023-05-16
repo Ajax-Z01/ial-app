@@ -8,6 +8,12 @@
     <div class="flex-none w-full max-w-full px-3">
       <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
         <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+          <h6 class="float-right m-0 font-weight-bold text-primary text-center align-middle transition-all bg-transparent shadow-none cursor-pointer leading-pro border-gray-300 ease-soft-in hover:scale-102 active:shadow-soft-xs text-gray-800 hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent">
+            <a href="{{ route('post.create') }}" class="btn">
+              <i class="fa fa-plus"></i>
+              New Post
+            </a>
+          </h6>
           <h6>Posts table</h6>
         </div>
         <div class="flex-auto px-0 pt-0 pb-2">
@@ -50,7 +56,7 @@
                     <span class="font-semibold leading-tight text-xs text-slate-400">{{ $post->updated_at }}</span>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <a href="{{ route('post.edit', ['id' => $post->id]) }}" class="font-semibold leading-tight text-xs text-slate-400"> Edit </a>
+                    <a href="{{ route('post.edit', ['id' => $post->id]) }}" class="font-semibold leading-tight text-xs text-slate-400  text-center align-middle transition-all bg-transparent shadow-none cursor-pointer border-gray-300 ease-soft-in hover:scale-102 active:shadow-soft-xs hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent"> Edit </a>
                   </td>
                 </tr>
                 @endforeach

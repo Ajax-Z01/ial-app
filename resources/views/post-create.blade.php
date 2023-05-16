@@ -1,50 +1,49 @@
-@extends('admin.layouts.master')
-@include('admin.layouts.sidebar')
-@section('title', 'New Post')
-@section('title')
-@section('subtitle')
+@extends('layouts.dashboard')
+
 @section('content')
-    <!-- Main Content -->
-    <div id="content">
-
-        @include('admin.layouts.topbar')
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-
-            <div class="card">
-                <div class="card-body">
-                    <form method="post" action="{{ route('admin.posts.store') }}" enctype="multipart/form-data">
-                        @method('post')
-                        @csrf
-                        <input type="hidden" name="author_id" value="{{ Auth::user()->id }}">
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" name="title" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="subtitle">Description</label>
-                            <input type="text" name="subtitle" class="form-control">
-                            <div class=" form-group col-6">
-                                <label for="image">Cover Image</label>
-                                <input type="file" name="image" class="form-control">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="description">Content</label>
-                                <textarea name="description" class="form-control" rows="4"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-block btn-danger btn-lg">Save Post</button>
-                            </div>
-                    </form>
-                </div>
-            </div>
-
+<!-- cards -->
+<div class="w-full px-6 py-6 mx-auto">
+  <!-- cards row 1 -->
+  <div class="flex flex-wrap -mx-3">
+    <div class="flex-none w-full max-w-full px-3">
+      <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
+        <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+          <h6 class="text-center">Post Create</h6>
         </div>
-        <!-- /.container-fluid -->
-
+        <div class="flex-auto px-0 pt-0 pb-2">
+          <div class="p-0 overflow-x-auto">
+            <div class="flex-auto px-6 pb-6">
+                <form role="form text-left" action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
+                    @method('post')
+                    @csrf
+                    <input type="hidden" name="author_id" value="{{ Auth::user()->id }}">
+                    <div class="mb-4">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Title" aria-label="Title" aria-describedby="title-addon" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="subtitle">Description</label>
+                        <input type="text" name="subtitle" id="subtitle" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Subtitle" aria-label="Subtitle" aria-describedby="subtitle-addon" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="status">Status</label>
+                        <select name="status" id="status" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                            <option value="publish">Publish</option>
+                            <option value="draft">Draft</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <label for="description">Content</label>
+                        <textarea name="description" id="description" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" rows="4" placeholder="Content" aria-label="Content"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-custom to-gray-custom hover:border-slate-700 hover:bg-slate-700 hover:text-white">Save Post</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-@endsection
+  </div>
+ @endsection

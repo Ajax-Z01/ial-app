@@ -14,33 +14,8 @@
 
         <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
           <div class="flex items-center md:ml-auto md:pr-4">
-            <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease-soft">
-              <span class="text-sm ease-soft leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
-                <i class="fas fa-search" aria-hidden="true"></i>
-              </span>
-              <input type="text" class="pl-8.75 text-sm focus:shadow-soft-primary-outline ease-soft w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Type here..." />
-            </div>
           </div>
           <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-            <!-- online builder btn  -->
-            <!-- <li class="flex items-center">
-              <a class="inline-block px-8 py-2 mb-0 mr-4 font-bold text-center text-white uppercase align-middle transition-all border border-solid rounded-lg shadow-none cursor-pointer leading-pro border-white/75 bg-white/10 ease-soft-in text-xs hover:scale-102 active:shadow-soft-xs tracking-tight-soft hover:border-white hover:bg-transparent hover:text-white hover:opacity-75 hover:shadow-none active:bg-white active:text-black active:hover:bg-transparent active:hover:text-white" target="_blank" href="https://www.creative-tim.com/builder/soft-ui?ref=navbar-dashboard&amp;_ga=2.76518741.1192788655.1647724933-1242940210.1644448053">Online Builder</a>
-            </li> -->
-            <li class="flex items-center">
-              <a href="../pages/sign-in.html" class="block px-0 py-2 font-semibold text-white transition-all ease-soft-in-out text-sm">
-                <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
-                <span class="hidden sm:inline">Sign In</span>
-              </a>
-            </li>
-            <li class="flex items-center pl-4 xl:hidden">
-              <a href="javascript:;" class="block p-0 text-white transition-all ease-soft-in-out text-sm" sidenav-trigger>
-                <div class="w-4.5 overflow-hidden">
-                  <i class="ease-soft mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                  <i class="ease-soft mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                  <i class="ease-soft relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                </div>
-              </a>
-            </li>
             <li class="flex items-center px-4">
               <a href="javascript:;" class="p-0 text-white transition-all text-sm ease-soft-in-out">
                 <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog" aria-hidden="true"></i>
@@ -50,7 +25,7 @@
 
             <!-- notifications -->
 
-            <li class="relative flex items-center pr-2">
+            <li class="relative flex items-center px-4">
               <p class="hidden transform-dropdown-show"></p>
               <a dropdown-trigger href="javascript:;" class="block p-0 text-white transition-all text-sm ease-nav-brand" aria-expanded="false">
                 <i class="cursor-pointer fa fa-bell" aria-hidden="true"></i>
@@ -121,6 +96,24 @@
                   </a>
                 </li>
               </ul>
+            </li>
+            <li class="flex items-center">
+              <a href="{{ route('profile') }}" class="block px-4 py-2 font-semibold text-white transition-all ease-soft-in-out text-sm">
+                <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
+                <span class="hidden sm:inline">{{ Auth::user()->username }}</span>
+              </a>
+            </li>
+            <li class="flex items-center">
+              <a class="inline-block px-2 py-2 mb-0 mx-2 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer leading-pro border-gray-300 ease-soft-in text-xs hover:scale-102 active:shadow-soft-xs text-white hover:border-gray-300 active:bg-gray-600 active:hover:text-white hover:text-white tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent" href="{{ route('logout') }}">Log Out</a>
+            </li>
+            <li class="flex items-center pl-4 xl:hidden">
+              <a href="javascript:;" class="block p-0 text-white transition-all ease-soft-in-out text-sm" sidenav-trigger>
+                <div class="w-4.5 overflow-hidden">
+                  <i class="ease-soft mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                  <i class="ease-soft mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                  <i class="ease-soft relative block h-0.5 rounded-sm bg-white transition-all"></i>
+                </div>
+              </a>
             </li>
           </ul>
         </div>

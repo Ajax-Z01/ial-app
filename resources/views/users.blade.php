@@ -50,7 +50,7 @@
                     <span class="font-semibold leading-tight text-xs text-slate-400">{{ $user->type }}</span>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <a href="javascript:;" class="font-semibold leading-tight text-xs text-slate-400"> Edit </a>
+                    <a href="{{ route('user.edit', ['id' => $user->id]) }}" class="font-semibold leading-tight text-xs text-slate-400  text-center align-middle transition-all bg-transparent shadow-none cursor-pointer border-gray-300 ease-soft-in hover:scale-102 active:shadow-soft-xs hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent"> Edit </a>
                   </td>
                 </tr>
                 @endforeach

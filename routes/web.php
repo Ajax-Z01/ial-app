@@ -57,13 +57,9 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/post/{id}/delete', [PostController::class, 'destroy'])->whereNumber('id')->name('post.delete');
 
     Route::get('/users', [UserController::class, 'index'])->name('users');
-    Route::get('/user/{id}/approve', [UserController::class, 'approve'])->whereNumber('id')->name('user.approve');
-    Route::get('/user/{id}/unapprove', [UserController::class, 'unapprove'])->whereNumber('id')->name('user.unapprove');
-    Route::get('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
     Route::get('/user/{id}/edit', [UserController::class, 'edit'])->whereNumber('id')->name('user.edit');
-    Route::post('/user/{id}/edit', [UserController::class, 'update'])->whereNumber('id')->name('user.update');
-    Route::get('/user/{id}/profile', [UserController::class, 'profile'])->whereNumber('id')->name('user.profile');
-    Route::get('/user/{id}/setting', [UserController::class, 'setting'])->whereNumber('id')->name('user.setting');
+    Route::put('/user/{id}/edit', [UserController::class, 'update'])->whereNumber('id')->name('user.update');
+    Route::get('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
 });
 
 Route::middleware(['IsUser', 'IsApproved'])->prefix('user')->name('user.')->group(function () {
