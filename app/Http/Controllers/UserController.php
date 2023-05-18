@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class UserController extends Controller
 {
@@ -45,5 +46,14 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users')->withSuccess('Is die...');
+    }
+
+
+    public function getNewUsersCount()
+    {
+        $today = Carbon::today();
+        $newUsersCount = User::whereDate('created_at', $today)->count();
+
+        return view('dashboard', compact('newUsersCount'));
     }
 }

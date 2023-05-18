@@ -9,7 +9,12 @@ class MainController extends Controller
 {
     public function landing()
     {
-        return view('landing');
+        $posts = Post::where('status', 'publish')->get()->take(3)->map(function ($post) {
+            $post->updated = $post->updated_at->diffForHumans();
+            $post->description = substr($post->description, 0, 200);
+            return $post;
+        });
+        return view('landing', compact('posts'));
     }
 
     public function about()

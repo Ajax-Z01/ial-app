@@ -29,6 +29,8 @@
   var labels_vakum =  {{ Js::from($labels_vakum) }};
   var penning =  {{ Js::from($penning) }};
   var pirani =  {{ Js::from($pirani) }};
+  var labels_dummy =  {{ Js::from($labels_dummy) }};
+  var dummy =  {{ Js::from($dummy) }};
   </script>
   @endif
 

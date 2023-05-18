@@ -29,15 +29,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Event::listen(
-            DataDummy::class,
-            [AddDummy::class, 'handle']
-        );
-
-        Event::listen(queueable(function (DataDummy $event) {
-            $data_dummy = $event->data_dummy;
-            $data_dummy->save();
-        }));
+        //
     }
 
     /**

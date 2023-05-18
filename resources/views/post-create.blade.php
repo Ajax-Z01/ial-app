@@ -28,8 +28,8 @@
                     <div class="mb-4">
                         <label for="status">Status</label>
                         <select name="status" id="status" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
-                            <option value="publish">Publish</option>
-                            <option value="draft">Draft</option>
+                          <option value="draft">Draft</option>
+                          <option value="publish">Publish</option>
                         </select>
                     </div>
                     <div class="mb-2">

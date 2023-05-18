@@ -25,11 +25,11 @@ class PostFactory extends Factory
         $title = $this->faker->sentence(rand(1, 3));
         $subtitle = $this->faker->sentence(rand(2, 4));
         return [
-            'author_id' => rand(1, 5),
+            'author_id' => rand(1, 10),
             'title' => $title,
             'subtitle' => $subtitle,
             'slug' => Str::slug($title),
-            'description' =>  $this->faker->text(200)
+            'description' =>  $this->faker->text(500)
         ];
     }
 }

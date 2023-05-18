@@ -40,14 +40,14 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
     Route::get('/chart', [DashboardController::class, 'chart'])->name('chart');
+    Route::get('/chart', [ChartJSController::class, 'all_chart'])->name('chart');
+
     Route::get('/posts', [DashboardController::class, 'post'])->name('posts');
     Route::get('/users', [DashboardController::class, 'user'])->name('users');
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     Route::get('/setting', [DashboardController::class, 'setting'])->name('settings');
-
-    Route::get('dashboard', [ChartJSController::class, 'index'])->name('dashboard');
-    Route::get('chart', [ChartJSController::class, 'all_chart'])->name('chart');
 
     Route::get('/posts', [PostController::class, 'index'])->name('posts');
     Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
@@ -62,16 +62,10 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
 });
 
-Route::middleware(['IsUser', 'IsApproved'])->prefix('user')->name('user.')->group(function () {
-    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
-    Route::get('dashboard', [ChartJSController::class, 'index'])->name('dashboard');
-    Route::get('chart', [ChartJSController::class, 'all_chart'])->name('chart');
-});
+Route::post('/create-dummy', function (Illuminate\Http\Request $request) {
+    $data = $request->only('data_dummy'); // Ambil data dari request
 
-Route::get('/dummy', function () {
-    DataDummy::dispatch('test');
-});
+    event(new DataDummy($data)); // Memicu event dengan data
 
-Route::get('/welcome', function () {
-    return view('welcome');
+    return redirect()->back();
 });

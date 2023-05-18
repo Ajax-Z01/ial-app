@@ -9,6 +9,7 @@ use App\Models\ChartJSModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Dummy;
 
 class ChartJSController extends Controller
 {
@@ -104,7 +105,15 @@ class ChartJSController extends Controller
         $labels_vakum = $piranis->pluck('time');
         $pirani = $piranis->pluck('tekanan_vakum_pirani_mbar');
 
-        return view('chart', compact('labels_filamen', 'filamen', 'potensio', 'labels_optic', 'a_pemayar', 'a_pemfokus', 't_pemayar', 't_pemfokus', 'labels_vakum', 'penning', 'pirani'));
+        $data_dummy = Dummy::select('data_dummy', DB::raw('TIME(created_at) as time'))
+            ->groupBy('data_dummy', DB::raw('TIME(created_at)'))
+            ->orderBy('id', 'ASC')
+            ->get();
+
+        $labels_dummy = $data_dummy->pluck('time');
+        $dummy = $data_dummy->pluck('data_dummy');
+
+        return view('chart', compact('labels_filamen', 'filamen', 'potensio', 'labels_optic', 'a_pemayar', 'a_pemfokus', 't_pemayar', 't_pemfokus', 'labels_vakum', 'penning', 'pirani', 'labels_dummy', 'dummy'));
     }
 
     public function filamen()
