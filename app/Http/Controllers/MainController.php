@@ -17,6 +17,12 @@ class MainController extends Controller
         return view('landing', compact('posts'));
     }
 
+    public function blog()
+    {
+        $posts = Post::where('status', 'publish')->simplePaginate(5);
+        return view('blog', compact('posts'));
+    }
+
     public function about()
     {
         return view('about');

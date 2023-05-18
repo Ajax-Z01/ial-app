@@ -26,6 +26,8 @@ use App\Models\ChartJSModel;
 
 Route::get('/', [MainController::class, 'landing'])->name('landing');
 
+Route::get('/blog', [MainController::class, 'blog'])->name('blog');
+
 Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');

@@ -27,6 +27,13 @@
         </li>
         <li class="mr-3">
           <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
+          @if (Request::is('blog'))  font-bold 
+          @else hover:text-gray-800 hover:text-underline
+          @endif
+          " href="{{ route('blog') }}">Blog</a>
+        </li>
+        <li class="mr-3">
+          <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
           @if (Request::is('about'))  font-bold 
           @else hover:text-gray-800 hover:text-underline
           @endif
