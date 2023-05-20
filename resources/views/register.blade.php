@@ -22,7 +22,7 @@
     <nav class="absolute top-0 z-30 flex flex-wrap items-center justify-between w-full px-4 py-2 mt-6 mb-4 shadow-none lg:flex-nowrap lg:justify-start">
       <div class="container flex items-center justify-between py-0 flex-wrap-inherit">
         <a class="py-2.375 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-white lg:ml-0" href="{{ route('landing') }}">
-          <span class="md:text-4xl text-3xl pl-2 flex"><img src="img/electron-.png" alt="" class="md:w-10 md:h-10 md:mt-0 w-6 h-6 mt-1 mr-2"> Internet Accelerator Laboratory (IA-Lab) </span>
+          <span class="flex"><img src="{{ asset('/img/electron-.png')}}" alt="" class="w-6 h-6 mr-2">Internet Accelerator Laboratory</span>
         </a>
       </div>
     </nav>
@@ -34,7 +34,7 @@
             <div class="flex flex-wrap justify-center -mx-3">
               <div class="w-full max-w-full px-3 mx-auto mt-0 text-center lg:flex-0 shrink-0 lg:w-5/12">
                   <h2 class="mt-1 mb-1 text-white">Welcome!</h2>
-                <p class="text-white">Use these awesome forms to login or create new account.</p>
+                <p class="text-white">Use these awesome forms to create new account.</p>
               </div>
             </div>
           </div>
@@ -79,8 +79,8 @@
       <footer class="py-6">
         <div class="container">
           <div class="flex flex-wrap -mx-3">
-            <div class="w-8/12 max-w-full px-3 mx-auto mt-1 text-center flex-0">
-              <p class="mb-0 text-slate-400">
+            <div class="w-8/12 max-w-full px-3 mx-auto text-center flex-0">
+              <p class="mb-0 text-slate-400 text-sm">
                 Copyright ©
                 <script>
                   document.write(new Date().getFullYear());

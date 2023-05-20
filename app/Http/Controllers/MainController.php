@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
@@ -19,7 +20,11 @@ class MainController extends Controller
 
     public function blog()
     {
-        $posts = Post::where('status', 'publish')->simplePaginate(5);
+        $posts = Post::where('status', 'publish')->get()->take(5)->map(function ($post) {
+            $post->updated = $post->updated_at->diffForHumans();
+            $post->description = substr($post->description, 0, 200);
+            return $post;
+        });
         return view('blog', compact('posts'));
     }
 

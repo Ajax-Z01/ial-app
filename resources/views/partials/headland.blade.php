@@ -9,40 +9,40 @@
       </a>
     </div>
     <div class="block lg:hidden pr-4">
-      <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+      <button id="nav-toggle" class="flex items-center p-1 text-black hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
         <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <title>Menu</title>
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
         </svg>
       </button>
     </div>
-    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 gradient lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
       <ul class="list-reset lg:flex justify-end flex-1 items-center">
         <li class="mr-3">
-          <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
+          <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline
           @if (Request::is('/'))  font-bold 
-          @else hover:text-gray-800 hover:text-underline
+          @else hover:text-gray-700 hover:text-underline
           @endif
           " href="{{ route('landing') }}">Home</a>
         </li>
         <li class="mr-3">
-          <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
+          <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline
           @if (Request::is('blog'))  font-bold 
-          @else hover:text-gray-800 hover:text-underline
+          @else hover:text-gray-700 hover:text-underline
           @endif
           " href="{{ route('blog') }}">Blog</a>
         </li>
         <li class="mr-3">
-          <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
+          <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline
           @if (Request::is('about'))  font-bold 
-          @else hover:text-gray-800 hover:text-underline
+          @else hover:text-gray-700 hover:text-underline
           @endif
           " href="{{ route('about') }}">About Us</a>
         </li>
         <li class="mr-3">
-          <a class="md:text-xl inline-block py-2 px-4 text-black no-underline
+          <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline
           @if (Request::is('contact'))  font-bold 
-          @else hover:text-gray-800 hover:text-underline
+          @else hover:text-gray-700 hover:text-underline
           @endif
           " href="{{ route('contact') }}">Contact</a>
         </li>

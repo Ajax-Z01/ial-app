@@ -1,11 +1,11 @@
 <div class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen bg-gray-50 transition-all duration-200">
-    <nav class="absolute z-20 flex flex-wrap items-center justify-between w-full px-6 py-2 text-white transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start" navbar-profile navbar-scroll="true">
+    <nav class="absolute z-20 flex flex-wrap items-center justify-between w-full px-6 py-2 text-white transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="true">
       <div class="flex items-center justify-between w-full px-6 py-1 mx-auto flex-wrap-inherit">
         <nav>
           <!-- breadcrumb -->
           <ol class="flex flex-wrap pt-1 pl-2 pr-4 mr-12 bg-transparent rounded-lg sm:mr-16">
             <li class="leading-normal text-sm">
-              <a class="opacity-50" href="javascript:;">Internet Accelerator Laboratory (IA-Lab)</a>
+              <a class="opacity-50" href="javascript:;">IA-Lab Dashboard</a>
             </li>
             <li class="text-sm pl-2 capitalize leading-normal before:float-left before:pr-2 before:content-['/']" aria-current="page">Profile</li>
           </ol>
@@ -16,15 +16,14 @@
           <div class="flex items-center md:ml-auto md:pr-4">
           </div>
           <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
+            {{-- settings --}}
             <li class="flex items-center px-4">
               <a href="javascript:;" class="p-0 text-white transition-all text-sm ease-soft-in-out">
                 <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog" aria-hidden="true"></i>
                 <!-- fixed-plugin-button-nav  -->
               </a>
             </li>
-
             <!-- notifications -->
-
             <li class="relative flex items-center px-4">
               <p class="hidden transform-dropdown-show"></p>
               <a dropdown-trigger href="javascript:;" class="block p-0 text-white transition-all text-sm ease-nav-brand" aria-expanded="false">
@@ -102,9 +101,6 @@
                 <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
                 <span class="hidden sm:inline">{{ Auth::user()->username }}</span>
               </a>
-            </li>
-            <li class="flex items-center">
-              <a class="inline-block px-2 py-2 mb-0 mx-2 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer leading-pro border-gray-300 ease-soft-in text-xs hover:scale-102 active:shadow-soft-xs text-white hover:border-gray-300 active:bg-gray-600 active:hover:text-white hover:text-white tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent" href="{{ route('logout') }}">Log Out</a>
             </li>
             <li class="flex items-center pl-4 xl:hidden">
               <a href="javascript:;" class="block p-0 text-white transition-all ease-soft-in-out text-sm" sidenav-trigger>

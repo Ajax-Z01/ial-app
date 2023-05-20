@@ -5,7 +5,7 @@
         <!-- breadcrumb -->
         <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
           <li class="leading-normal text-sm">
-            <a class="opacity-50 text-slate-700" href="javascript:;">Internet Accelerator Laboratory (IA-Lab)</a>
+            <a class="opacity-50 text-slate-700" href="javascript:;">IA-Lab Dashboard</a>
           </li>
           <li class="text-sm pl-2 capitalize leading-normal text-slate-700 before:float-left before:pr-2 before:text-gray-600 before:content-['/']" aria-current="page">
           @if (request()->is('dashboard'))
@@ -129,9 +129,6 @@
               <i class="fa fa-user sm:mr-1"></i>
               <span class="hidden sm:inline">{{ Auth::user()->username }}</span>
             </a>
-          </li>
-          <li class="flex items-center">
-            <a class="inline-block px-2 py-2 mb-0 mx-2 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer leading-pro border-gray-300 ease-soft-in text-xs hover:scale-102 active:shadow-soft-xs text-gray-800 hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent" href="{{ route('logout') }}">Log Out</a>
           </li>
           <li class="flex items-center pl-4 xl:hidden">
             <a href="javascript:;" class="block p-0 transition-all ease-nav-brand text-sm text-slate-500" sidenav-trigger>

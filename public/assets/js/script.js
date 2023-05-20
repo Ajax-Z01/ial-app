@@ -21,7 +21,8 @@ if (scrollpos > 10) {
     toToggle[i].classList.remove("text-white");
     }
     header.classList.add("shadow");
-    navcontent.classList.remove("bg-gray-100");
+    // navcontent.classList.remove("bg-black");
+    navcontent.classList.remove("gradient");
     navcontent.classList.add("bg-white");
 } else {
     header.classList.remove("bg-white");
@@ -37,7 +38,8 @@ if (scrollpos > 10) {
 
     header.classList.remove("shadow");
     navcontent.classList.remove("bg-white");
-    navcontent.classList.add("bg-gray-100");
+    navcontent.classList.add("gradient");
+    // navcontent.classList.add("bg-black");
 }
 });
 /*Toggle dropdown list*/
