@@ -95,7 +95,7 @@
       <div class="container">
         <div class="flex flex-wrap -mx-3">
           <div class="w-8/12 max-w-full px-3 mx-auto mt-1 text-center flex-0">
-            <p class="mb-0 text-slate-400">
+            <p class="mb-0 text-slate-400 text-sm">
               Copyright ©
               <script>
                 document.write(new Date().getFullYear());
@@ -110,5 +110,5 @@
   <!-- plugin for scrollbar  -->
   <script src="{{ asset('/assets/js/plugins/perfect-scrollbar.min.js') }}" async></script>
   <!-- main script file  -->
-  <script src="{{ asset('/assets/js/soft-ui-dashboard.min.js?v=1.0.4') }}" async></script>
+  <script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.min.js') }}" async></script>
 </html>

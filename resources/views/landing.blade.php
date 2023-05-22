@@ -17,7 +17,7 @@
         </div>
         <!--Right Col-->
         <div class="w-full md:w-3/5 py-3 text-center">
-          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="img/electron-.png" />
+          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="{{ asset('img/electron-.png') }}" />
         </div>
       </div>
     </div>
@@ -103,9 +103,11 @@
           </div>
           <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
             <div class="flex items-center justify-start">
-              <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Detail
-              </button>
+              <a href="{{ route('post', $post->slug) }}">
+                <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  Detail
+                </button>
+              </a>
             </div>
           </div>
         </div>

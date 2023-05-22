@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="{{ asset('/img/electron.png')}}" />
     <title>IA-Lab Dashboard</title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    {{-- Vite Js --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
@@ -15,7 +17,7 @@
     <link href="{{ asset('/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-
+    {{-- Charts --}}
     @if (request()->is('chart'))
     <script>
     var labels_filamen =  {{ Js::from($labels_filamen) }};
@@ -32,11 +34,17 @@
     var labels_dummy =  {{ Js::from($labels_dummy) }};
     var dummy =  {{ Js::from($dummy) }};
     </script>
+    @elseif (request()->is('dummy'))
+    <script>
+      var labels_dummy =  {{ Js::from($labels_dummy) }};
+      var dummy =  {{ Js::from($dummy) }};
+    </script>
     @endif
-
     <!-- Main Styling -->
     <link href="{{ asset('/assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4') }}" rel="stylesheet" />
     <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" />
+    @livewireStyles
+    @stack('css')
   </head>
 
   <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
@@ -54,13 +62,20 @@
       @include('partials.setdash')
     </main>
     @endif
+    <!-- Load Livewire JS -->
+    <script src="{{ asset('vendor/livewire/livewire.js') }}"></script>
+    {{-- jquery --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- plugin for charts  -->
+    <script src="{{ asset('/assets/js/plugins/chartjs.min.js') }}" async></script>
+    <!-- plugin for scrollbar  -->
+    <script src="{{ asset('/assets/js/plugins/perfect-scrollbar.min.js') }}" async></script>
+    <!-- github button -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- main script file  -->
+    <script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
+    @livewire('real-time-data')
+    @livewireScripts
+    @stack('js')
   </body>
-  <!-- plugin for charts  -->
-  <script src="{{ asset('/assets/js/plugins/chartjs.min.js') }}" async></script>
-  <!-- plugin for scrollbar  -->
-  <script src="{{ asset('/assets/js/plugins/perfect-scrollbar.min.js') }}" async></script>
-  <!-- github button -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- main script file  -->
-  <script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
-</html>
+  </html>

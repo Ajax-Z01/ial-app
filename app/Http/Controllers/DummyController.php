@@ -21,15 +21,13 @@ class DummyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): Response
+    public function store(Request $request)
     {
-        $data_dummy = Dummy::create([
-            'data_dummy' => $request->input('data_dummy'),
-        ]);
+        $dummy = new Dummy();
+        $dummy->data_dummy = $request->data_dummy;
+        $dummy->save();
 
-        DataDummy::dispatch($data_dummy);
-
-        return response()->noContent();
+        return response()->json(['message' => 'Data saved successfully']);
     }
 
     /**

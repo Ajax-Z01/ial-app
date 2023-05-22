@@ -1,5 +1,6 @@
 var scrollpos = window.scrollY;
 var header = document.getElementById("header");
+var header2 = document.getElementById("header2");
 var navcontent = document.getElementById("nav-content");
 var navaction = document.getElementById("navAction");
 var brandname = document.getElementById("brandname");
@@ -11,6 +12,8 @@ scrollpos = window.scrollY;
 
 if (scrollpos > 10) {
     header.classList.add("bg-white");
+    header2.classList.add("bg-white");
+    header2.classList.remove("gradient");
     navaction.classList.remove("bg-white");
     navaction.classList.add("gradient");
     navaction.classList.remove("text-gray-800");
@@ -22,10 +25,10 @@ if (scrollpos > 10) {
     }
     header.classList.add("shadow");
     // navcontent.classList.remove("bg-black");
-    navcontent.classList.remove("gradient");
-    navcontent.classList.add("bg-white");
 } else {
     header.classList.remove("bg-white");
+    header2.classList.remove("bg-white");
+    header2.classList.add("gradient");
     navaction.classList.remove("gradient");
     navaction.classList.add("bg-white");
     navaction.classList.remove("text-white");
@@ -37,8 +40,6 @@ if (scrollpos > 10) {
     }
 
     header.classList.remove("shadow");
-    navcontent.classList.remove("bg-white");
-    navcontent.classList.add("gradient");
     // navcontent.classList.add("bg-black");
 }
 });

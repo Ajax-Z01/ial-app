@@ -40,58 +40,20 @@
       </svg>
     </div>
     <section class="bg-white border-b py-8">
-      <div class="container max-w-5xl mx-auto m-8">
-        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          Contact Us
-        </h2>
-        <div class="w-full mb-4">
-          <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+      <article class="max-w-4xl px-6 py-24 mx-auto space-y-16 text-gray-900">
+        <div class="w-full mx-auto space-y-4">
+          <h1 class="text-5xl font-bold leading-none">{{ $post->title }}</h1>
+          <p class="text-sm text-gray-600">by
+            <a href="#" target="_blank" rel="noopener noreferrer" class="hover:underline text-blue-600">
+              <span>{{ $post->author->name }}</span>
+            </a>on
+            <time datetime="2021-02-12 15:34:18-0200">{{ $post->created_at->format('d M Y')}}</time>
+          </p>
         </div>
-        <section class="py-6 bg-gray-100 text-gray-900">
-          <div class="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
-            <div class="py-6 md:py-0 md:px-6">
-              <h1 class="text-4xl font-bold">Get in touch</h1>
-              <p class="pt-2 pb-4">Fill in the form to start a conversation</p>
-              <div class="space-y-4">
-                <p class="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-11 h-11 mr-2 sm:mr-6">
-                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>6CC7+JQ3, Jl. Babarsari, Depok, Tambak Bayan, Caturtunggal, Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</span>
-                </p>
-                <p class="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 sm:mr-6">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                  </svg>
-                  <span>(0274) 488435</span>
-                </p>
-                <p class="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 sm:mr-6">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                  </svg>
-                  <span>ial-prta@brin.com</span>
-                </p>
-              </div>
-            </div>
-            <form novalidate="" class="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid">
-              <label class="block">
-                <span class="mb-1">Full name</span>
-                <input type="text" placeholder="Full Name" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white">
-              </label>
-              <label class="block">
-                <span class="mb-1">Email address</span>
-                <input type="email" placeholder="email@email.com" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white">
-              </label>
-              <label class="block">
-                <span class="mb-1">Message</span>
-                <textarea rows="3" class="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white"></textarea>
-              </label>
-              <button type="button" class="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-blue-600 text-gray-50 focus:ring-blue-600 hover:ring-blue-600">Submit</button>
-            </form>
-          </div>
-        </section>
-      </div>
+        <div class="text-gray-800">
+          <p>{{ $post->description }}</p>
+        </div>
+      </article>
     </section>
     <section class="bg-landing py-8">
       <div class="container mx-auto flex flex-wrap pt-4 pb-12 justify-center">

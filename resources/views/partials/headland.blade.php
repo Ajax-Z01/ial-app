@@ -1,5 +1,5 @@
 <nav id="header" class="fixed w-full z-30 top-0 text-white">
-  <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+  <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2 gradient" id="header2">
     <div class="pl-4 flex items-center">
       <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
         <span class="md:text-4xl text-3xl pl-2 flex">
@@ -16,7 +16,7 @@
         </svg>
       </button>
     </div>
-    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 gradient lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
       <ul class="list-reset lg:flex justify-end flex-1 items-center">
         <li class="mr-3">
           <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline

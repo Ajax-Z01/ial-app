@@ -15,6 +15,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * allows your team to easily build robust real-time web applications.
  */
 
+import $ from 'jquery';
+
 import Echo from 'laravel-echo';
 
 import Pusher from 'pusher-js';
@@ -28,9 +30,32 @@ window.Echo = new Echo({
     forceTLS: true
 });
 
-window.Echo.channel('data-dummy').listen('.dummy-added', (event) => {
-    console.log(event);
-});
+var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+window.Echo.channel('data-dummy')
+    .listen('.dummy-added', (data_dummy) => {
+        var payload = {
+            data_dummy: data_dummy // Assign the data_dummy value to the payload object
+        };
+        console.log(data_dummy);
+        // Kirim data ke endpoint Laravel menggunakan AJAX
+        $.ajax({
+            url: '/save-dummy',
+            type: 'POST',
+            data: payload,
+            headers: {
+                'X-CSRF-TOKEN': csrfToken // Menyertakan token CSRF dalam header permintaan
+            },
+            success: function(response) {
+                console.log(response);
+                // Handle response jika diperlukan
+            },
+            error: function(xhr, status, error) {
+                console.log(error);
+                // Handle error jika diperlukan
+            }
+        });
+    });
 
 // var channel = Echo.channel('data-dummy');
 // channel.listen('.data-added', function(data) {

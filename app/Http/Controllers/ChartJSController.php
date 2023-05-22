@@ -134,7 +134,7 @@ class ChartJSController extends Controller
         $labels_filamen = $potensios->pluck('time');
         $potensio = $potensios->pluck('tegangan_potensio');
 
-        return view('chart', compact('labels_filamen', 'filamen', 'potensio'));
+        return view('filamen', compact('labels_filamen', 'filamen', 'potensio'));
     }
 
     public function optic()
@@ -171,7 +171,7 @@ class ChartJSController extends Controller
         $labels_optic = $t_pemfokuses->pluck('time');
         $t_pemfokus = $t_pemfokuses->pluck('tegangan_pemfokus');
 
-        return view('chart', compact('labels_optic', 'a_pemayar', 'a_pemfokus', 't_pemayar', 't_pemfokus'));
+        return view('optic', compact('labels_optic', 'a_pemayar', 'a_pemfokus', 't_pemayar', 't_pemfokus'));
     }
 
     public function vakum()
@@ -192,7 +192,20 @@ class ChartJSController extends Controller
         $labels_vakum = $piranis->pluck('time');
         $pirani = $piranis->pluck('tekanan_vakum_pirani_mbar');
 
-        return view('chart', compact('labels_vakum', 'penning', 'pirani'));
+        return view('vakum', compact('labels_vakum', 'penning', 'pirani'));
+    }
+
+    public function dummy()
+    {
+        $data_dummy = Dummy::select('data_dummy', DB::raw('TIME(created_at) as time'))
+            ->groupBy('data_dummy', DB::raw('TIME(created_at)'))
+            ->orderBy('id', 'ASC')
+            ->get();
+
+        $labels_dummy = $data_dummy->pluck('time');
+        $dummy = $data_dummy->pluck('data_dummy');
+
+        return view('dummy', compact('labels_dummy', 'dummy'));
     }
 
     /**

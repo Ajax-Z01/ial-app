@@ -16,7 +16,7 @@
         </div>
         <!--Right Col-->
         <div class="w-full md:w-3/5 py-3 text-center">
-          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="img/electron-.png" />
+          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="{{ asset('img/electron-.png') }}" />
         </div>
       </div>
     </div>
@@ -59,12 +59,11 @@
               <p class="mt-2">{{ $post->description }}</p>
             </div>
             <div class="flex items-center justify-between mt-4">
-              <a rel="noopener noreferrer" href="#" class="hover:underline text-blue-600">Read more</a>
+              <a rel="noopener noreferrer" href="{{ route('post', $post->slug) }}" class="hover:underline text-blue-600">Read more</a>
               <div>
                 <a rel="noopener noreferrer" href="#" class="flex items-center">
                   <img src="{{ asset("img/default-profile.png") }}" alt="avatar" class="object-cover w-10 h-10 mx-4 rounded-full bg-gray-500">
-                  <span class="hover:underline text-gray-600">
-                    {{ $post->author->name }}
+                  <span class="hover:underline text-gray-600"> {{ $post->author->name }}
                   </span>
                 </a>
               </div>

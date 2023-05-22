@@ -1,17 +1,22 @@
 <?php
 
+use App\Models\Dummy;
+use Livewire\Livewire;
 use App\Events\DataDummy;
+use App\Models\ChartJSModel;
+use App\Http\Livewire\LiveDummy;
+use App\Http\Livewire\RealTimeData;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DummyController;
 use App\Http\Controllers\OpticController;
 use App\Http\Controllers\VakumController;
 use App\Http\Controllers\ChartJSController;
 use App\Http\Controllers\FilamenController;
 use App\Http\Controllers\DashboardController;
-use App\Models\ChartJSModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +33,8 @@ Route::get('/', [MainController::class, 'landing'])->name('landing');
 
 Route::get('/blog', [MainController::class, 'blog'])->name('blog');
 
+Route::get('/post/{slug}', [MainController::class, 'post'])->name('post');
+
 Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
@@ -43,16 +50,19 @@ Route::controller(AuthController::class)->group(function () {
 Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/chart', [DashboardController::class, 'chart'])->name('chart');
     Route::get('/chart', [ChartJSController::class, 'all_chart'])->name('chart');
 
-    Route::get('/posts', [DashboardController::class, 'post'])->name('posts');
-    Route::get('/users', [DashboardController::class, 'user'])->name('users');
+    Route::get('/vakum', [ChartJSController::class, 'vakum'])->name('vakum');
+
+    Route::get('/dummy', [ChartJSController::class, 'dummy'])->name('dummy');
+
+    Route::post('/save-dummy', [DummyController::class, 'store']);
+
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     Route::get('/setting', [DashboardController::class, 'setting'])->name('settings');
 
     Route::get('/posts', [PostController::class, 'index'])->name('posts');
-    Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
     Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
     Route::get('/post/{id}/edit', [PostController::class, 'edit'])->whereNumber('id')->name('post.edit');
     Route::put('/post/{id}/edit', [PostController::class, 'update'])->whereNumber('id')->name('post.update');
@@ -64,10 +74,4 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
 });
 
-Route::post('/create-dummy', function (Illuminate\Http\Request $request) {
-    $data = $request->only('data_dummy'); // Ambil data dari request
-
-    event(new DataDummy($data)); // Memicu event dengan data
-
-    return redirect()->back();
-});
+Livewire::component('real-time-data', RealTimeData::class);

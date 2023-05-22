@@ -40,12 +40,13 @@ class MainController extends Controller
 
     public function index()
     {
-        $posts = Post::where('status', 'publish')->with('admin')->simplePaginate(5);
+        $posts = Post::where('status', 'publish')->with('author')->simplePaginate(5);
         return view('index', compact('posts'));
     }
+
     public function post($slug)
     {
-        $post = Post::with('admin')->whereSlug($slug)->first() ?? abort(404, "Wrong way dude...");
+        $post = Post::with('author')->whereSlug($slug)->first() ?? abort(404, "Wrong way dude...");
         return view('post', compact('post'));
     }
 }
