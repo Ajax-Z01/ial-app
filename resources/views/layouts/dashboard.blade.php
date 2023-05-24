@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     {{-- Vite Js --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- Tailwind CSS --}}
+    <script src="https://cdn.tailwindcss.com"></script> 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
@@ -33,11 +35,6 @@
     var pirani =  {{ Js::from($pirani) }};
     var labels_dummy =  {{ Js::from($labels_dummy) }};
     var dummy =  {{ Js::from($dummy) }};
-    </script>
-    @elseif (request()->is('dummy'))
-    <script>
-      var labels_dummy =  {{ Js::from($labels_dummy) }};
-      var dummy =  {{ Js::from($dummy) }};
     </script>
     @endif
     <!-- Main Styling -->
@@ -74,7 +71,17 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- main script file  -->
     <script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
-    @livewire('real-time-data')
+    {{-- flowbit script --}}
+    <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+    {{-- chart script --}}
+    @if (request()->is('filamen'))
+    @livewire('real-time-filamen')
+    @elseif (request()->is('optic'))
+    @livewire('real-time-optic')
+    @elseif (request()->is('vakum'))
+    @livewire('real-time-vakum')
+    @else
+    @endif
     @livewireScripts
     @stack('js')
   </body>

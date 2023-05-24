@@ -17,10 +17,10 @@ class OpticFactory extends Factory
     public function definition(): array
     {
         return [
-            'arus_pemayar' => $this->faker->randomFloat(2, 0, 100),
-            'arus_pemfokus' => $this->faker->randomFloat(2, 0, 100),
-            'tegangan_pemayar' => $this->faker->randomFloat(2, 0, 100),
-            'tegangan_pemfokus' => $this->faker->randomFloat(2, 0, 100),
+            'arus_pemayar' => $this->faker->randomFloat(2, 0, 1),
+            'arus_pemfokus' => $this->faker->randomFloat(2, 0, 1),
+            'tegangan_pemayar' => $this->faker->randomFloat(2, 0, 4),
+            'tegangan_pemfokus' => $this->faker->randomFloat(2, 0, 10),
         ];
     }
 }

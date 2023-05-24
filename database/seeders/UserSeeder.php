@@ -21,6 +21,14 @@ class UserSeeder extends Seeder
             'status' => 'approved',
             'password' => ('$2y$10$WCVI32GnFcYOOaIasofpiOxLnZ1TEgfWU80ZNRKGXAsXxtLiTCDim'),
         ]);
-        \App\Models\User::factory(10)->create();
+        \App\Models\User::insert([
+            'username' => 'Admin',
+            'name' => 'Admin Official',
+            'email' => 'admin@gmail.com',
+            'type' => 'admin',
+            'status' => 'approved',
+            'password' => ('$2y$10$WCVI32GnFcYOOaIasofpiOxLnZ1TEgfWU80ZNRKGXAsXxtLiTCDim'),
+        ]);
+        \App\Models\User::factory(12)->create();
     }
 }

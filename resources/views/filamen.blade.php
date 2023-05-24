@@ -2,34 +2,34 @@
 
 @section('content')
 <div class="w-full px-6 py-6 mx-auto">
-  <!-- cards 1 -->
+  {{-- card 1 --}}
   <div class="flex flex-wrap -mx-3">
     <div class="w-full max-w-full px-3 mt-0 mb-6 lg:flex-none">
       <div class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
         <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-white p-6 pb-0">
-          <h6>Data Akuisisi Sistem Vakum (Penning)</h6>
+          <h6>Data Akuisisi Sistem Filamen (Arus Filamen)</h6>
         </div>
         <div class="flex-auto p-4">
           <div>
-            <canvas id="chartPenning" height="300"></canvas>
+            <canvas id="chartFilamen" height="300"></canvas>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- cards 2 -->
+  {{-- card 2 --}}
   <div class="flex flex-wrap -mx-3">
     <div class="w-full max-w-full px-3 mt-0 mb-6 lg:flex-none">
       <div class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
         <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-white p-6 pb-0">
-          <h6>Data Akuisisi Sistem Vakum (Pirani)</h6>
+          <h6>Data Akuisisi Sistem Filamen (Tegangan Potensio)</h6>
         </div>
         <div class="flex-auto p-4">
           <div>
-            <canvas id="chartPirani" height="300"></canvas>
+            <canvas id="chartPotensio" height="300"></canvas>
           </div>
         </div>
       </div>
     </div>
   </div>
- @endsection
+@endsection

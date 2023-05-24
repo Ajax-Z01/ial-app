@@ -13,6 +13,6 @@ class FilamenSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Filamen::factory(10)->create();
+        \App\Models\Filamen::factory(100)->create();
     }
 }

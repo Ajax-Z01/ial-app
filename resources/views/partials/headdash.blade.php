@@ -18,8 +18,14 @@
             Users
           @elseif (request()->is('profile'))
             Profile
-          @elseif (request()->is('setting'))
-            Settings
+          @elseif (request()->is('filamen'))
+            Filamen Chart
+          @elseif (request()->is('optic'))
+            Optic Chart
+          @elseif (request()->is('vakum'))
+            Vakum Chart
+          @elseif (request()->is('video'))
+            Video
           @else Admin Page
           @endif
           </li>
@@ -35,8 +41,14 @@
             Users
           @elseif (request()->is('profile'))
             Profile
-          @elseif (request()->is('setting'))
-            Settings
+          @elseif (request()->is('filamen'))
+            Filamen Chart
+          @elseif (request()->is('optic'))
+            Optic Chart
+          @elseif (request()->is('vakum'))
+            Vakum Chart
+          @elseif (request()->is('video'))
+            Video
           @else Admin Page
           @endif
         </h4>

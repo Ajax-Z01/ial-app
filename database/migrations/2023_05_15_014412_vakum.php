@@ -17,7 +17,7 @@ class Vakum extends Migration
             $table->timestamps();
             $table->double('tekanan_vakum_penning_mbar');
             $table->double('tekanan_vakum_pirani_mbar');
-            $table->double('waktu_operasi_detik');
+            $table->double('waktu_operasi_detik')->nullable();
         });
     }
 

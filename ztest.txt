@@ -1,0 +1,25 @@
+Channel : data-filamen,
+Event : filamen-added,
+Data :
+{
+    "arus_filamen":7,
+    "tegangan_potensio":0.7
+}
+
+Channel : data-vakum,
+Event : vakum-added,
+Data :
+{
+    "tekanan_vakum_penning_mbar":0.0099,
+    "tekanan_vakum_pirani_mbar":9900
+}
+
+Channel : data-optic,
+Event : optic-added,
+Data :
+{
+    "arus_pemayar":0.7,
+    "arus_pemfokus":0.3,
+    "tegangan_pemayar":3,
+    "tegangan_pemfokus":7
+}

@@ -13,6 +13,6 @@ class VakumSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Vakum::factory(10)->create();
+        \App\Models\Vakum::factory(100)->create();
     }
 }

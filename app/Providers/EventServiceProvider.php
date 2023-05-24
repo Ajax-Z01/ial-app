@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Events\DataDummy;
+use App\Events\EventFilamen;
 use App\Listeners\AddDummy;
+use App\Listeners\AddFilamen;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -21,6 +23,15 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         DataDummy::class => [
             AddDummy::class,
+        ],
+        EventFilamen::class => [
+            AddFilamen::class,
+        ],
+        EventOptic::class => [
+            AddOptic::class,
+        ],
+        EventVakum::class => [
+            AddVakum::class,
         ],
     ];
 

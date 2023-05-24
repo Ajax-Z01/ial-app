@@ -19,3 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/get-dummy-data', 'DummyApi@getDummyData');
+
+Route::get('/get-filamen-data', 'FilamenApi@getFilamenData');
+
+Route::get('/get-optic-data', 'OpticApi@getOpticData');
+
+Route::get('/get-vakum-data', 'VakumApi@getVakumData');

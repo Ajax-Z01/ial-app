@@ -13,6 +13,6 @@ class OpticSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Optic::factory(10)->create();
+        \App\Models\Optic::factory(100)->create();
     }
 }

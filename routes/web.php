@@ -5,8 +5,9 @@ use Livewire\Livewire;
 use App\Events\DataDummy;
 use App\Models\ChartJSModel;
 use App\Http\Livewire\LiveDummy;
-use App\Http\Livewire\RealTimeData;
+use App\Http\Livewire\RealTimeDummy;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\RealTimeFilamen;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
@@ -52,14 +53,21 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
 
     Route::get('/chart', [ChartJSController::class, 'all_chart'])->name('chart');
 
+    Route::get('/filamen', [ChartJSController::class, 'filamen'])->name('filamen');
+
+    Route::post('/save-filamen', [FilamenController::class, 'store']);
+
+    Route::get('/optic', [ChartJSController::class, 'optic'])->name('optic');
+
+    Route::post('/save-optic', [OpticController::class, 'store']);
+
     Route::get('/vakum', [ChartJSController::class, 'vakum'])->name('vakum');
 
-    Route::get('/dummy', [ChartJSController::class, 'dummy'])->name('dummy');
+    Route::post('/save-vakum', [VakumController::class, 'store']);
 
-    Route::post('/save-dummy', [DummyController::class, 'store']);
+    Route::get('/video', [DashboardController::class, 'video'])->name('video');
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
-    Route::get('/setting', [DashboardController::class, 'setting'])->name('settings');
 
     Route::get('/posts', [PostController::class, 'index'])->name('posts');
     Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
@@ -73,5 +81,3 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::put('/user/{id}/edit', [UserController::class, 'update'])->whereNumber('id')->name('user.update');
     Route::get('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
 });
-
-Livewire::component('real-time-data', RealTimeData::class);

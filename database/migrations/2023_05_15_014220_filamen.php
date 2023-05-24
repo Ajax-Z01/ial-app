@@ -17,9 +17,9 @@ class Filamen extends Migration
             $table->timestamps();
             $table->double('arus_filamen');
             $table->double('tegangan_potensio');
-            $table->integer('register');
-            $table->string('operator');
-            $table->double('waktu_operasi_detik');
+            $table->integer('register')->nullable();
+            $table->string('operator')->nullable();
+            $table->double('waktu_operasi_detik')->nullable();
         });
     }
 

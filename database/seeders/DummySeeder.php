@@ -12,6 +12,6 @@ class DummySeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Dummy::factory(10)->create();
+        \App\Models\Dummy::factory(100)->create();
     }
 }

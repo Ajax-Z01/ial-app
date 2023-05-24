@@ -47,7 +47,11 @@
                     @endif
                   </td>
                   <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <span class="font-semibold leading-tight text-xs text-slate-400">{{ $user->type }}</span>
+                    @if ($user->type == 'admin')
+                    <span class="bg-gradient-to-tl from-yellow-600 to-yellow-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $user->type }}</span>
+                    @elseif($user->type == 'user')
+                    <span class="bg-gradient-to-tl from-blue-600 to-blue-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $user->type }}</span>
+                    @endif
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <a href="{{ route('user.edit', ['id' => $user->id]) }}" class="font-semibold leading-tight text-xs text-slate-400  text-center align-middle transition-all bg-transparent shadow-none cursor-pointer border-gray-300 ease-soft-in hover:scale-102 active:shadow-soft-xs hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent"> Edit </a>

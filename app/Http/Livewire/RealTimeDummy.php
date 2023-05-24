@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Dummy;
 use Livewire\Component;
 
-class RealTimeData extends Component
+class RealTimeDummy extends Component
 {
     public $dataDummy;
 
@@ -23,7 +23,7 @@ class RealTimeData extends Component
 
     public function render()
     {
-        return view('livewire.real-time-data');
+        return view('livewire.real-time-dummy');
     }
 
     public function refreshData()

@@ -12,8 +12,9 @@
     <meta name="description" content="Simple landing page" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
+    {{-- Tailwind CSS --}}
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
-    <!--Replace with your tailwind.css once created-->
+    {{-- Styles --}}
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
   </head>
