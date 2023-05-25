@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
-use App\Events\DataDummy;
+use App\Models\Filamen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -14,11 +14,13 @@ class DashboardController extends Controller
     {
         $totalPosts = Post::count();
         $totalUsers = User::count();
+        $totalData = Filamen::count();
         $today = Carbon::today();
         $newUsersCount = User::whereDate('created_at', $today)->count();
         $newPostsCount = Post::whereDate('created_at', $today)->count();
+        $newDataCount = Filamen::whereDate('created_at', $today)->count();
 
-        return view('dashboard', compact('totalPosts', 'totalUsers', 'newUsersCount', 'newPostsCount'));
+        return view('dashboard', compact('totalPosts', 'totalUsers', 'totalData', 'newUsersCount', 'newPostsCount', 'newDataCount'));
     }
 
     public function profile()

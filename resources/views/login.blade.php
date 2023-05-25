@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="{{ asset('img/electron.png')}}" />
     <title>IA-Lab Login</title>
+    {{-- Vite Js --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/88c60bac4f.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
     <link href="{{ asset('assets/css/nucleo-icons.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
@@ -25,8 +27,48 @@
           <nav class="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 mx-6 my-4 shadow-soft-2xl rounded-blur bg-white/80 backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start">
             <div class="flex items-center justify-between w-full p-0 pl-6 mx-auto flex-wrap-inherit">
               <a class="py-2.375 text-sm mr-4 whitespace-nowrap font-bold text-gray-800 lg:ml-0" href="{{ route('landing') }}">
-                <span class="flex"><img src="{{ asset('/img/electron.png')}}" alt="" class="w-6 h-6 mr-2">Internet Accelerator Laboratory</span>
+                <span class="flex text-xl"><img src="{{ asset('/img/electron.png')}}" alt="" class="w-6 h-6 mr-2">IA-Lab</span>
               </a>
+              <button navbar-trigger class="px-3 py-1 ml-2 leading-none transition-all bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg ease-soft-in-out lg:hidden" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="inline-block mt-2 align-middle bg-center bg-no-repeat bg-cover w-6 h-6 bg-none">
+                  <span bar1 class="w-5.5 rounded-xs relative my-0 mx-auto block h-px bg-gray-600 transition-all duration-300"></span>
+                  <span bar2 class="w-5.5 rounded-xs mt-1.75 relative my-0 mx-auto block h-px bg-gray-600 transition-all duration-300"></span>
+                  <span bar3 class="w-5.5 rounded-xs mt-1.75 relative my-0 mx-auto block h-px bg-gray-600 transition-all duration-300"></span>
+                </span>
+              </button>
+              <div navbar-menu class="items-center flex-grow overflow-hidden transition-all duration-500 ease-soft lg-max:max-h-0 basis-full lg:flex lg:basis-auto">
+                <ul class="flex flex-col pl-0 mx-auto mb-0 list-none lg:flex-row xl:ml-auto">
+                  <li>
+                    <a class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" aria-current="page" href="{{ route('landing') }}">
+                      <i class="mr-1 fa-solid fa-house-chimney opacity-60"></i>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('blog') }}">
+                      <i class="mr-1 fa-solid fa-newspaper opacity-60"></i>
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('about') }}">
+                      <i class="mr-1 fa-solid fa-circle-info opacity-60"></i>
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('contact') }}l">
+                      <i class="mr-1 fa-solid fa-headset opacity-60"></i>
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+                <ul class="hidden pl-0 mb-0 list-none lg:block lg:flex-row">
+                  <li>
+                    <a href="{{ route('register') }}" class="leading-pro hover:scale-102 hover:shadow-soft-xs active:opacity-85 ease-soft-in text-xs tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-custom to-gray-custom rounded-3.5xl mb-0 mr-1 inline-block cursor-pointer border-0 bg-transparent px-8 py-2 text-center align-middle font-bold uppercase text-white transition-all">Register</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </nav>
         </div>
@@ -42,7 +84,7 @@
                   <div class="p-6 pb-0 mb-0 bg-transparent border-b-0 rounded-t-2xl">
                     <h3 class="relative z-10 font-bold text-transparent bg-gradient-to-tl from-gray-custom to-gray-custom bg-clip-text">Welcome back</h3>
                     @if (Session::has('success'))
-                      <div class="alert alert-success text-green-500">
+                      <div class="alert alert-success text-lime-500">
                           <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
                       </div>
                     @endif

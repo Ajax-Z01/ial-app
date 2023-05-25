@@ -3,13 +3,13 @@
     font-family: karla;
 }
 .bg-sidebar {
-    background-color: #3d5168;
+    background-color: #253f5b;
 }
 .bg-navbar {
-    background-color: #3d5168;
+    background-color: #253f5b;
 }
 .cta-btn {
-    color: #3d5168;
+    color: #253f5b;
 }
 .active-nav-link {
     background-color: #7b8295;
@@ -18,10 +18,10 @@
     background-color: #7b8295;
 }
 .account-link:hover {
-    background-color: #3d5168;
+    background-color: #253f5b;
 }
 .gradient {
-    background: linear-gradient(90deg, #3d5168 0%, #918e8c 100%);
+    background: linear-gradient(90deg, #253f5b 0%, #4f728e 100%);
 }
 .bg-landing {
     background: #f8fafc;

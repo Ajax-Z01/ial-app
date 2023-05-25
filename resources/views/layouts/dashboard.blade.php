@@ -13,7 +13,7 @@
     {{-- Tailwind CSS --}}
     <script src="https://cdn.tailwindcss.com"></script> 
     <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/88c60bac4f.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
     <link href="{{ asset('/assets/css/nucleo-icons.css') }}" rel="stylesheet" />
     <link href="{{ asset('/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
@@ -73,6 +73,8 @@
     <script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
     {{-- flowbit script --}}
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+    {{-- switch-mode script --}}
+    <script src="{{ asset('/assets/js/switch-mode.js') }}" async></script>
     {{-- chart script --}}
     @if (request()->is('filamen'))
     @livewire('real-time-filamen')

@@ -3,7 +3,7 @@
     <div class="pl-4 flex items-center">
       <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
         <span class="md:text-4xl text-3xl pl-2 flex">
-          <img src="{{asset('img/electron.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
+          <img id="icon" src="{{asset('img/electron-.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
           IA-Lab
         </span>
       </a>
@@ -45,6 +45,13 @@
           @else hover:text-gray-700 hover:text-underline
           @endif
           " href="{{ route('contact') }}">Contact</a>
+        </li>
+        <li class="mr-3">
+          <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline
+          @if (Request::is('register'))  font-bold 
+          @else hover:text-gray-700 hover:text-underline
+          @endif
+          " href="{{ route('register') }}">Register</a>
         </li>
       </ul>
       <a href="{{ route('login') }}">

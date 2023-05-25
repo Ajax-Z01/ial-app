@@ -16,9 +16,9 @@ class IsApproved
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->status == 'notapproved') {
-            return redirect()->route('login');
+        if (Auth::check() && Auth::user()->status === 'approved') {
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->route('login');
     }
 }

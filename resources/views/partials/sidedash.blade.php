@@ -116,6 +116,7 @@
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Video</span>
           </a>
         </li>
+        @if (Auth::user()->type == 'admin')
         {{-- tab admin --}}
         <li class="w-full mt-4">
           <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Admin pages</h6>
@@ -162,40 +163,17 @@
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Users</span>
           </a>
         </li>
+        @endif
 
-        {{-- <li class="mt-0.5 w-full">
-          <a class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors @if (Request::is('profile')) shadow-soft-xl ease-nav-brand rounded-lg bg-white font-semibold text-slate-700 @else ease-nav-brand @endif" href="{{ route('profile') }}">
-            <div class="@if (Request::is('profile')) bg-gradient-to-tl from-gray-custom to-gray-custom @endif shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-              <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>profile</title>
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                    <g transform="translate(1716.000000, 291.000000)">
-                      <g transform="translate(1.000000, 0.000000)">
-                        <path class="opacity-60 @if (Request::is('profile')) @else fill-slate-800  @endif" d="M45,0 L26,0 C25.447,0 25,0.447 25,1 L25,20 C25,20.379 25.214,20.725 25.553,20.895 C25.694,20.965 25.848,21 26,21 C26.212,21 26.424,20.933 26.6,20.8 L34.333,15 L45,15 C45.553,15 46,14.553 46,14 L46,1 C46,0.447 45.553,0 45,0 Z"></path>
-                        <path class="@if (Request::is('profile')) @else fill-slate-800  @endif" d="M22.883,32.86 C20.761,32.012 17.324,31 13,31 C8.676,31 5.239,32.012 3.116,32.86 C1.224,33.619 0,35.438 0,37.494 L0,41 C0,41.553 0.447,42 1,42 L25,42 C25.553,42 26,41.553 26,41 L26,37.494 C26,35.438 24.776,33.619 22.883,32.86 Z"></path>
-                        <path class="@if (Request::is('profile')) @else fill-slate-800  @endif" d="M13,28 C17.432,28 21,22.529 21,18 C21,13.589 17.411,10 13,10 C8.589,10 5,13.589 5,18 C5,22.529 8.568,28 13,28 Z"></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Profile</span>
-          </a>
-        </li>
-
+        {{-- switch mode --}}
         <li class="mt-0.5 w-full">
-          <a class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="{{ route('logout') }}">
-            <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-              <svg width="12px" height="12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <title>log out</title>
-                <path class="fill-slate-800" d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/>
-              </svg>
-            </div>
-            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Log Out</span>
-          </a>
-        </li> --}}
+          <p class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors ease-nav-brand" href="">
+            <button id="darkModeButton" class="bg-gray-300 dark:bg-gray-800 rounded-full w-12 h-6 flex items-center p-1 transition-colors duration-300 focus:outline-none">
+              <div id="darkModeIcon" class="bg-white dark:bg-gray-700 rounded-full w-4 h-4 shadow-md transform transition-transform duration-300"></div>
+            </button>
+            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Switch Mode</span>
+          </p>
+        </li>
       </ul>
     </div>
   </nav>

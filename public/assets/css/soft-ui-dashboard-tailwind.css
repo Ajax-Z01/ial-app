@@ -2067,8 +2067,8 @@ h6 {
 }
 
 .from-blue-600 {
-    --tw-gradient-from: #2152ff;
-    --tw-gradient-to: rgb(33 82 255 / 0);
+    --tw-gradient-from: #1e5fa6;30, 95, 166, 1
+    --tw-gradient-to: rgb(30 95 166 / 1);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -2140,17 +2140,17 @@ h6 {
 }
 
 .to-gray-100 {
-    --tw-gradient-to: #ebeff4;
+    --tw-gradient-to: #67b0fd;
 }
 
 .from-gray-custom {
-    --tw-gradient-from: #3d5168;
-    --tw-gradient-to: rgb(61 81 104 / 1);
+    --tw-gradient-from: #253F5B;37, 63, 91, 1
+    --tw-gradient-to: rgb(37 63 91 / 1);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .to-gray-custom {
-    --tw-gradient-to: #918e8c;
+    --tw-gradient-to: #4f728e;
 }
 
 .bg-cover {
@@ -2524,8 +2524,8 @@ h6 {
 }
 
 .text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
 }
 
 .text-inherit {

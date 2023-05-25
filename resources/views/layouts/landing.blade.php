@@ -29,5 +29,10 @@
   <!-- jQuery if you need it
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 -->
+<!-- plugin for scrollbar  -->
+<script src="{{ asset('/assets/js/plugins/perfect-scrollbar.min.js') }}" async></script>
+<!-- main script file  -->
+<script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
+{{-- script --}}
 <script src="{{ asset('assets/js/script.js') }}"></script>
 </html>

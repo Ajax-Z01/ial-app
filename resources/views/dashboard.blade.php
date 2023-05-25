@@ -4,7 +4,7 @@
 <!-- cards -->
 <div class="w-full px-6 py-6 mx-auto">
   @if (Session::has('success'))
-  <div class="pb-2 alert alert-success text-fuchsia-500">
+  <div class="pb-2 alert alert-success text-lime-500">
       <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
   </div>
   @endif
@@ -17,10 +17,10 @@
           <div class="flex flex-row -mx-3">
             <div class="flex-none w-2/3 max-w-full px-3">
               <div>
-                <p class="mb-0 font-sans font-semibold leading-normal text-sm">New Users</p>
+                <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Users</p>
                 <h5 class="mb-0 font-bold">
-                  {{ $totalUsers}}
-                  <span class="leading-normal text-sm font-weight-bolder text-lime-500">+{{ $newUsersCount}}</span>
+                  {{ $totalUsers }}
+                  <span class="leading-normal text-sm font-weight-bolder text-lime-500">+{{ $newUsersCount }}</span>
                 </h5>
               </div>
             </div>
@@ -41,7 +41,7 @@
           <div class="flex flex-row -mx-3">
             <div class="flex-none w-2/3 max-w-full px-3">
               <div>
-                <p class="mb-0 font-sans font-semibold leading-normal text-sm">New Posts</p>
+                <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Posts</p>
                 <h5 class="mb-0 font-bold">
                   {{ $totalPosts }}
                   <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ $newPostsCount }}</span>
@@ -59,11 +59,55 @@
     </div>
 
     <!-- card3 -->
-
+    <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
+      <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
+        <div class="flex-auto p-4">
+          <div class="flex flex-row -mx-3">
+            <div class="flex-none w-2/3 max-w-full px-3">
+              <div>
+                <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Chart Data</p>
+                <h5 class="mb-0 font-bold">
+                  {{ $totalData }}
+                  <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ $newDataCount }}</span>
+                </h5>
+              </div>
+            </div>
+            <div class="px-3 text-right basis-1/3">
+              <div class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-gray-custom to-gray-custom">
+                <i class="ni leading-none ni-chart-bar-32 text-lg relative top-3.5 text-white"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- card4 -->
+    <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
+      <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
+        <div class="flex-auto p-4">
+          <div class="flex flex-row -mx-3">
+            <div class="flex-none w-2/3 max-w-full px-3">
+              <div>
+                <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Messages</p>
+                <h5 class="mb-0 font-bold">
+                  {{ $totalPosts }}
+                  <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ $newPostsCount }}</span>
+                </h5>
+              </div>
+            </div>
+            <div class="px-3 text-right basis-1/3">
+              <div class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-gray-custom to-gray-custom">
+                <i class="ni leading-none ni-email-83 text-lg relative top-3.5 text-white"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   
-  <!-- cards row 2 -->
+  <!-- row 2 -->
   <div class="flex flex-wrap mt-6 -mx-3">
     <div class="w-full px-3 mb-6 lg:mb-0 lg:w-7/12 lg:flex-none">
       <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">

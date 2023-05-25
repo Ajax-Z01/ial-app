@@ -1,18 +1,10 @@
 <?php
 
-use App\Models\Dummy;
-use Livewire\Livewire;
-use App\Events\DataDummy;
-use App\Models\ChartJSModel;
-use App\Http\Livewire\LiveDummy;
-use App\Http\Livewire\RealTimeDummy;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\RealTimeFilamen;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\DummyController;
 use App\Http\Controllers\OpticController;
 use App\Http\Controllers\VakumController;
 use App\Http\Controllers\ChartJSController;
@@ -48,7 +40,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'registerPost')->name('register.post');
 });
 
-Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
+Route::middleware(['IsApproved'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/chart', [ChartJSController::class, 'all_chart'])->name('chart');
@@ -68,7 +60,12 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/video', [DashboardController::class, 'video'])->name('video');
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+});
 
+Route::middleware(['IsUser', 'IsApproved'])->group(function () {
+});
+
+Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/posts', [PostController::class, 'index'])->name('posts');
     Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
     Route::post('/post/create', [PostController::class, 'store'])->name('post.store');

@@ -5,6 +5,7 @@ var navcontent = document.getElementById("nav-content");
 var navaction = document.getElementById("navAction");
 var brandname = document.getElementById("brandname");
 var toToggle = document.querySelectorAll(".toggleColour");
+var icon = document.getElementById("icon");
 
 document.addEventListener("scroll", function () {
 /*Apply classes for slide in bar*/
@@ -24,7 +25,7 @@ if (scrollpos > 10) {
     toToggle[i].classList.remove("text-white");
     }
     header.classList.add("shadow");
-    // navcontent.classList.remove("bg-black");
+    icon.setAttribute('src', 'img/electron.png');
 } else {
     header.classList.remove("bg-white");
     header2.classList.remove("bg-white");
@@ -38,9 +39,8 @@ if (scrollpos > 10) {
     toToggle[i].classList.add("text-white");
     toToggle[i].classList.remove("text-gray-800");
     }
-
     header.classList.remove("shadow");
-    // navcontent.classList.add("bg-black");
+    icon.setAttribute('src','img/electron-.png');
 }
 });
 /*Toggle dropdown list*/
