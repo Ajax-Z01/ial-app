@@ -86,36 +86,65 @@
   {{-- profile bio card --}}
   <div class="w-full p-6 mx-auto">
     <div class="flex flex-wrap -mx-3">
-      <div class="w-full max-w-full px-3 lg-max:mt-6">
-        <div class="relative flex flex-col h-full min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
-          <div class="p-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
-            <div class="flex flex-wrap -mx-3">
-              <div class="flex items-center w-full max-w-full px-3 shrink-0 md:w-8/12 md:flex-none">
-                <h6 class="mb-0 font-bold">Profile Information</h6>
+      <section class="p-6 bg-gray-100 text-gray-900">
+        <form action="{{ route('profile.update', $user->id) }}" method="post" enctype="multipart/form-data" class="container flex flex-col mx-auto space-y-12 ng-untouched ng-pristine ng-valid">
+          @method('put')
+          @csrf
+          <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-50">
+            <div class="space-y-2 col-span-full lg:col-span-1">
+              <p class="font-medium">Personal Information</p>
+              <p class="text-xs">In this section, you can find relevant personal information. We value your privacy and are committed to keeping it secure.</p>
+            </div>
+            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+              <div class="col-span-full">
+                <label for="name" class="text-sm">Full name</label>
+                <input name="name" id="name" type="text" placeholder="Full name" value="{{ $user->name }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
               </div>
-              <div class="w-full max-w-full px-3 text-right shrink-0 md:w-4/12 md:flex-none">
-                <a href="{{ route('profile.edit', ['id' => $user->id]) }}" data-target="tooltip_trigger" data-placement="top">
-                  <i class="leading-normal fas fa-user-edit text-sm text-slate-400"></i>
-                </a>
-                <div data-target="tooltip" class="hidden px-2 py-1 text-center text-white bg-black rounded-lg text-sm" role="tooltip">
-                  Edit Profile
-                  <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
+              <div class="col-span-full">
+                <label for="mobile" class="text-sm">Mobile</label>
+                <input name="mobile" id="mobile" type="text" placeholder="+62xxx-xxxx-xxxx" value="{{ $user->mobile }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+              </div>
+              <div class="col-span-full">
+                <label for="email" class="text-sm">Email</label>
+                <input name="email" id="email" type="email" placeholder="email@example.com" value="{{ $user->email }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+              </div>
+              <div class="col-span-full">
+                <label for="location" class="text-sm">Location</label>
+                <input name="location" id="location" type="text" placeholder="Location" value="{{ $user->location }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-50">
+            <div class="space-y-2 col-span-full lg:col-span-1">
+              <p class="font-medium">Profile</p>
+              <p class="text-xs">Below is a form to update your profile information. Please fill it out with the relevant details.</p>
+            </div>
+            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+              <div class="col-span-full sm:col-span-3">
+                <label for="username" class="text-sm">Username</label>
+                <input name="username" id="username" type="text" placeholder="Username" value="{{ $user->username }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+              </div>
+              <div class="col-span-full">
+                <label for="bio" class="text-sm">Bio</label>
+                <textarea name="bio" id="bio" placeholder="" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">{{ $user->bio }}</textarea>
+              </div>
+              <div class="col-span-full">
+                <label for="profile_image" class="text-sm">Photo</label>
+                <div class="flex items-center space-x-2">
+                  <img src="{{ $user->profile_image }}" alt="" class="w-10 h-10 rounded-full">
+                  <div>
+                    <input type="file" name="profile_image" id="profile_image" class="text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" accept="image/*" />
+                  </div>
                 </div>
               </div>
             </div>
+          </fieldset>
+          <div class="flex justify-end">
+            <a href="{{ route('profile') }}" class="mx-4 px-2 py-2 bg-red-500 text-white rounded-md">Cancel</a>
+            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Save</button>
           </div>
-          <div class="flex-auto p-4">
-            <p class="leading-normal text-sm">{{ $user->bio }}</p>
-            <hr class="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent" />
-            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
-              <li class="relative block px-4 py-2 pt-0 pl-0 leading-normal bg-white border-0 rounded-t-lg text-sm text-inherit"><strong class="text-slate-700">Full Name:</strong> &nbsp; {{ $user->name }}</li>
-              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Mobile:</strong> &nbsp; {{ $user->mobile }}</li>
-              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Email:</strong> &nbsp; {{ $user->email }}</li>
-              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Location:</strong> &nbsp; {{ $user->location }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        </form>
+      </section>
     </div>
   </div>
 @endsection

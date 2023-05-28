@@ -4,7 +4,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="{{ asset('img/electron.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.png') }}" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
       IA-Lab | Internet Accelerator Laboratory 
@@ -21,18 +21,17 @@
   <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
     @include('partials.headland')
-    <!--Hero-->
+    <!--Content-->
     @yield('content')
     <!--Footer-->
     @include('partials.footland')
+    {{-- jQuery if you need it --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- plugin for scrollbar  -->
+    <script src="{{ asset('/assets/js/plugins/perfect-scrollbar.min.js') }}" async></script>
+    <!-- main script file  -->
+    <script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
+    {{-- script --}}
+    <script src="{{ asset('assets/js/script.js') }}"></script>
   </body>
-  <!-- jQuery if you need it
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
--->
-<!-- plugin for scrollbar  -->
-<script src="{{ asset('/assets/js/plugins/perfect-scrollbar.min.js') }}" async></script>
-<!-- main script file  -->
-<script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4') }}" async></script>
-{{-- script --}}
-<script src="{{ asset('assets/js/script.js') }}"></script>
 </html>

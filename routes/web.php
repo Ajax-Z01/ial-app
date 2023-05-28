@@ -60,9 +60,10 @@ Route::middleware(['IsApproved'])->group(function () {
     Route::get('/video', [DashboardController::class, 'video'])->name('video');
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
-});
 
-Route::middleware(['IsUser', 'IsApproved'])->group(function () {
+    Route::get('/profile/edit', [UserController::class, 'edit_profile'])->name('profile.edit');
+
+    Route::put('/profile/edit/{id}', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
 });
 
 Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {

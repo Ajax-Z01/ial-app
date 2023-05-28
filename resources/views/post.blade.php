@@ -16,7 +16,7 @@
         </div>
         <!--Right Col-->
         <div class="w-full md:w-3/5 py-3 text-center">
-          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="{{ asset('img/electron-.png') }}" />
+          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="{{ asset('img/linac-icon-.png') }}" />
         </div>
       </div>
     </div>

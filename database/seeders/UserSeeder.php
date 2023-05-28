@@ -20,6 +20,10 @@ class UserSeeder extends Seeder
             'type' => 'admin',
             'status' => 'approved',
             'password' => ('$2y$10$WCVI32GnFcYOOaIasofpiOxLnZ1TEgfWU80ZNRKGXAsXxtLiTCDim'),
+            'profile_image' => '/img/default-profile.png',
+            'mobile' => '08994530875',
+            'location' => 'Sleman, Yogyakarta',
+            'bio' => 'I am a web developer',
         ]);
         \App\Models\User::insert([
             'username' => 'Admin',
@@ -28,6 +32,10 @@ class UserSeeder extends Seeder
             'type' => 'admin',
             'status' => 'approved',
             'password' => ('$2y$10$WCVI32GnFcYOOaIasofpiOxLnZ1TEgfWU80ZNRKGXAsXxtLiTCDim'),
+            'profile_image' => '/img/default-profile.png',
+            'mobile' => '08991231234',
+            'location' => 'Sleman, Yogyakarta',
+            'bio' => 'I am an Admin',
         ]);
         \App\Models\User::factory(12)->create();
     }

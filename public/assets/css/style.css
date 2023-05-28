@@ -26,3 +26,8 @@
 .bg-landing {
     background: #f8fafc;
 }
+
+.custom-section {
+    position: relative;
+    z-index: 1;
+}

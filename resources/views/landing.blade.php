@@ -1,26 +1,6 @@
 @extends('layouts.landing')
 
 @section('content')
-    <!--Hero-->
-    <div class="pt-24">
-      <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-        
-        <!--Left Col-->
-        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-          <p class="uppercase tracking-loose w-full">Online Accelerator Experiment</p>
-          <h1 class="my-4 text-5xl font-bold leading-tight">
-            Internet Accelerator Laboratory
-          </h1>
-          <p class="leading-normal text-2xl mb-8">
-            Laboratorium pendidikan berbasis internet dengan metode aplikasi pembelajaran akselerator jarak jauh.
-          </p>
-        </div>
-        <!--Right Col-->
-        <div class="w-full md:w-3/5 py-3 text-center">
-          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="{{ asset('img/electron-.png') }}" />
-        </div>
-      </div>
-    </div>
     <div class="relative -mt-12 lg:-mt-24">
       <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -40,7 +20,7 @@
         </g>
       </svg>
     </div>
-    <section class="bg-white border-b py-8">
+    <section class="custom-section bg-white border-b py-8">
       <div class="container max-w-5xl mx-auto m-8">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           IA-Lab
@@ -50,16 +30,23 @@
         </div>
         <div class="flex flex-wrap flex-col-reverse sm:flex-row">
           <div class="w-full xl:w-1/2 sm:w-1/2 mx-auto mt-12 my-4">
-            <img class="w-full" src="img/ilustrasi.jpg">
+            <img class="w-full" src="img/rf-linac.jpg">
           </div>
           <div class="w-full md:w-1/2 sm:w-1/2 p-6 mt-6">
             <div class="align-middle">
               <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                Konsep IA-Lab
+                IA-Lab Concept
               </h3>
               <p class="text-gray-600 mb-8">
-                IA-Lab (Internet Accelerator Laboratory) merupakan laboratorium pendidikan berbasis internet dengan metode aplikasi pembelajaran akselerator jarak jauh sesuai program Teaching Laboratory. IA-Lab dikembangkan dengan model live video webcasting berbasis smart Classroom.
+                IA-Lab (Internet Accelerator Laboratory) is an innovative and cutting-edge educational facility that harnesses the power of the internet to provide remote accelerated learning experiences. It operates in alignment with the Teaching Laboratory program, offering students a unique and immersive educational environment. IA-Lab leverages advanced technologies to deliver live video webcasting sessions, allowing students to actively participate in interactive lessons from anywhere in the world. With its state-of-the-art smart Classroom, IA-Lab creates a dynamic and engaging learning atmosphere, enabling students to collaborate, exchange ideas, and explore subjects with the guidance of expert instructors. By combining the convenience of online education with the effectiveness of accelerated learning methods, IA-Lab revolutionizes the way education is accessed and experienced, breaking down geographical barriers and opening up new opportunities for students to thrive in the digital era.
               </p>
+              <div class="flex items-center justify-start">
+                <a href="">
+                  <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    Read more
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -68,12 +55,17 @@
             <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
               Linear Accelerator (LINAC)
             </h3>
-            <p class="text-gray-600 mb-8">
-              Linear accelerator (LINAC) adalah sebuah alat yang digunakan dalam bidang kedokteran, penelitian, dan industri untuk menghasilkan sinar partikel berkecepatan tinggi. LINAC bekerja dengan mengakselerasikan partikel, seperti elektron atau ion, melalui serangkaian tabung akselerator linier yang panjang. Partikel-partikel ini diberikan energi tambahan saat mereka melewati resonator radiofrekuensi yang terletak di dalam tabung akselerator. Proses ini berulang hingga partikel mencapai energi yang diinginkan.
-            </p>
+            <p class="text-gray-600 mb-8">A linear accelerator (LINAC) is a sophisticated device employed in various fields including medicine, research, and industry to produce high-velocity particle beams. Its primary function is to accelerate particles, such as electrons or ions, utilizing a sequence of lengthy linear accelerator tubes. As these particles traverse through the linear accelerator, they are subjected to radiofrequency resonators situated within the tubes, resulting in the particles gaining additional energy. This acceleration process is reiterated until the particles attain the desired energy level. The utilization of LINAC technology enables scientists, medical professionals, and industrial experts to explore a wide range of applications, from advanced cancer treatments and particle physics research to industrial material analysis and sterilization processes. By harnessing the power of high-speed particle beams, LINAC plays a vital role in pushing the boundaries of scientific discovery and technological innovation across diverse disciplines.</p>
+            <div class="flex items-center justify-start">
+              <a href="">
+                <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                  Read more
+                </button>
+              </a>
+            </div>
           </div>
           <div class="w-full sm:w-1/2 mx-auto my-4">
-            <img class="w-full" src="img/simulasi.jpg">
+            <img class="w-full" src="img/linac.png">
           </div>
         </div>
       </div>

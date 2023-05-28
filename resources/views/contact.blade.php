@@ -1,25 +1,6 @@
 @extends('layouts.landing')
 
 @section('content')
-    <!--Hero-->
-    <div class="pt-24">
-      <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-        <!--Left Col-->
-        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-          <p class="uppercase tracking-loose w-full">Online Accelerator Experiment</p>
-          <h1 class="my-4 text-5xl font-bold leading-tight">
-            Internet Accelerator Laboratory
-          </h1>
-          <p class="leading-normal text-2xl mb-8">
-            Laboratorium pendidikan berbasis internet dengan metode aplikasi pembelajaran akselerator jarak jauh.
-          </p>
-        </div>
-        <!--Right Col-->
-        <div class="w-full md:w-3/5 py-3 text-center">
-          <img class="w-full md:w-3/5 z-50 md:ml-60 mb-12" src="{{ asset('img/electron-.png') }}" />
-        </div>
-      </div>
-    </div>
     <div class="relative -mt-12 lg:-mt-24">
       <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -39,7 +20,7 @@
         </g>
       </svg>
     </div>
-    <section class="bg-white border-b py-8">
+    <section class="custom-section bg-white border-b py-8">
       <div class="container max-w-5xl mx-auto m-8">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Contact Us

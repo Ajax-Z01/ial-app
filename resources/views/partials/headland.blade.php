@@ -3,7 +3,7 @@
     <div class="pl-4 flex items-center">
       <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
         <span class="md:text-4xl text-3xl pl-2 flex">
-          <img id="icon" src="{{asset('img/electron-.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
+          <img id="icon" src="{{asset('img/linac-icon-.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
           IA-Lab
         </span>
       </a>
@@ -65,3 +65,27 @@
   </div>
   <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
 </nav>
+<div class="pt-24">
+  <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <!--Left Col-->
+    <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+      <div class="parallax-layer1" style="transform: translateY(0);">
+        <p class="uppercase tracking-loose w-full">Online Accelerator Experiment</p>
+        <h1 class="my-4 text-5xl font-bold leading-tight">
+          Internet Accelerator Laboratory
+        </h1>
+        <p class="leading-normal text-2xl mb-8">
+          Internet-based education laboratory utilizing remote accelerated learning application methods.
+        </p>
+      </div>
+    </div>
+    <!--Right Col-->
+    <div class="w-full md:w-3/5 py-3 text-center">
+      <div class="parallax-container">
+        <div class="parallax-layer2" style="transform: translateY(0);">
+          <img class="parallax-bg w-full md:w-3/5 z-50 md:ml-60 mb-12" src="{{ asset('img/linac-icon-.png') }}" alt="Background Image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

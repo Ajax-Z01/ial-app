@@ -28,11 +28,11 @@
     <div class="h-1 mx-auto bg-white w-3/4 opacity-25 my-0 py-0 rounded-t"></div>
   </div>
   <h3 class="my-4 text-2xl leading-tight">
-    Buat Akun Sekarang Untuk Melihat Data Sistem Akuisisi!
+    Sign Up Now to Access the Acquisition System Data!
   </h3>
   <a href="{{ route('register') }}">
     <button class="mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-      Bergabung!
+      Sign Up!
     </button>
   </a>
 </section>
@@ -41,7 +41,7 @@
   <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
       <div class="sm:flex sm:items-center sm:justify-between">
           <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
-              <img src="{{asset('img/electron.png') }}" class="h-8 mr-3" alt="Flowbite Logo" />
+              <img src="{{asset('img/linac-icon.png') }}" class="h-8 mr-3" alt="Flowbite Logo" />
               <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">IA-Lab</span>
           </a>
           <ul class="flex flex-wrap items-center mb-6 text-md font-medium text-gray-500 sm:mb-0 dark:text-gray-400">

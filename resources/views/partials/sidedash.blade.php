@@ -3,14 +3,14 @@
     <div class="h-19.5">
       <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
       <a class="block pl-4 pr-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;">
-        <img src="{{asset('img/electron.png') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8 mb-2" alt="main_logo" />
+        <img src="{{asset('img/linac-icon.png') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8 mb-2" alt="main_logo" />
         <span class="ml-1 text-xl font-semibold transition-all duration-200 ease-nav-brand">IA-Lab Dashboard</span>
       </a>
     </div>
 
     <hr class="h-px mt-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
 
-    <div class="items-center block w-auto max-h-screen overflow-auto h-screen grow basis-full">
+    <div class="items-center block w-auto max-h-screen overflow-auto h-auto grow basis-full">
       <ul class="flex flex-col pl-0 mb-0">
         {{-- tab dashboard --}}
         <li class="mt-0.5 w-full">
@@ -166,14 +166,14 @@
         @endif
 
         {{-- switch mode --}}
-        <li class="mt-0.5 w-full">
+        {{-- <li class="mt-0.5 w-full">
           <p class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors ease-nav-brand" href="">
             <button id="darkModeButton" class="bg-gray-300 dark:bg-gray-800 rounded-full w-12 h-6 flex items-center p-1 transition-colors duration-300 focus:outline-none">
               <div id="darkModeIcon" class="bg-white dark:bg-gray-700 rounded-full w-4 h-4 shadow-md transform transition-transform duration-300"></div>
             </button>
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Switch Mode</span>
           </p>
-        </li>
+        </li> --}}
       </ul>
     </div>
   </nav>
