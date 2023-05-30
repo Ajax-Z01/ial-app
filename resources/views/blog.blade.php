@@ -35,7 +35,7 @@
               <div class="bg-no-repeat bg-cover bg-gray-50 col-span-full lg:col-span-4" style="background-image: url('{{ $post->image }}'); background-position: center center; background-blend-mode: multiply; background-size: cover;"></div>
               <div class="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
                 <div class="flex justify-start">
-                  @if ($post->updated < now()->subDays(1))
+                  @if ($post->updated_at > now()->subDays(1))
                   <span class="px-2 py-1 text-xs rounded-full bg-blue-600 text-gray-50">New</span>
                   @endif
                 </div>

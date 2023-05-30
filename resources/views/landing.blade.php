@@ -71,7 +71,7 @@
       </div>
     </section>
     <section class="bg-landing py-8">
-      <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+      <div class="container mx-auto flex flex-wrap py-8">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Article
         </h2>
@@ -89,7 +89,7 @@
               <div class="w-full font-bold text-xl text-gray-800 px-6">
                 {{ $post->title }}
               </div>
-              <p class="text-gray-800 text-base px-6 mb-5">
+              <p class="text-gray-800 text-base px-6 mb-2">
                 {{ $post->description }}...
               </p>
             </a>
@@ -104,7 +104,6 @@
             </div>
           </div>
         </div>
-        
         @endforeach
       </div>
     </section>

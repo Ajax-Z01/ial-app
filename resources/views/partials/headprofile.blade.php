@@ -17,14 +17,14 @@
           </div>
           <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
             {{-- settings --}}
-            <li class="flex items-center px-4">
+            {{-- <li class="flex items-center px-4">
               <a href="javascript:;" class="p-0 text-white transition-all text-sm ease-soft-in-out">
                 <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog" aria-hidden="true"></i>
                 <!-- fixed-plugin-button-nav  -->
               </a>
-            </li>
+            </li> --}}
             <!-- notifications -->
-            <li class="relative flex items-center px-4">
+            {{-- <li class="relative flex items-center px-4">
               <p class="hidden transform-dropdown-show"></p>
               <a dropdown-trigger href="javascript:;" class="block p-0 text-white transition-all text-sm ease-nav-brand" aria-expanded="false">
                 <i class="cursor-pointer fa fa-bell" aria-hidden="true"></i>
@@ -95,7 +95,7 @@
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> --}}
             {{-- account dropdown --}}
             <li class="relative flex items-center pr-2">
               <p class="hidden transform-dropdown-show"></p>

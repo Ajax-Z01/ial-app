@@ -1,6 +1,8 @@
 <div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        var liveIndicator = document.getElementById("liveIndicator");
+
         var chartData = JSON.parse('<?php echo $dataVakum ?>');
         console.log(chartData);
 
@@ -35,7 +37,15 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        display: false,
+                    display: true,
+                    labels: {
+                        font: {
+                        size: 11,
+                        family: "Open Sans",
+                        style: "normal",
+                        lineHeight: 2,
+                        },
+                    },
                     },
                 },
                 interaction: {
@@ -118,7 +128,15 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        display: false,
+                    display: true,
+                    labels: {
+                        font: {
+                        size: 11,
+                        family: "Open Sans",
+                        style: "normal",
+                        lineHeight: 2,
+                        },
+                    },
                     },
                 },
                 interaction: {
@@ -175,6 +193,18 @@
             // Event listener untuk menerima data terbaru dari Livewire
             Livewire.on('refreshDataVakum', event => {
                 var newData = JSON.parse(event.data);
+
+                // Ambil nilai terakhir dari newData.label
+                var lastLabel = newData.label[newData.label.length - 1];
+
+                // Periksa apakah lastLabel berbeda dari label sebelumnya
+                if (lastLabel !== chartPenning.data.labels[chartPenning.data.labels.length - 1]) {
+                liveIndicator.classList.remove("text-red-500");
+                liveIndicator.classList.add("text-green-500");
+                } else {
+                liveIndicator.classList.remove("text-green-500");
+                liveIndicator.classList.add("text-red-500");
+                }
                 
                 chartPenning.data.labels = newData.label;
                 chartPenning.data.datasets[0].data = newData.data1;
@@ -189,6 +219,6 @@
         // Interval untuk memperbarui data secara berkala
         setInterval(() => {
             Livewire.emit('vakumAdded');
-        }, 3000);
+        }, 10000);
     </script>
 </div>

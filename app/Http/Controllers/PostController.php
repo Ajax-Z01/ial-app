@@ -39,9 +39,6 @@ class PostController extends Controller
         return view('posts', compact('posts', 'totalPages', 'currentPage'));
     }
 
-
-
-
     /**
      * Show the form for creating a new resource.
      *
@@ -60,6 +57,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'subtitle' => 'required',
+            'author_id' => 'required',
+            'status' => 'required',
+            'description' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
         $post = new Post;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
@@ -74,8 +80,9 @@ class PostController extends Controller
         }
 
         $post->save();
-        return redirect()->route('posts')->withSuccess('Wow... Rocket !!');
+        return redirect()->route('posts')->withSuccess('Post Created Successfully');
     }
+
 
     /**
      * Display the specified resource.
@@ -110,6 +117,15 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required',
+            'subtitle' => 'required',
+            'author_id' => 'required',
+            'status' => 'required',
+            'description' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // tambahkan aturan validasi untuk file gambar jika diperlukan
+        ]);
+
         $post = Post::find($id);
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
@@ -125,8 +141,9 @@ class PostController extends Controller
         }
         $post->save();
 
-        return redirect()->route('posts')->withSuccess("Awesome....");
+        return redirect()->route('posts')->withSuccess("Post Updated Successfully");
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -137,6 +154,6 @@ class PostController extends Controller
     public function destroy($id)
     {
         Post::find($id)->delete();
-        return redirect()->route('posts')->withSuccess('Is Die.....');
+        return redirect()->route('posts')->withSuccess('Post Deleted Successfully');
     }
 }

@@ -8,8 +8,9 @@
       <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
   </div>
   @endif
+  @if (Auth::user()->type == 'admin')
   <!-- row 1 -->
-  <div class="flex flex-wrap -mx-3">
+  <div class="flex flex-wrap mb-6 -mx-3">
     <!-- card1 -->
     <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
       <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
@@ -106,9 +107,9 @@
       </div>
     </div>
   </div>
-  
+  @endif
   <!-- row 2 -->
-<div class="flex flex-wrap mt-6 -mx-3">
+<div class="flex flex-wrap -mx-3">
   <div class="w-full px-3 mb-6 md:mb-0 md:w-7/12 md:flex-none">
     <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
       <div class="flex-auto p-4">

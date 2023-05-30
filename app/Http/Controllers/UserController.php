@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -40,17 +41,35 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        $rules = [
+            'type' => 'required',
+            'status' => 'required'
+        ];
+
+        $messages = [
+            'type.required' => 'The type field is required.',
+            'status.required' => 'The status field is required.'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $user = User::find($id);
         $user->type = $request->type;
         $user->status = $request->status;
         $user->save();
-        return redirect()->route('users')->withSuccess('Awesome broo...');
+
+        return redirect()->route('users')->withSuccess('User updated successfully.');
     }
+
 
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('users')->withSuccess('Is die...');
+        return redirect()->route('users')->withSuccess('User deleted successfully.');
     }
 
 
@@ -77,8 +96,8 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'mobile' => 'required|string|max:20',
             'location' => 'required|string|max:255',
-            'bio' => 'nullable|string|max:255',
-            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'bio' => 'nullable|string|max:1000',
+            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $user->username = $request->username;

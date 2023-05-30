@@ -13,19 +13,33 @@ class AuthController extends Controller
     {
         return view('login');
     }
+
     public function loginPost(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            if (Auth::user()->type == 'admin') {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+
+            if ($user->type == 'admin' && $user->status == 'approved') {
                 return redirect()->route('dashboard')->withSuccess("Welcome to Dashboard Admin");
-            } else if (Auth::user()->type == 'user') {
+            } else if ($user->type == 'user' && $user->status == 'approved') {
                 return redirect()->route('dashboard')->withSuccess("Welcome to Dashboard User");
             } else {
                 return redirect()->route('login')->withUnsuccess("Your account is not approved. Please contact the administrator.");
             }
         }
-        return redirect()->route('login');
+
+        return redirect()->route('login')->withErrors([
+            'email' => 'Invalid email or password.',
+        ]);
     }
+
     public function logout()
     {
         Auth::logout();
@@ -36,14 +50,30 @@ class AuthController extends Controller
     {
         return view('register');
     }
+
     public function registerPost(Request $request)
     {
+        $request->validate([
+            'username' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ], [
+            'username.required' => 'Username is required.',
+            'name.required' => 'Name is required.',
+            'email.required' => 'Email is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'password.required' => 'Password is required.',
+            'password.min' => 'Password must be at least 8 characters.',
+        ]);
+
         $user = new User();
         $user->username = $request->username;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
+
         return redirect()->route('login')->withSuccess('Your account has been successfully registered.');
     }
 }

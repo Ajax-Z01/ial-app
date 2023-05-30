@@ -85,12 +85,21 @@
                     <h3 class="relative z-10 font-bold text-transparent bg-gradient-to-tl from-gray-custom to-gray-custom bg-clip-text">Welcome back</h3>
                     @if (Session::has('success'))
                       <div class="alert alert-success text-lime-500">
-                          <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
+                        <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
                       </div>
                     @endif
                     @if (Session::has('unsuccess'))
                       <div class="alert alert-unsuccess text-red-500">
-                          <i class="fas fa-times-circle"></i> {{ Session::get('unsuccess') }}
+                        <i class="fas fa-times-circle"></i> {{ Session::get('unsuccess') }}
+                      </div>
+                    @endif
+                    @if ($errors->any())
+                      <div class="alert alert-error text-red-500">
+                        <ul class="list-disc pl-5">
+                          @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                          @endforeach
+                        </ul>
                       </div>
                     @endif
                     <p class="mb-0">Enter your email and password to sign in</p>
@@ -121,7 +130,7 @@
                       <a href="{{ route('register') }}" class="relative z-10 font-semibold text-transparent bg-gradient-to-tl from-gray-custom to-gray-custom bg-clip-text">Sign up</a>
                     </p>
                   </div>
-                </div>
+                </div>                
               </div>
               <div class="w-full max-w-full px-3 lg:flex-0 shrink-0 md:w-6/12">
                 <div class="absolute top-0 hidden w-2/3 h-full -mr-32 overflow-hidden -skew-x-10 -right-40 rounded-bl-xl md:block">

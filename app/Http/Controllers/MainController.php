@@ -10,7 +10,7 @@ class MainController extends Controller
 {
     public function landing()
     {
-        $posts = Post::where('status', 'publish')->get()->take(3)->map(function ($post) {
+        $posts = Post::where('status', 'publish')->orderByDesc('updated_at')->get()->take(3)->map(function ($post) {
             $post->updated = $post->updated_at->diffForHumans();
             $post->description = substr($post->description, 0, 200);
             return $post;
@@ -27,6 +27,7 @@ class MainController extends Controller
 
         $posts = Post::where('status', 'publish')
             ->skip(($currentPage - 1) * $postsPerPage)
+            ->orderByDesc('updated_at')
             ->take($postsPerPage)
             ->get()
             ->map(function ($post) {

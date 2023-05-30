@@ -20,7 +20,7 @@ class Users extends Migration
             $table->string('profile_image')->default('/img/default-profile.png');
             $table->string('mobile')->nullable();
             $table->string('location')->nullable();
-            $table->string('bio')->nullable();
+            $table->longText('bio')->nullable();
             $table->enum('type', ['admin', 'user'])->default('user');
             $table->enum('status', ['approved', 'notapproved'])->default('notapproved');
             $table->timestamps();
