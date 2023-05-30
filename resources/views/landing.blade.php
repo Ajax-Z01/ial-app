@@ -30,7 +30,7 @@
         </div>
         <div class="flex flex-wrap flex-col-reverse sm:flex-row">
           <div class="w-full xl:w-1/2 sm:w-1/2 mx-auto mt-12 my-4">
-            <img class="w-full" src="img/rf-linac.jpg">
+            <img class="w-full" src="/img/rf-linac.jpg">
           </div>
           <div class="w-full md:w-1/2 sm:w-1/2 p-6 mt-6">
             <div class="align-middle">
@@ -41,7 +41,7 @@
                 IA-Lab (Internet Accelerator Laboratory) is an innovative and cutting-edge educational facility that harnesses the power of the internet to provide remote accelerated learning experiences. It operates in alignment with the Teaching Laboratory program, offering students a unique and immersive educational environment. IA-Lab leverages advanced technologies to deliver live video webcasting sessions, allowing students to actively participate in interactive lessons from anywhere in the world. With its state-of-the-art smart Classroom, IA-Lab creates a dynamic and engaging learning atmosphere, enabling students to collaborate, exchange ideas, and explore subjects with the guidance of expert instructors. By combining the convenience of online education with the effectiveness of accelerated learning methods, IA-Lab revolutionizes the way education is accessed and experienced, breaking down geographical barriers and opening up new opportunities for students to thrive in the digital era.
               </p>
               <div class="flex items-center justify-start">
-                <a href="">
+                <a href="{{ route('concept') }}">
                   <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     Read more
                   </button>
@@ -57,7 +57,7 @@
             </h3>
             <p class="text-gray-600 mb-8">A linear accelerator (LINAC) is a sophisticated device employed in various fields including medicine, research, and industry to produce high-velocity particle beams. Its primary function is to accelerate particles, such as electrons or ions, utilizing a sequence of lengthy linear accelerator tubes. As these particles traverse through the linear accelerator, they are subjected to radiofrequency resonators situated within the tubes, resulting in the particles gaining additional energy. This acceleration process is reiterated until the particles attain the desired energy level. The utilization of LINAC technology enables scientists, medical professionals, and industrial experts to explore a wide range of applications, from advanced cancer treatments and particle physics research to industrial material analysis and sterilization processes. By harnessing the power of high-speed particle beams, LINAC plays a vital role in pushing the boundaries of scientific discovery and technological innovation across diverse disciplines.</p>
             <div class="flex items-center justify-start">
-              <a href="">
+              <a href="{{ route('linac') }}">
                 <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                   Read more
                 </button>
@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="w-full sm:w-1/2 mx-auto my-4">
-            <img class="w-full" src="img/linac.png">
+            <img class="w-full" src="/img/linac.png">
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@
     <section class="bg-landing py-8">
       <div class="container mx-auto flex flex-wrap pt-4 pb-12">
         <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          Artikel
+          Article
         </h2>
         <div class="w-full mb-4">
           <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -81,7 +81,8 @@
         @foreach ($posts as $post)
         <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
           <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+            <a href="{{ route('post', $post->slug) }}" class="flex flex-wrap no-underline hover:no-underline">
+              <img src="{{ $post->image }}" alt="{{ $post->title }}" class="w-full h-60 object-cover object-center">
               <p class="w-full text-gray-600 text-xs md:text-sm px-6">
                 {{ $post->updated }}
               </p>
@@ -103,6 +104,7 @@
             </div>
           </div>
         </div>
+        
         @endforeach
       </div>
     </section>

@@ -1,9 +1,9 @@
 <nav id="header" class="fixed w-full z-30 top-0 text-white">
   <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2 gradient" id="header2">
     <div class="pl-4 flex items-center">
-      <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+      <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="{{ route('landing') }}">
         <span class="md:text-4xl text-3xl pl-2 flex">
-          <img id="icon" src="{{asset('img/linac-icon-.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
+          <img id="icon" src="{{asset('/img/linac-icon-.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
           IA-Lab
         </span>
       </a>
@@ -54,13 +54,11 @@
           " href="{{ route('register') }}">Register</a>
         </li>
       </ul>
-      <a href="{{ route('login') }}">
-        <button
-          id="navAction"
-          class="mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
+      <a href="{{ route('login') }}" class="mx-auto lg:mx-0">
+        <button id="navAction" class="bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
           Login
         </button>
-      </a>
+      </a>      
     </div>
   </div>
   <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />

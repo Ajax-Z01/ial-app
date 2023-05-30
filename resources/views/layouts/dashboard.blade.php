@@ -73,8 +73,6 @@
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
     {{-- switch-mode script --}}
     <script src="{{ asset('/assets/js/switch-mode.js') }}" async></script>
-    {{-- script dashboard --}}
-    <script src="{{ asset('assets/js/scriptdash.js') }}"></script>
     {{-- chart script --}}
     @if (request()->is('filamen'))
     @livewire('real-time-filamen')

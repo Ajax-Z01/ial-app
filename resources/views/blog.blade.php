@@ -30,28 +30,59 @@
         </div>
         <div class="bg-white text-gray-800">
           @foreach ($posts as $post)
-          <div class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-gray-50">
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-gray-600">{{ $post->updated }}</span>
-              <a rel="noopener noreferrer" href="#" class="px-2 py-1 font-bold rounded bg-blue-600 text-gray-50">New</a>
-            </div>
-            <div class="mt-3">
-              <a rel="noopener noreferrer" href="#" class="text-2xl font-bold hover:underline">{{ $post->title  }}</a>
-              <p class="mt-2">{{ $post->description }}</p>
-            </div>
-            <div class="flex items-center justify-between mt-4">
-              <a rel="noopener noreferrer" href="{{ route('post', $post->slug) }}" class="hover:underline text-blue-600">Read more</a>
-              <div>
-                <a rel="noopener noreferrer" href="#" class="flex items-center">
-                  <img src="{{ asset("img/default-profile.png") }}" alt="avatar" class="object-cover w-10 h-10 mx-4 rounded-full bg-gray-500">
-                  <span class="hover:underline text-gray-600"> {{ $post->author->name }}
-                  </span>
+          <div class="bg-gray-100 text-gray-900 mt-3">
+            <div class="container grid grid-cols-12 mx-auto bg-gray-50">
+              <div class="bg-no-repeat bg-cover bg-gray-50 col-span-full lg:col-span-4" style="background-image: url('{{ $post->image }}'); background-position: center center; background-blend-mode: multiply; background-size: cover;"></div>
+              <div class="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
+                <div class="flex justify-start">
+                  @if ($post->updated < now()->subDays(1))
+                  <span class="px-2 py-1 text-xs rounded-full bg-blue-600 text-gray-50">New</span>
+                  @endif
+                </div>
+                <h1 class="text-3xl font-semibold">{{ $post->title }}</h1>
+                <p class="flex-1 pt-2">{{ $post->description }}</p>
+                <a rel="noopener noreferrer" href="{{ route('post', $post->slug) }}" class="inline-flex items-center pt-2 pb-6 space-x-2 text-sm text-blue-600">
+                  <span>Read more</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
                 </a>
+                <div class="flex items-center justify-between pt-2">
+                  <div class="flex space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-600">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="self-center text-sm">{{ $post->author->name }}</span>
+                  </div>
+                  <span class="text-xs">{{ $post->updated }}</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="bg-white my-8"></div>
           @endforeach
+        </div>
+        <div class="mt-6 flex justify-center space-x-1 text-gray-800">
+          <a href="{{ route('blog', ['page' => max($currentPage - 1, 1)]) }}">
+            <button title="previous" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
+              <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+          </a>
+            
+          @for ($page = 1; $page <= $totalPages; $page++)
+            <a href="{{ route('blog', ['page' => $page]) }}">
+              <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ $page == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ $page }}">{{ $page }}</button>
+            </a>
+          @endfor
+            
+          <a href="{{ route('blog', ['page' => min($currentPage + 1, $totalPages)]) }}">
+            <button title="next" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
+              <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </a>
         </div>
       </div>
     </section>

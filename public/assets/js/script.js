@@ -25,7 +25,7 @@ if (scrollpos > 10) {
     toToggle[i].classList.remove("text-white");
     }
     header.classList.add("shadow");
-    icon.setAttribute('src', 'img/linac-icon.png');
+    icon.setAttribute('src', '/img/linac-icon.png');
 } else {
     header.classList.remove("bg-white");
     header2.classList.remove("bg-white");
@@ -40,7 +40,7 @@ if (scrollpos > 10) {
     toToggle[i].classList.remove("text-gray-800");
     }
     header.classList.remove("shadow");
-    icon.setAttribute('src','img/linac-icon-.png');
+    icon.setAttribute('src','/img/linac-icon-.png');
 }
 });
 /*Toggle dropdown list*/

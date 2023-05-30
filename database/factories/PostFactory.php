@@ -29,7 +29,8 @@ class PostFactory extends Factory
             'title' => $title,
             'subtitle' => $subtitle,
             'slug' => Str::slug($title),
-            'description' =>  $this->faker->text(1000)
+            'description' =>  $this->faker->text(1000),
+            'image' => '/img/default-post.png',
         ];
     }
 }

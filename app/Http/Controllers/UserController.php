@@ -12,21 +12,24 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = new User();
-        if (request()->get('username')) {
-            $users = $users->where('username', 'LIKE', '%' . request()->get('username') . '%');
+        $usersPerPage = 10;
+        $totalUsers = User::count();
+        $totalPages = ceil($totalUsers / $usersPerPage);
+        $currentPage = request()->page ?? 1;
+
+        $query = User::query();
+
+        if (request()->filled('search')) {
+            $search = request()->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('username', 'LIKE', '%' . $search . '%')
+                    ->orWhere('name', 'LIKE', '%' . $search . '%');
+            });
         }
-        if (request()->get('name')) {
-            $users = $users->where('name', 'LIKE', '%' . request()->get('name') . '%');
-        }
-        if (request()->get('status')) {
-            $users = $users->where('status', request()->get('status'));
-        }
-        if (request()->get('type')) {
-            $users = $users->where('type', request()->get('type'));
-        }
-        $users = $users->get();
-        return view('users', compact('users'));
+
+        $users = $query->skip(($currentPage - 1) * $usersPerPage)->take($usersPerPage)->get();
+
+        return view('users', compact('users', 'currentPage', 'totalPages'));
     }
 
     public function edit($id)

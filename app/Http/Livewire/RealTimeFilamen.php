@@ -13,7 +13,7 @@ class RealTimeFilamen extends Component
 
     public function mount()
     {
-        $filamens = Filamen::latest()->limit(10)->get()->reverse();
+        $filamens = Filamen::latest()->limit(50)->get()->reverse();
         $data = [];
 
         foreach ($filamens as $filamen) {
@@ -32,7 +32,7 @@ class RealTimeFilamen extends Component
 
     public function refreshDataFilamen()
     {
-        $filamens = Filamen::latest()->limit(10)->get()->reverse();
+        $filamens = Filamen::latest()->limit(50)->get()->reverse();
         $data = [];
 
         foreach ($filamens as $filamen) {

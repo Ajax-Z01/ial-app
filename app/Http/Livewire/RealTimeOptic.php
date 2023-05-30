@@ -13,7 +13,7 @@ class RealTimeOptic extends Component
 
     public function mount()
     {
-        $optics = Optic::latest()->limit(10)->get()->reverse();
+        $optics = Optic::latest()->limit(50)->get()->reverse();
         $data = [];
 
         foreach ($optics as $optic) {
@@ -34,7 +34,7 @@ class RealTimeOptic extends Component
 
     public function refreshDataOptic()
     {
-        $optics = Optic::latest()->limit(10)->get()->reverse();
+        $optics = Optic::latest()->limit(50)->get()->reverse();
         $data = [];
 
         foreach ($optics as $optic) {

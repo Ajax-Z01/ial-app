@@ -32,6 +32,10 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
+Route::get('/concept', [MainController::class, 'concept'])->name('concept');
+
+Route::get('/linac', [MainController::class, 'linac'])->name('linac');
+
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
     Route::post('login', 'loginPost')->name('login.post');
@@ -72,10 +76,10 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
     Route::get('/post/{id}/edit', [PostController::class, 'edit'])->whereNumber('id')->name('post.edit');
     Route::put('/post/{id}/edit', [PostController::class, 'update'])->whereNumber('id')->name('post.update');
-    Route::get('/post/{id}/delete', [PostController::class, 'destroy'])->whereNumber('id')->name('post.delete');
+    Route::delete('/post/{id}/delete', [PostController::class, 'destroy'])->whereNumber('id')->name('post.delete');
 
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::get('/user/{id}/edit', [UserController::class, 'edit'])->whereNumber('id')->name('user.edit');
     Route::put('/user/{id}/edit', [UserController::class, 'update'])->whereNumber('id')->name('user.update');
-    Route::get('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
+    Route::delete('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
 });

@@ -10,7 +10,7 @@
       <div class="flex flex-wrap -mx-3">
         <div class="flex-none w-auto max-w-full px-3">
           <div class="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
-            <img src="{{ Auth::user()->profile_image }}" alt="profile_image" class="w-full shadow-soft-sm rounded-xl" />
+            <img src="{{ Auth::user()->profile_image }}" alt="profile_image" class="w-full h-full object-cover shadow-soft-sm rounded-xl" />
           </div>
         </div>
         <div class="flex-none w-auto max-w-full px-3 my-auto">
@@ -98,19 +98,19 @@
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
               <div class="col-span-full">
                 <label for="name" class="text-sm">Full name</label>
-                <input name="name" id="name" type="text" placeholder="Full name" value="{{ $user->name }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+                <input name="name" id="name" type="text" placeholder="Full name" value="{{ $user->name }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
               <div class="col-span-full">
                 <label for="mobile" class="text-sm">Mobile</label>
-                <input name="mobile" id="mobile" type="text" placeholder="+62xxx-xxxx-xxxx" value="{{ $user->mobile }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+                <input name="mobile" id="mobile" type="text" placeholder="+62xxx-xxxx-xxxx" value="{{ $user->mobile }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
               <div class="col-span-full">
                 <label for="email" class="text-sm">Email</label>
-                <input name="email" id="email" type="email" placeholder="email@example.com" value="{{ $user->email }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+                <input name="email" id="email" type="email" placeholder="email@example.com" value="{{ $user->email }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
               <div class="col-span-full">
                 <label for="location" class="text-sm">Location</label>
-                <input name="location" id="location" type="text" placeholder="Location" value="{{ $user->location }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+                <input name="location" id="location" type="text" placeholder="Location" value="{{ $user->location }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
             </div>
           </fieldset>
@@ -122,20 +122,22 @@
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
               <div class="col-span-full sm:col-span-3">
                 <label for="username" class="text-sm">Username</label>
-                <input name="username" id="username" type="text" placeholder="Username" value="{{ $user->username }}" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">
+                <input name="username" id="username" type="text" placeholder="Username" value="{{ $user->username }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
               <div class="col-span-full">
                 <label for="bio" class="text-sm">Bio</label>
-                <textarea name="bio" id="bio" placeholder="" class="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 border-gray-300 text-gray-900">{{ $user->bio }}</textarea>
+                <textarea name="bio" id="bio" placeholder="" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">{{ $user->bio }}</textarea>
               </div>
               <div class="col-span-full">
                 <label for="profile_image" class="text-sm">Photo</label>
                 <div class="flex items-center space-x-2">
-                  <img src="{{ $user->profile_image }}" alt="" class="w-10 h-10 rounded-full">
-                  <div>
-                    <input type="file" name="profile_image" id="profile_image" class="text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" accept="image/*" />
+                  <div class="w-10 h-10">
+                    <img src="{{ $user->profile_image }}" alt="" class="object-cover w-full h-full rounded-full">
                   </div>
-                </div>
+                  <div>
+                    <input type="file" name="profile_image" id="profile_image" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" accept="image/*" />
+                  </div>
+                </div>                
               </div>
             </div>
           </fieldset>

@@ -10,8 +10,8 @@
       <div class="flex flex-wrap -mx-3">
         <div class="flex-none w-auto max-w-full px-3">
           <div class="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
-            <img src="{{ Auth::user()->profile_image }}" alt="profile_image" class="w-full shadow-soft-sm rounded-xl" />
-          </div>
+            <img src="{{ Auth::user()->profile_image }}" alt="profile_image" class="w-full h-full object-cover shadow-soft-sm rounded-xl" />
+          </div>          
         </div>
         <div class="flex-none w-auto max-w-full px-3 my-auto">
           <div class="h-full">

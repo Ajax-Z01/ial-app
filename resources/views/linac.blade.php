@@ -23,28 +23,27 @@
     <section class="custom-section bg-white border-b py-8">
       <div class="p-5 mx-auto sm:p-10 md:p-16 bg-white text-gray-800">
         <div class="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
-          <img src="{{ $post->image }}" alt="" class="w-full h-60 sm:h-96 bg-white object-contain object-center">
+          <img src="/img/linac.png" alt="" class="w-full h-60 sm:h-96 bg-white">
           <div class="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-white">
             <div class="w-full mx-auto space-y-4 text-center">
-              <h1 class="text-4xl font-bold leading-tight md:text-5xl">{{ $post->title }}</h1>
+              <h1 class="text-4xl font-bold leading-tight md:text-5xl">Linear Accelerator (LINAC)</h1>
               <p class="text-sm text-gray-600">by
                 <a rel="noopener noreferrer" href="javascript:;" class="underline text-blue-600">
-                  <span itemprop="name">{{ $post->author->name }}</span>
+                  <span itemprop="name">Admin Official</span>
                 </a>on
-                <time datetime="2021-02-12 15:34:18-0200">{{ $post->updated }}</time>
+                <time datetime="2021-02-12 15:34:18-0200">May 29th 2023</time>
               </p>
             </div>
             <div class="text-gray-800">
-              <p>{{ $post->description }}</p>
+              <p>A linear accelerator (LINAC) is a sophisticated device employed in various fields including medicine, research, and industry to produce high-velocity particle beams. Its primary function is to accelerate particles, such as electrons or ions, utilizing a sequence of lengthy linear accelerator tubes. As these particles traverse through the linear accelerator, they are subjected to radiofrequency resonators situated within the tubes, resulting in the particles gaining additional energy. This acceleration process is reiterated until the particles attain the desired energy level. The utilization of LINAC technology enables scientists, medical professionals, and industrial experts to explore a wide range of applications, from advanced cancer treatments and particle physics research to industrial material analysis and sterilization processes. By harnessing the power of high-speed particle beams, LINAC plays a vital role in pushing the boundaries of scientific discovery and technological innovation across diverse disciplines.</p>
             </div>
             <div class="pt-12 border-t border-gray-300">
               <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-                <img src="{{ $post->author->profile_image }}" alt="" class="self-center flex-shrink-0 w-24 h-24 object-cover object-center border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
+                <img src="/img/default-profile.png" alt="" class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
                 <div class="flex flex-col">
-                  <h4 class="text-lg font-semibold">{{ $post->author->name }}</h4>
-                  <p class="text-gray-600">{{ $post->author->bio }}</p>
+                  <h4 class="text-lg font-semibold">Admin Official</h4>
+                  <p class="text-gray-600">Welcome to our website, where innovation and creativity converge in elegant design. We bring you harmonious layouts, intuitive navigation, and innovative features. Together, we will create a strong digital identity and make a positive impact for the future. Enjoy an unforgettable experience here!</p>
                 </div>
-              </div>              
               </div>
             </div>
           </div>

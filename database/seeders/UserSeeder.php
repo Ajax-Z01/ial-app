@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'profile_image' => '/img/default-profile.png',
             'mobile' => '08994530875',
             'location' => 'Sleman, Yogyakarta',
-            'bio' => 'I am a web developer',
+            'bio' => 'Hello everyone Im Azhar Abdul, a final-year student at Politeknik Teknologi Nuklir Indonesia.',
         ]);
         \App\Models\User::insert([
             'username' => 'Admin',
@@ -35,8 +35,20 @@ class UserSeeder extends Seeder
             'profile_image' => '/img/default-profile.png',
             'mobile' => '08991231234',
             'location' => 'Sleman, Yogyakarta',
-            'bio' => 'I am an Admin',
+            'bio' => 'Welcome to our website, where innovation and creativity converge in elegant design. We hope you enjoy your visit and find it informative and useful.',
         ]);
-        \App\Models\User::factory(12)->create();
+        \App\Models\User::insert([
+            'username' => 'tiasayu',
+            'name' => 'Ayuningtias Ntuiyo',
+            'email' => 'tiasntuiyo9@gmail.com',
+            'type' => 'admin',
+            'status' => 'approved',
+            'password' => ('$2y$10$8vPsMMeaCKeoF/6FyNn7o.6VuSB8AKLbCSfCgjExpMXnJV/YZzuym'),
+            'profile_image' => '/img/default-profile.png',
+            'mobile' => '',
+            'location' => '',
+            'bio' => '',
+        ]);
+        \App\Models\User::factory(17)->create();
     }
 }

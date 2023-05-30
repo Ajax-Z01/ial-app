@@ -15,16 +15,32 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('author');
-        if (request()->get('title')) {
-            $posts = $posts->where('title', 'LIKE', '%' . request()->get('title') . '%');
+        $postsPerPage = 10;
+        $totalPosts = Post::count();
+        $totalPages = ceil($totalPosts / $postsPerPage);
+        $currentPage = request()->page ?? 1;
+
+        $query = Post::query();
+
+        // Filter berdasarkan pencarian judul
+        if (request()->has('search')) {
+            $search = request()->input('search');
+            $query->where('title', 'LIKE', "%$search%");
         }
-        if (request()->get('status')) {
-            $posts = $posts->where('status', request()->get('status'));
+
+        // Filter berdasarkan status
+        if (request()->has('status')) {
+            $status = request()->input('status');
+            $query->where('status', $status);
         }
-        $posts = $posts->get();
-        return view('posts', compact('posts'));
+
+        $posts = $query->skip(($currentPage - 1) * $postsPerPage)->take($postsPerPage)->get();
+
+        return view('posts', compact('posts', 'totalPages', 'currentPage'));
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -105,7 +121,7 @@ class PostController extends Controller
         if ($request->hasFile('image')) {
             $name = Str::slug($request->title) . '.' . $request->image->extension();
             $request->image->move(public_path('uploads'), $name);
-            $post->image = 'uploads/' . $name;
+            $post->image = '/uploads/' . $name;
         }
         $post->save();
 

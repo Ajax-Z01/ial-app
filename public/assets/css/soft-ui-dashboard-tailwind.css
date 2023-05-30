@@ -3674,9 +3674,9 @@ h6 {
     transform: perspective(999px) rotateX(7deg) translate3d(0, -4px, 5px);
 }
 
-.focus\:border-fuchsia-300:focus {
+.focus\:border-blue-custom:focus {
     --tw-border-opacity: 1;
-    border-color: rgb(226 147 211 / var(--tw-border-opacity));
+    border-color: rgb(37 63 91 / var(--tw-border-opacity));
 }
 
 .focus\:bg-white:focus {
@@ -3690,7 +3690,7 @@ h6 {
 }
 
 .focus\:shadow-soft-primary-outline:focus {
-    --tw-shadow: 0 0 0 2px #e9aede;
+    --tw-shadow: 0 0 0 2px #253F5B;
     --tw-shadow-colored: 0 0 0 2px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
         var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
