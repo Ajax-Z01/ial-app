@@ -17,6 +17,7 @@
     <link href="{{ asset('/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
     <!-- Main Styling -->
     <link href="{{ asset('assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4') }}" rel="stylesheet" />
+    {{-- Styles --}}
     <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" />
   </head>
   <body class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
@@ -24,7 +25,7 @@
     <nav class="absolute top-0 z-30 flex flex-wrap items-center justify-between w-full px-4 py-2 mt-6 mb-4 shadow-none lg:flex-nowrap lg:justify-start">
       <div class="container flex items-center justify-between py-0 flex-wrap-inherit">
         <a class="py-2.375 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-white lg:ml-0" href="{{ route('landing') }}">
-          <span class="flex text-xl"><img src="{{ asset('/img/linac-icon-.png')}}" alt="" class="w-6 h-6 mr-2">IA-Lab</span>
+          <span class="flex text-xl"><img src="{{ asset('/img/linac-icon-.png')}}" alt="" class="w-6 h-6 mr-2 object-contain object-center" loading="lazy">IA-Lab</span>
         </a>
         <button navbar-trigger class="px-3 py-1 ml-2 leading-none transition-all bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg ease-soft-in-out lg:hidden" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="inline-block mt-2 align-middle bg-center bg-no-repeat bg-cover w-6 h-6 bg-none">
@@ -54,7 +55,7 @@
               </a>
             </li>
             <li>
-              <a class="block px-4 py-2 mr-2 font-normal text-white transition-all duration-250 lg-max:opacity-0 lg-max:text-slate-700 ease-soft-in-out text-sm lg:px-2 lg:hover:text-white/75" href="{{ route('contact') }}l">
+              <a class="block px-4 py-2 mr-2 font-normal text-white transition-all duration-250 lg-max:opacity-0 lg-max:text-slate-700 ease-soft-in-out text-sm lg:px-2 lg:hover:text-white/75" href="{{ route('contact') }}">
                 <i class="mr-1 fa-solid fa-headset opacity-60"></i>
                 Contact Us
               </a>
@@ -148,4 +149,6 @@
   <script src="assets/js/plugins/perfect-scrollbar.min.js" async></script>
   <!-- main script file  -->
   <script src="assets/js/soft-ui-dashboard-tailwind.js?v=1.0.4" async></script>
+  {{-- script --}}
+  <script src="{{ asset('assets/js/script.js') }}"></script>
 </html>

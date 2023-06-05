@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
   </head>
   <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <div id="loading-screen" class="fixed inset-0 flex items-center justify-center bg-white z-50">
+      <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-blue-600"></div>
+    </div>    
     <!--Nav-->
     @include('partials.headland')
     <!--Content-->

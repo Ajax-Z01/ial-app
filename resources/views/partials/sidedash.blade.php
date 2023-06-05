@@ -1,8 +1,8 @@
 <!-- sidenav  -->
-<aside class="max-w-62.5 ease-nav-brand z-990 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
+<aside class="max-w-62.5 ease-nav-brand z-100 fixed inset-y-0 my-4 ml-4 block w-full -translate-x-full flex-wrap items-center justify-between overflow-y-auto rounded-2xl border-0 bg-white p-0 antialiased shadow-none transition-transform duration-200 xl:left-0 xl:translate-x-0 xl:bg-transparent">
     <div class="h-19.5">
       <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 xl:hidden" sidenav-close></i>
-      <a class="block pl-4 pr-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="javascript:;">
+      <a class="block pl-4 pr-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="{{ route('dashboard') }}">
         <img src="{{asset('img/linac-icon.png') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8 mb-2" alt="main_logo" />
         <span class="ml-1 text-xl font-semibold transition-all duration-200 ease-nav-brand">IA-Lab Dashboard</span>
       </a>
@@ -163,6 +163,26 @@
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Users</span>
           </a>
         </li>
+        {{-- tab messages --}}
+        <li class="mt-0.5 w-full">
+          <a class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors @if (Request::is('messages')) shadow-soft-xl ease-nav-brand rounded-lg bg-white font-semibold text-slate-700 @else ease-nav-brand @endif" href="{{ route('messages') }}">
+            <div class="@if (Request::is('messages')) bg-gradient-to-tl from-gray-custom to-gray-custom @endif shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+              <svg width="12px" height="12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <title>messages</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(154.000000, 300.000000)">
+                        <path class="@if (Request::is('messages')) @else fill-slate-800 @endif" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Messages</span>
+          </a>
+        </li>        
         @endif
 
         {{-- switch mode --}}

@@ -10,6 +10,7 @@ use App\Http\Controllers\VakumController;
 use App\Http\Controllers\ChartJSController;
 use App\Http\Controllers\FilamenController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FormResponseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::get('/post/{slug}', [MainController::class, 'post'])->name('post');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+
+Route::post('/form/submit', [FormResponseController::class, 'store'])->name('form.submit');
 
 Route::get('/concept', [MainController::class, 'concept'])->name('concept');
 
@@ -82,4 +85,6 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/user/{id}/edit', [UserController::class, 'edit'])->whereNumber('id')->name('user.edit');
     Route::put('/user/{id}/edit', [UserController::class, 'update'])->whereNumber('id')->name('user.update');
     Route::delete('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
+
+    Route::get('/messages', [FormResponseController::class, 'index'])->name('messages');
 });

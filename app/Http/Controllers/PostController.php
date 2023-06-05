@@ -25,13 +25,7 @@ class PostController extends Controller
         // Filter berdasarkan pencarian judul
         if (request()->has('search')) {
             $search = request()->input('search');
-            $query->where('title', 'LIKE', "%$search%");
-        }
-
-        // Filter berdasarkan status
-        if (request()->has('status')) {
-            $status = request()->input('status');
-            $query->where('status', $status);
+            $query->where('title', 'LIKE', "%$search%")->orWhere('subtitle', 'LIKE', "%$search%")->orWhere('status', 'LIKE', "%$search%");
         }
 
         $posts = $query->skip(($currentPage - 1) * $postsPerPage)->take($postsPerPage)->get();

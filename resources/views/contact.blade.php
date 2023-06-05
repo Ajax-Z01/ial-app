@@ -55,21 +55,31 @@
                 </p>
               </div>
             </div>
-            <form novalidate="" class="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid">
+            <form class="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid" method="POST" action="{{ route('form.submit') }}">
+              @csrf
               <label class="block">
                 <span class="mb-1">Full name</span>
-                <input type="text" placeholder="Full Name" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white">
+                <input type="text" placeholder="Full Name" class="p-2 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white" name="full_name" required>
+                @error('full_name')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
               </label>
               <label class="block">
                 <span class="mb-1">Email address</span>
-                <input type="email" placeholder="email@email.com" class="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white">
+                <input type="email" placeholder="email@example.com" class="p-2 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white" name="email" required>
+                @error('email')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
               </label>
               <label class="block">
                 <span class="mb-1">Message</span>
-                <textarea rows="3" class="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white"></textarea>
+                <textarea rows="3" class="p-2 block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white" name="message" required></textarea>
+                @error('message')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
               </label>
-              <button type="button" class="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-blue-600 text-gray-50 focus:ring-blue-600 hover:ring-blue-600">Submit</button>
-            </form>
+              <button type="submit" class="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-blue-600 text-gray-50 focus:ring-blue-600 hover:ring-blue-600">Submit</button>
+            </form>            
           </div>
         </section>
       </div>

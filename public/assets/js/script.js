@@ -94,3 +94,24 @@ window.addEventListener('scroll', function () {
     let speed = 0.3;
     parallaxLayer.style.transform = 'translateY(' + (scrollPosition * speed) + 'px)';
   });
+
+  // Membuat fungsi untuk menampilkan loading screen
+function showLoadingScreen() {
+    document.getElementById('loading-screen').style.display = 'flex';
+  }
+  
+  // Membuat fungsi untuk menyembunyikan loading screen
+  function hideLoadingScreen() {
+    document.getElementById('loading-screen').style.display = 'none';
+  }
+  
+  // Menampilkan loading screen saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', function () {
+    showLoadingScreen();
+  });
+  
+  // Menyembunyikan loading screen setelah halaman selesai dimuat
+  window.addEventListener('load', function () {
+    hideLoadingScreen();
+  });
+  

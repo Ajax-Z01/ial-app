@@ -12,6 +12,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- Tailwind CSS --}}
     <script src="https://cdn.tailwindcss.com"></script> 
+    {{-- Styles --}}
+    <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/88c60bac4f.js" crossorigin="anonymous"></script>
     <!-- Nucleo Icons -->
@@ -39,12 +41,13 @@
     @endif
     <!-- Main Styling -->
     <link href="{{ asset('/assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4') }}" rel="stylesheet" />
-    <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" />
     @livewireStyles
     @stack('css')
   </head>
-
   <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
+    <div id="loading-screen" class="fixed inset-0 flex items-center justify-center bg-white z-990">
+      <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-blue-600"></div>
+    </div>    
     @include('partials.sidedash')
     @if (request()->is('profile') || request()->is('profile/*'))
     @include('partials.headprofile')
@@ -73,6 +76,8 @@
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
     {{-- switch-mode script --}}
     <script src="{{ asset('/assets/js/switch-mode.js') }}" async></script>
+    {{-- script --}}
+    <script src="{{ asset('/assets/js/script.js') }}"></script>
     {{-- chart script --}}
     @if (request()->is('filamen'))
     @livewire('real-time-filamen')

@@ -17,6 +17,7 @@
     <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
     <!-- Main Styling -->
     <link href="{{ asset('assets/css/soft-ui-dashboard-tailwind.css?v=1.0.4') }}" rel="stylesheet" />
+    {{-- Styles --}}
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
   </head>
   <body class="m-0 font-sans antialiased font-normal bg-landing text-start text-base leading-default text-slate-500">
@@ -27,7 +28,7 @@
           <nav class="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 mx-6 my-4 shadow-soft-2xl rounded-blur bg-white/80 backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start">
             <div class="flex items-center justify-between w-full p-0 pl-6 mx-auto flex-wrap-inherit">
               <a class="py-2.375 text-sm mr-4 whitespace-nowrap font-bold text-gray-800 lg:ml-0" href="{{ route('landing') }}">
-                <span class="flex text-xl"><img src="{{ asset('/img/linac-icon.png')}}" alt="" class="w-6 h-6 mr-2">IA-Lab</span>
+                <span class="flex text-xl"><img src="{{ asset('/img/linac-icon.png')}}" alt="" class="w-6 h-6 mr-2 object-contain object-center" loading="lazy">IA-Lab</span>
               </a>
               <button navbar-trigger class="px-3 py-1 ml-2 leading-none transition-all bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg ease-soft-in-out lg:hidden" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="inline-block mt-2 align-middle bg-center bg-no-repeat bg-cover w-6 h-6 bg-none">
@@ -57,7 +58,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('contact') }}l">
+                    <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('contact') }}">
                       <i class="mr-1 fa-solid fa-headset opacity-60"></i>
                       Contact Us
                     </a>
@@ -162,4 +163,6 @@
   <script src="{{ asset('/assets/js/plugins/perfect-scrollbar.min.js') }}" async></script>
   <!-- main script file  -->
   <script src="{{ asset('/assets/js/soft-ui-dashboard-tailwind.min.js') }}" async></script>
+  {{-- script --}}
+  <script src="{{ asset('assets/js/script.js') }}"></script>
 </html>
