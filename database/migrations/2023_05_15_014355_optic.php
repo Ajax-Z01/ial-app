@@ -13,7 +13,6 @@ class Optic extends Migration
     {
         Schema::create('optics', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('tanggal')->nullable();
             $table->timestamps();
             $table->double('arus_pemayar');
             $table->double('arus_pemfokus');

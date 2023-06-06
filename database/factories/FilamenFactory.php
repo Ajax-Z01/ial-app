@@ -20,7 +20,7 @@ class FilamenFactory extends Factory
             'arus_filamen' => $this->faker->randomFloat(2, 0, 12),
             'tegangan_potensio' => $this->faker->randomFloat(2, 0, 1),
             'register' => $this->faker->randomFloat(0, 30000, 40000),
-            'operator' => $this->faker->name,
+            'operator' => 'Rifqi',
             'waktu_operasi_detik' => $this->faker->randomFloat(0, 0, 1000),
         ];
     }

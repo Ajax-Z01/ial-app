@@ -13,7 +13,6 @@ class Vakum extends Migration
     {
         Schema::create('vakums', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('tanggal')->nullable();
             $table->timestamps();
             $table->double('tekanan_vakum_penning_mbar');
             $table->double('tekanan_vakum_pirani_mbar');

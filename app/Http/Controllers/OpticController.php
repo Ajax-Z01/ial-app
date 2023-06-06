@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Optic;
+use App\Exports\OpticExport;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StoreOpticRequest;
 use App\Http\Requests\UpdateOpticRequest;
-use Illuminate\Http\Request;
 
 class OpticController extends Controller
 {
@@ -23,5 +25,10 @@ class OpticController extends Controller
         $optic->save();
 
         return response()->json(['message' => 'Data saved successfully']);
+    }
+
+    public function export()
+    {
+        return Excel::download(new OpticExport, 'data_optic.xlsx');
     }
 }

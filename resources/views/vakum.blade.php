@@ -38,4 +38,8 @@
       </div>
     </div>
   </div>
+
+  <div class="flex items-center justify-end mb-4">
+    <a href="{{ route('vakum.export') }}" class="inline-block px-8 py-2 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer leading-pro ease-soft-in text-xs hover:scale-102 active:shadow-soft-xs tracking-tight-soft border-slate-700 text-slate-700 hover:border-slate-700 hover:bg-transparent hover:text-slate-700 hover:opacity-75 hover:shadow-none active:bg-slate-700 active:text-white active:hover:bg-transparent active:hover:text-slate-700">Download Vakum Data</a>
+  </div>
  @endsection

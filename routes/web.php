@@ -54,13 +54,19 @@ Route::middleware(['IsApproved'])->group(function () {
 
     Route::get('/filamen', [ChartJSController::class, 'filamen'])->name('filamen');
 
+    Route::get('/filamen/export', [FilamenController::class, 'export'])->name('filamen.export');
+
     Route::post('/save-filamen', [FilamenController::class, 'store']);
 
     Route::get('/optic', [ChartJSController::class, 'optic'])->name('optic');
 
+    Route::get('/optic/export', [OpticController::class, 'export'])->name('optic.export');
+
     Route::post('/save-optic', [OpticController::class, 'store']);
 
     Route::get('/vakum', [ChartJSController::class, 'vakum'])->name('vakum');
+
+    Route::get('/vakum/export', [VakumController::class, 'export'])->name('vakum.export');
 
     Route::post('/save-vakum', [VakumController::class, 'store']);
 

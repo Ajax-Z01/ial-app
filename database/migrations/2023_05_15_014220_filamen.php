@@ -13,7 +13,6 @@ class Filamen extends Migration
     {
         Schema::create('filamens', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('tanggal')->nullable();
             $table->timestamps();
             $table->double('arus_filamen');
             $table->double('tegangan_potensio');

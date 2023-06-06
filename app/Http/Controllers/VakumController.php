@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vakum;
+use App\Exports\VakumExport;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StoreVakumRequest;
 use App\Http\Requests\UpdateVakumRequest;
-use Illuminate\Http\Request;
 
 class VakumController extends Controller
 {
@@ -21,5 +23,10 @@ class VakumController extends Controller
         $vakum->save();
 
         return response()->json(['message' => 'Data saved successfully']);
+    }
+
+    public function export()
+    {
+        return Excel::download(new VakumExport, 'data_vakum.xlsx');
     }
 }
