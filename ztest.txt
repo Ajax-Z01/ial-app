@@ -23,3 +23,5 @@ Data :
     "tegangan_pemayar":3,
     "tegangan_pemfokus":7
 }
+
+6725 755 465

@@ -269,7 +269,7 @@ if (navbar) {
       navbar.classList.add("backdrop-blur-[30px]");
       navbar.classList.add("bg-[hsla(0,0%,100%,0.8)]");
       navbar.classList.add("shadow-blur");
-      navbar.classList.add("z-110");
+      navbar.classList.add("z-99");
     } else {
       navbar.setAttribute("navbar-scroll", "false");
       navbar.classList.remove("sticky");
@@ -278,7 +278,7 @@ if (navbar) {
       navbar.classList.remove("backdrop-blur-[30px]");
       navbar.classList.remove("bg-[hsla(0,0%,100%,0.8)]");
       navbar.classList.remove("shadow-blur");
-      navbar.classList.remove("z-110");
+      navbar.classList.remove("z-99");
     }
   });
 } else {

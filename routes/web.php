@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\AccountApproved;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
@@ -38,6 +40,12 @@ Route::post('/form/submit', [FormResponseController::class, 'store'])->name('for
 Route::get('/concept', [MainController::class, 'concept'])->name('concept');
 
 Route::get('/linac', [MainController::class, 'linac'])->name('linac');
+
+Route::get('/send-test-email', function () {
+    $userEmail = 'azhar.ala99@gmail.com';
+    Mail::to($userEmail)->send(new AccountApproved());
+    return "Email berhasil dikirim";
+});
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');

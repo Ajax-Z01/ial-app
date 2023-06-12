@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
+use App\Mail\AccountApproved;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -62,6 +64,10 @@ class UserController extends Controller
         $user = User::find($id);
         $user->type = $request->type;
         $user->status = $request->status;
+        // if ($user->status == 'approved') {
+        //     // Kirim email notifikasi bahwa akun telah diapprove
+        //     Mail::to($user->email)->send(new AccountApproved());
+        // }
         $user->save();
 
         return redirect()->route('users')->withSuccess('User updated successfully.');
@@ -96,8 +102,8 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required|string|max:255',
             'name' => 'required|string|max:255',
-            'mobile' => 'required|string|max:20',
-            'location' => 'required|string|max:255',
+            'mobile' => 'nullable|string|max:20',
+            'location' => 'nullable|string|max:255',
             'bio' => 'nullable|string|max:1000',
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
