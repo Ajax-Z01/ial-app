@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Conference;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 class ConferenceController extends Controller
@@ -46,15 +47,21 @@ class ConferenceController extends Controller
             'link' => 'required|url',
         ]);
 
-        $conference->create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'location' => $request->location,
-            'admin_id' => $request->admin_id,
-            'date' => $request->date,
-            'time' => $request->time,
-            'link' => $request->link,
-        ]);
+        $conference = new Conference();
+        $conference->title = $request->title;
+        $conference->description = $request->description;
+        $conference->location = $request->location;
+        $conference->admin_id = $request->admin_id;
+        $conference->date = $request->date;
+        $conference->time = $request->time;
+        $conference->link = $request->link;
+        $conference->save();
+
+        // Create notification
+        $notification = new Notification();
+        $notification->model()->associate($conference); // Menghubungkan dengan model Post
+        $notification->content = 'Post has been updated.';
+        $notification->save();
 
         return redirect()->route('video_conference')->with('success', 'Video conference berhasil diubah');
     }

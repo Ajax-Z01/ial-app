@@ -20,4 +20,9 @@ class Post extends Model
     {
         return $query->where('status', 'publish');
     }
+
+    public function notifications()
+    {
+        return $this->morphMany(Notification::class, 'notifiable');
+    }
 }

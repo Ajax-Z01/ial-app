@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use App\Models\Post;
+use Illuminate\Support\Str;
+use App\Models\Notification;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -20,7 +21,7 @@ class PostController extends Controller
         $totalPages = ceil($totalPosts / $postsPerPage);
         $currentPage = request()->page ?? 1;
 
-        $query = Post::query();
+        $query = Post::query()->latest();
 
         // Filter berdasarkan pencarian judul
         if (request()->has('search')) {
@@ -74,6 +75,10 @@ class PostController extends Controller
         }
 
         $post->save();
+        $notification = new Notification();
+        $notification->model()->associate($post); // Menghubungkan dengan model Post
+        $notification->content = 'Post has been created.';
+        $notification->save();
         return redirect()->route('posts')->withSuccess('Post Created Successfully');
     }
 
@@ -134,7 +139,10 @@ class PostController extends Controller
             $post->image = '/uploads/' . $name;
         }
         $post->save();
-
+        $notification = new Notification();
+        $notification->model()->associate($post); // Menghubungkan dengan model Post
+        $notification->content = 'Post has been updated.';
+        $notification->save();
         return redirect()->route('posts')->withSuccess("Post Updated Successfully");
     }
 

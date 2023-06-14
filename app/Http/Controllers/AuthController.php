@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -73,6 +74,11 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->save();
+
+        $notification = new Notification();
+        $notification->model()->associate($user); // Menghubungkan dengan model Post
+        $notification->content = 'has been created.';
+        $notification->save();
 
         return redirect()->route('login')->withSuccess('Your account has been successfully registered, please wait until your account is approved by the administrator.');
     }

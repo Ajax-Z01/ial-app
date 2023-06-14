@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FormResponse;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -20,7 +21,7 @@ class FormResponseController extends Controller
         $totalPages = ceil($totalMessages / $messagesPerPage);
         $currentPage = request()->page ?? 1;
 
-        $query = FormResponse::query();
+        $query = FormResponse::query()->latest();
 
         if (request()->filled('search')) {
             $search = request()->input('search');
@@ -53,12 +54,17 @@ class FormResponseController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        // Jika validasi berhasil, simpan data ke database
-        FormResponse::create([
-            'full_name' => $request->input('full_name'),
-            'email' => $request->input('email'),
-            'message' => $request->input('message'),
-        ]);
+        // Buat data form baru
+        $form = new FormResponse();
+        $form->full_name = $request->input('full_name');
+        $form->email = $request->input('email');
+        $form->message = $request->input('message');
+        $form->save();
+
+        $notification = new Notification();
+        $notification->model()->associate($form); // Menghubungkan dengan model Post
+        $notification->content = 'Post has been updated.';
+        $notification->save();
 
         // Redirect ke halaman sukses dengan pesan success
         return redirect()->route('contact')->with('success', 'Form submitted successfully!');

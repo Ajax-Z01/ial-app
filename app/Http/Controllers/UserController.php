@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Mail\AccountApproved;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class UserController extends Controller
         $totalPages = ceil($totalUsers / $usersPerPage);
         $currentPage = request()->page ?? 1;
 
-        $query = User::query();
+        $query = User::query()->latest();
 
         if (request()->filled('search')) {
             $search = request()->input('search');
@@ -69,6 +70,11 @@ class UserController extends Controller
             Mail::to($user->email)->send(new AccountApproved());
         }
         $user->save();
+
+        $notification = new Notification();
+        $notification->model()->associate($user); // Menghubungkan dengan model Post
+        $notification->content = 'has been updated.';
+        $notification->save();
 
         return redirect()->route('users')->withSuccess('User updated successfully.');
     }

@@ -15,4 +15,9 @@ class Conference extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function notifications()
+    {
+        return $this->morphMany(Notification::class, 'notifiable');
+    }
 }

@@ -14,4 +14,9 @@ class FormResponse extends Model
         'email',
         'message',
     ];
+
+    public function notifications()
+    {
+        return $this->morphMany(Notification::class, 'notifiable');
+    }
 }
