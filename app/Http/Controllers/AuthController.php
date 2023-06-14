@@ -74,6 +74,6 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect()->route('login')->withSuccess('Your account has been successfully registered.');
+        return redirect()->route('login')->withSuccess('Your account has been successfully registered, please wait until your account is approved by the administrator.');
     }
 }

@@ -102,18 +102,35 @@
         <li class="mt-0.5 w-full">
           <a class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors @if (Request::is('video')) shadow-soft-xl ease-nav-brand rounded-lg bg-white font-semibold text-slate-700 @else ease-nav-brand  @endif" href="{{ route('video') }}">
             <div class="@if (Request::is('video')) bg-gradient-to-tl from-gray-custom to-gray-custom @endif shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-              <svg width="12px" height="12px" class="dark:text-white" fill="#000000" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                <title>video</title>
+              <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" class="dark:text-white" fill="#000000" stroke="currentColor" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                 <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
                   <g transform="translate(1716.000000, 291.000000)">
                     <g transform="translate(153.000000, 2.000000)">
-                      <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path class="@if (Request::is('video')) @else fill-slate-700 @endif" d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/>
+                      <path class="@if (Request::is('video')) @else fill-slate-700 @endif" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
                     </g>
                   </g>
                 </g>
               </svg>
             </div>
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Video</span>
+          </a>
+        </li>
+        {{-- tab video conference --}}
+        <li class="mt-0.5 w-full">
+          <a class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors @if (Request::is('video-conference')) shadow-soft-xl ease-nav-brand rounded-lg bg-white font-semibold text-slate-700 @else ease-nav-brand  @endif" href="{{ route('video_conference') }}">
+            <div class="@if (Request::is('video-conference')) bg-gradient-to-tl from-gray-custom to-gray-custom @endif shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+              <svg width="12px" height="12px" class="dark:text-white" fill="#000000" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <title>conference</title>
+                <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                  <g transform="translate(1716.000000, 291.000000)">
+                    <g transform="translate(153.000000, 2.000000)">
+                      <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path class="@if (Request::is('video-conference')) @else fill-slate-700 @endif" d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Conference</span>
           </a>
         </li>
         @if (Auth::user()->type == 'admin')
@@ -182,9 +199,28 @@
             </div>
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Messages</span>
           </a>
-        </li>        
+        </li>
+        {{-- tab conference --}}
+        <li class="mt-0.5 w-full">
+          <a class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors @if (Request::is('conference')) shadow-soft-xl ease-nav-brand rounded-lg bg-white font-semibold text-slate-700 @else ease-nav-brand @endif" href="{{ route('conference') }}">
+            <div class="@if (Request::is('conference')) bg-gradient-to-tl from-gray-custom to-gray-custom @endif shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 512 512">
+                <title>conference</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(154.000000, 300.000000)">
+                        <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path class="@if (Request::is('conference')) @else fill-slate-800 @endif" d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"/>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Conference</span>
+          </a>
+        </li>
         @endif
-
         {{-- switch mode --}}
         {{-- <li class="mt-0.5 w-full">
           <p class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors ease-nav-brand" href="">

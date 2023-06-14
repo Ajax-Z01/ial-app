@@ -64,10 +64,10 @@ class UserController extends Controller
         $user = User::find($id);
         $user->type = $request->type;
         $user->status = $request->status;
-        // if ($user->status == 'approved') {
-        //     // Kirim email notifikasi bahwa akun telah diapprove
-        //     Mail::to($user->email)->send(new AccountApproved());
-        // }
+        if ($user->status == 'approved') {
+            // Kirim email notifikasi bahwa akun telah diapprove
+            Mail::to($user->email)->send(new AccountApproved());
+        }
         $user->save();
 
         return redirect()->route('users')->withSuccess('User updated successfully.');

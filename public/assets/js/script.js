@@ -115,3 +115,16 @@ function showLoadingScreen() {
     hideLoadingScreen();
   });
   
+  flatpickr("#date", {
+    minDate: "today",
+    altInput: true,
+    altFormat: "j F, Y",
+    dateFormat: "Y-m-d",
+  });
+
+  flatpickr("#time", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true
+  });

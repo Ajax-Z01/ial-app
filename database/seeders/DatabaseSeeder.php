@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             VakumSeeder::class,
             FilamenSeeder::class,
             DummySeeder::class,
+            ConferenceSeeder::class,
         ]);
     }
 }

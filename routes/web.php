@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OpticController;
 use App\Http\Controllers\VakumController;
 use App\Http\Controllers\ChartJSController;
+use App\Http\Controllers\ConferenceController;
 use App\Http\Controllers\FilamenController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormResponseController;
@@ -80,6 +81,8 @@ Route::middleware(['IsApproved'])->group(function () {
 
     Route::get('/video', [DashboardController::class, 'video'])->name('video');
 
+    Route::get('/video-conference', [ConferenceController::class, 'index'])->name('video_conference');
+
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
 
     Route::get('/profile/edit', [UserController::class, 'edit_profile'])->name('profile.edit');
@@ -101,4 +104,8 @@ Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::delete('/user/{id}/delete', [UserController::class, 'destroy'])->whereNumber('id')->name('user.delete');
 
     Route::get('/messages', [FormResponseController::class, 'index'])->name('messages');
+
+    Route::get('/conference', [ConferenceController::class, 'conference'])->name('conference');
+
+    Route::post('/conference/update', [ConferenceController::class, 'update'])->name('conference.update');
 });

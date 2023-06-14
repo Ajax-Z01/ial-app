@@ -16,6 +16,7 @@
     "dependencies": {
         "autoprefixer": "^10.4.14",
         "cli": "^1.0.1",
+        "flatpickr": "^4.6.13",
         "highlight.js": "^11.7.0",
         "jquery": "^3.7.0",
         "postcss": "^8.4.23",

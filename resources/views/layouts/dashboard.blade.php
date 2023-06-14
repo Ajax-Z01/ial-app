@@ -11,7 +11,9 @@
     {{-- Vite Js --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- Tailwind CSS --}}
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- flatpickr --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     {{-- Styles --}}
     <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" />
     <!-- Font Awesome Icons -->
@@ -76,6 +78,8 @@
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
     {{-- switch-mode script --}}
     <script src="{{ asset('/assets/js/switch-mode.js') }}" async></script>
+    {{-- flatpickr script --}}
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     {{-- script --}}
     <script src="{{ asset('/assets/js/script.js') }}"></script>
     {{-- chart script --}}
