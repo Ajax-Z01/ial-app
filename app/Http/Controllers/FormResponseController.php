@@ -63,10 +63,55 @@ class FormResponseController extends Controller
 
         $notification = new Notification();
         $notification->model()->associate($form); // Menghubungkan dengan model Post
-        $notification->content = 'Post has been updated.';
+        $notification->content = 'New message has been submitted';
         $notification->save();
 
         // Redirect ke halaman sukses dengan pesan success
         return redirect()->route('contact')->with('success', 'Form submitted successfully!');
+    }
+
+    /**
+     * Menampilkan halaman form untuk user
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contact()
+    {
+        return view('contact_admin');
+    }
+
+    /**
+     * Menampilkan menyimpan data form
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function contact_store(Request $request)
+    {
+        // Validasi input form
+        $validator = Validator::make($request->all(), [
+            'full_name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+        // Jika validasi gagal, kirimkan pesan error dan redirect kembali ke halaman sebelumnya
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        // Buat data form baru
+        $form = new FormResponse();
+        $form->full_name = $request->input('full_name');
+        $form->email = $request->input('email');
+        $form->message = $request->input('message');
+        $form->save();
+
+        $notification = new Notification();
+        $notification->model()->associate($form); // Menghubungkan dengan model Post
+        $notification->content = 'New message has been submitted';
+        $notification->save();
+
+        // Redirect ke halaman sukses dengan pesan success
+        return redirect()->route('contact_admin')->with('success', 'Message submitted successfully!');
     }
 }

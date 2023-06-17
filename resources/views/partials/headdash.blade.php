@@ -68,12 +68,12 @@
         </div>
         <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
           {{-- settings --}}
-          {{-- <li class="flex items-center px-4">
-            <a href="javascript:;" class="p-0 transition-all text-sm ease-nav-brand text-slate-500">
-              <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
+          <li class="flex items-center px-4">
+            <a href="{{ route('landing') }}" class="p-0 transition-all text-sm ease-nav-brand text-slate-500">
+              <i fixed-plugin-button-nav class="cursor-pointer fa fa-home"></i>
               <!-- fixed-plugin-button-nav  -->
             </a>
-          </li> --}}
+          </li>
           <!-- notifications -->
           <livewire:notifications />
           {{-- account dropdown --}}

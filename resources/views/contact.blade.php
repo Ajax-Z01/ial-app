@@ -55,8 +55,9 @@
                 </p>
               </div>
             </div>
-            <form class="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid" method="POST" action="{{ route('form.submit') }}">
+            <form class="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid" method="post" action="{{ route('form.submit') }}">
               @csrf
+              @method('post')
               <label class="block">
                 <span class="mb-1">Full name</span>
                 <input type="text" placeholder="Full Name" class="p-2 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-blue-600 bg-white" name="full_name" required>

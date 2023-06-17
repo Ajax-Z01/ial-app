@@ -83,6 +83,10 @@ Route::middleware(['IsApproved'])->group(function () {
 
     Route::get('/video-conference', [ConferenceController::class, 'index'])->name('video_conference');
 
+    Route::get('/contact_admin', [FormResponseController::class, 'contact'])->name('contact_admin');
+
+    Route::post('/contact_admin/submit', [FormResponseController::class, 'contact_store'])->name('contact.submit');
+
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
 
     Route::get('/profile/edit', [UserController::class, 'edit_profile'])->name('profile.edit');

@@ -27,6 +27,16 @@
   <div class="w-full mb-4">
     <div class="h-1 mx-auto bg-white w-3/4 opacity-25 my-0 py-0 rounded-t"></div>
   </div>
+  @if(auth()->check())
+  <h3 class="my-4 text-2xl leading-tight">
+    Welcome, {{ auth()->user()->name }}!
+  </h3>
+  <a href="{{ route('dashboard') }}">
+    <button class="mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+      Dashboard
+    </button>
+  </a>
+  @else
   <h3 class="my-4 text-2xl leading-tight">
     Sign Up Now to Access the Acquisition System Data!
   </h3>
@@ -35,6 +45,7 @@
       Sign Up!
     </button>
   </a>
+  @endif
 </section>
 <!--Footer-->
 <footer class="bg-white shadow dark:bg-gray-900">

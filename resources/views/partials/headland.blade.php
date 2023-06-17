@@ -54,11 +54,19 @@
           " href="{{ route('register') }}">Register</a>
         </li>
       </ul>
-      <a href="{{ route('login') }}" class="mx-auto lg:mx-0">
-        <button id="navAction" class="bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
-          Login
-        </button>
-      </a>      
+      @if(auth()->check())
+        <a href="{{ route('dashboard') }}" class="mx-auto lg:mx-0">
+            <button id="navAction" class="bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
+                Dashboard
+            </button>
+        </a>
+      @else
+        <a href="{{ route('login') }}" class="mx-auto lg:mx-0">
+            <button id="navAction" class="bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
+                Login
+            </button>
+        </a>
+      @endif
     </div>
   </div>
   <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />

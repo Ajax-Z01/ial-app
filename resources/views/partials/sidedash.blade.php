@@ -133,7 +133,26 @@
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Conference</span>
           </a>
         </li>
-        @if (Auth::user()->type == 'admin')
+        @if (Auth::user()->type == 'user')
+        {{-- tab contact --}}
+        <li class="mt-0.5 w-full">
+          <a class="py-2.7 text-sm my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors @if (Request::is('contact_admin')) shadow-soft-xl ease-nav-brand rounded-lg bg-white font-semibold text-slate-700 @else ease-nav-brand  @endif" href="{{ route('contact_admin') }}">
+            <div class="@if (Request::is('contact_admin')) bg-gradient-to-tl from-gray-custom to-gray-custom @endif shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" class="dark:text-white" fill="#000000" stroke="currentColor" viewBox="0 0 512 512">
+                <title>messages</title>
+                <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                  <g transform="translate(1716.000000, 291.000000)">
+                    <g transform="translate(153.000000, 2.000000)">
+                      <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path class="@if (Request::is('contact_admin')) @else fill-slate-700 @endif" d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Contact Admin</span>
+          </a>
+        </li>
+        @elseif (Auth::user()->type == 'admin')
         {{-- tab admin --}}
         <li class="w-full mt-4">
           <h6 class="pl-6 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Admin pages</h6>
