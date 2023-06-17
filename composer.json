@@ -15,8 +15,7 @@
         "nesbot/carbon": "^2.67",
         "phpoffice/phpspreadsheet": "^1.28",
         "pusher/pusher-php-server": "^7.2",
-        "symfony/http-client": "^6.3",
-        "symfony/mailgun-mailer": "^6.3"
+        "symfony/http-client": "^6.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

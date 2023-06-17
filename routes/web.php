@@ -42,12 +42,6 @@ Route::get('/concept', [MainController::class, 'concept'])->name('concept');
 
 Route::get('/linac', [MainController::class, 'linac'])->name('linac');
 
-Route::get('/send-test-email', function () {
-    $userEmail = 'azhar.ala99@gmail.com';
-    Mail::to($userEmail)->send(new AccountApproved());
-    return "Email berhasil dikirim";
-});
-
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
     Route::post('login', 'loginPost')->name('login.post');
@@ -59,24 +53,16 @@ Route::controller(AuthController::class)->group(function () {
 Route::middleware(['IsApproved'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/chart', [ChartJSController::class, 'all_chart'])->name('chart');
-
     Route::get('/filamen', [ChartJSController::class, 'filamen'])->name('filamen');
-
     Route::get('/filamen/export', [FilamenController::class, 'export'])->name('filamen.export');
-
     Route::post('/save-filamen', [FilamenController::class, 'store']);
 
     Route::get('/optic', [ChartJSController::class, 'optic'])->name('optic');
-
     Route::get('/optic/export', [OpticController::class, 'export'])->name('optic.export');
-
     Route::post('/save-optic', [OpticController::class, 'store']);
 
     Route::get('/vakum', [ChartJSController::class, 'vakum'])->name('vakum');
-
     Route::get('/vakum/export', [VakumController::class, 'export'])->name('vakum.export');
-
     Route::post('/save-vakum', [VakumController::class, 'store']);
 
     Route::get('/video', [DashboardController::class, 'video'])->name('video');
@@ -84,13 +70,10 @@ Route::middleware(['IsApproved'])->group(function () {
     Route::get('/video-conference', [ConferenceController::class, 'index'])->name('video_conference');
 
     Route::get('/contact_admin', [FormResponseController::class, 'contact'])->name('contact_admin');
-
     Route::post('/contact_admin/submit', [FormResponseController::class, 'contact_store'])->name('contact.submit');
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
-
     Route::get('/profile/edit', [UserController::class, 'edit_profile'])->name('profile.edit');
-
     Route::put('/profile/edit/{id}', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
 });
 
