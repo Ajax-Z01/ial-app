@@ -30,6 +30,8 @@
             Conference
           @elseif (request()->is('conference'))
             Conference
+          @elseif (request()->is('contact_admin'))
+            Contact Admin
           @else Admin Page
           @endif
           </li>
@@ -59,6 +61,8 @@
             Conference
           @elseif (request()->is('conference'))
             Conference
+          @elseif (request()->is('contact_admin'))
+            Contact Admin
           @else Admin Page
           @endif
         </h4>
