@@ -21,7 +21,7 @@
               <button class="hidden" type="submit">Search</button>
           </form>
           @if (request()->filled('search'))
-              <a href="{{ route('users') }}" class="ml-4 text-sm text-gray-500 hover:text-gray-700">Reset Search</a>
+              <a href="{{ route('messages') }}" class="ml-4 text-sm text-gray-500 hover:text-gray-700">Reset Search</a>
           @endif
         </div>
         @if (session('success'))
@@ -59,7 +59,7 @@
             @endforeach
           </div>
           <div class="mt-6 flex justify-center space-x-1 text-gray-800">
-            <a href="{{ route('users', ['page' => max($currentPage - 1, 1)]) }}">
+            <a href="{{ route('messages', ['page' => max($currentPage - 1, 1)]) }}">
                 <button title="previous" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
                     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4">
                         <polyline points="15 18 9 12 15 6"></polyline>
@@ -68,12 +68,12 @@
             </a>
         
             @for ($page = 1; $page <= $totalPages; $page++)
-                <a href="{{ route('users', ['page' => $page]) }}">
+                <a href="{{ route('messages', ['page' => $page]) }}">
                     <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ $page == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ $page }}">{{ $page }}</button>
                 </a>
             @endfor
         
-            <a href="{{ route('users', ['page' => min($currentPage + 1, $totalPages)]) }}">
+            <a href="{{ route('messages', ['page' => min($currentPage + 1, $totalPages)]) }}">
                 <button title="next" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
                     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4">
                         <polyline points="9 18 15 12 9 6"></polyline>
