@@ -18,12 +18,16 @@ class MainController extends Controller
         return view('landing', compact('posts'));
     }
 
-    public function blog()
+    public function blog(Request $request)
     {
+        $request->validate([
+            'page' => 'nullable|numeric',
+        ]);
+
         $postsPerPage = 5;
         $totalPosts = Post::where('status', 'publish')->count();
         $totalPages = ceil($totalPosts / $postsPerPage);
-        $currentPage = request()->page ?? 1;
+        $currentPage = $request->input('page') ?? 1;
 
         $posts = Post::where('status', 'publish')
             ->skip(($currentPage - 1) * $postsPerPage)
@@ -38,7 +42,6 @@ class MainController extends Controller
 
         return view('blog', compact('posts', 'totalPages', 'currentPage'));
     }
-
 
     public function about()
     {

@@ -35,7 +35,7 @@
             <strong class="font-bold">Validation Error!</strong>
             <ul class="mt-3 list-disc list-inside text-sm text-red-500">
                 @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li>{{ htmlentities($error) }}</li>
                 @endforeach
             </ul>
         </div>
@@ -58,35 +58,35 @@
                   <td class="py-2 pl-2 pr-12 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
                       <div class="flex-shrink-0">
-                        <img src="{{ $user->profile_image }}" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl object-cover" alt="user1" />
+                        <img src="{{ htmlentities($user->profile_image) }}" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl object-cover" alt="user1" />
                       </div>    
                       <div class="flex flex-col justify-center">
-                        <h6 class="mb-0 leading-normal text-sm">{{ $user->username }}</h6>
-                        <p class="mb-0 leading-tight text-xs text-slate-400">{{ $user->name }}</p>
+                        <h6 class="mb-0 leading-normal text-sm">{{ htmlentities($user->username) }}</h6>
+                        <p class="mb-0 leading-tight text-xs text-slate-400">{{ htmlentities($user->name) }}</p>
                       </div>
                     </div> 
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 font-semibold leading-tight text-xs">{{ $user->email }}</p>
+                    <p class="mb-0 font-semibold leading-tight text-xs">{{ htmlentities($user->email) }}</p>
                   </td>
                   <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
                     @if ($user->status == 'approved')
-                    <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $user->status }}</span>
+                    <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ htmlentities($user->status) }}</span>
                     @elseif($user->status == 'notapproved')
-                    <span class="bg-gradient-to-tl from-red-600 to-pink-500 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $user->status }}</span>
+                    <span class="bg-gradient-to-tl from-red-600 to-pink-500 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ htmlentities($user->status) }}</span>
                     @endif
                   </td>
                   <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     @if ($user->type == 'admin')
-                    <span class="bg-gradient-to-tl from-yellow-600 to-yellow-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $user->type }}</span>
+                    <span class="bg-gradient-to-tl from-yellow-600 to-yellow-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ htmlentities($user->type) }}</span>
                     @elseif($user->type == 'user')
-                    <span class="bg-gradient-to-tl from-blue-600 to-blue-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $user->type }}</span>
+                    <span class="bg-gradient-to-tl from-blue-600 to-blue-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{htmlentities($user->type) }}</span>
                     @endif
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <a href="{{ route('user.edit', ['id' => $user->id]) }}" class="font-semibold leading-tight text-xs text-slate-400 text-center align-middle transition-all bg-transparent shadow-none cursor-pointer border-gray-300 ease-soft-in hover:scale-102 active:shadow-soft-xs hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent mr-4">Edit</a>
-                    <a href="{{ route('user.delete', ['id' => $user->id]) }}" class="font-semibold leading-tight text-xs text-slate-400 text-center align-middle transition-all bg-transparent shadow-none cursor-pointer border-gray-300 ease-soft-in hover:scale-102 active:shadow-soft-xs hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent" onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this user?')) document.getElementById('delete-form-{{ $user->id }}').submit();">Delete</a>
-                    <form id="delete-form-{{ $user->id }}" action="{{ route('user.delete', ['id' => $user->id]) }}" method="POST" style="display: none;">
+                    <a href="{{ route('user.delete', ['id' => $user->id]) }}" class="font-semibold leading-tight text-xs text-slate-400 text-center align-middle transition-all bg-transparent shadow-none cursor-pointer border-gray-300 ease-soft-in hover:scale-102 active:shadow-soft-xs hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent" onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this user?')) document.getElementById('delete-form-{{ htmlentities($user->id) }}').submit();">Delete</a>
+                    <form id="delete-form-{{ htmlentities($user->id) }}" action="{{ route('user.delete', ['id' => $user->id]) }}" method="POST" style="display: none;">
                       @csrf
                       @method('DELETE')
                     </form>
@@ -108,7 +108,7 @@
         
             @for ($page = 1; $page <= $totalPages; $page++)
                 <a href="{{ route('users', ['page' => $page]) }}">
-                    <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ $page == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ $page }}">{{ $page }}</button>
+                    <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ htmlentities($page) == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ htmlentities($page) }}">{{ htmlentities($page) }}</button>
                 </a>
             @endfor
         

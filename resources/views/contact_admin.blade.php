@@ -28,7 +28,7 @@
             <label class="block mb-2 text-sm text-gray-600" for="message">Message</label>
             <textarea class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" id="message" name="message" rows="5" placeholder="Type your message here" required></textarea>
             @error('message')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
+                <span class="text-red-500 text-sm">{{ htmlentities($message) }}</span>
             @enderror
             <div class="flex justify-end">
               <button class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" type="submit">Send</button>

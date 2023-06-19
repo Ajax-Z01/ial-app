@@ -35,7 +35,7 @@
             <strong class="font-bold">Validation Error!</strong>
             <ul class="mt-3 list-disc list-inside text-sm text-red-500">
                 @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li>{{ htmlentities($error) }}</li>
                 @endforeach
             </ul>
         </div>
@@ -47,13 +47,13 @@
               <div class="flex justify-between p-4">
                 <div class="flex space-x-4">
                   <div>
-                    <h4 class="font-bold">{{ $message->full_name }} ({{ $message->email }})</h4>
-                    <span class="text-xs text-gray-600">{{ $message->created_at->diffForHumans() }}</span>
+                    <h4 class="font-bold">{{ htmlentities($message->full_name) }} ({{ htmlentities($message->email) }})</h4>
+                    <span class="text-xs text-gray-600">{{ htmlentities($message->created_at->diffForHumans()) }}</span>
                   </div>
                 </div>
               </div>
               <div class="p-4 space-y-2 text-sm text-gray-600">
-                <p>{{ $message->message }}</p>
+                <p>{{ htmlentities($message->message) }}</p>
               </div>
             </div>
             @endforeach
@@ -69,7 +69,7 @@
         
             @for ($page = 1; $page <= $totalPages; $page++)
                 <a href="{{ route('messages', ['page' => $page]) }}">
-                    <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ $page == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ $page }}">{{ $page }}</button>
+                    <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ htmlentities($page) == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ htmlentities($page) }}">{{ htmlentities($page) }}</button>
                 </a>
             @endfor
         

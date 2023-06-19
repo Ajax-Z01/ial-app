@@ -59,26 +59,26 @@
                                     <td class="py-2 pl-2 pr-12 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <div class="flex px-2 py-1">
                                             <div class="flex-shrink-0">
-                                                <img src="{{ $post->image }}" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl object-cover" alt="user1" />
+                                                <img src="{{ htmlentities($post->image) }}" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl object-cover" alt="user1" />
                                             </div>
                                             <div class="flex flex-col justify-center">
-                                                <h6 class="mb-0 leading-normal text-sm">{{ $post->title }}</h6>
-                                                <p class="mb-0 leading-tight text-xs text-slate-400">{{ $post->author->name }}</p>
+                                                <h6 class="mb-0 leading-normal text-sm">{{ htmlentities($post->title) }}</h6>
+                                                <p class="mb-0 leading-tight text-xs text-slate-400">{{ htmlentities($post->author->name) }}</p>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <p class="mr-8 mb-0 font-semibold leading-tight text-xs">{{ $post->subtitle }}</p>
+                                        <p class="mr-8 mb-0 font-semibold leading-tight text-xs">{{ htmlentities($post->subtitle) }}</p>
                                     </td>
                                     <td class="p-2 leading-normal text-center align-middle bg-transparent border-b text-sm whitespace-nowrap shadow-transparent">
                                         @if ($post->status == 'publish')
-                                            <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $post->status }}</span>
+                                            <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ htmlentities($post->status) }}</span>
                                         @elseif($post->status == 'draft')
-                                            <span class="bg-gradient-to-tl from-red-600 to-pink-500 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $post->status }}</span>
+                                            <span class="bg-gradient-to-tl from-red-600 to-pink-500 px-2 text-xs rounded-1.8 py-1 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ htmlentities($post->status) }}</span>
                                         @endif
                                     </td>
                                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <span class="font-semibold leading-tight text-xs text-slate-400">{{ $post->updated_at }}</span>
+                                        <span class="font-semibold leading-tight text-xs text-slate-400">{{ htmlentities($post->updated_at) }}</span>
                                     </td>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <a href="{{ route('post.edit', ['id' => $post->id]) }}"
@@ -87,10 +87,10 @@
                                         </a>
                                         <a href="{{ route('post.delete', ['id' => $post->id]) }}"
                                             class="font-semibold leading-tight text-xs text-slate-400 text-center align-middle transition-all bg-transparent shadow-none cursor-pointer border-gray-300 ease-soft-in hover:scale-102 active:shadow-soft-xs hover:border-gray-300 active:bg-gray-600 active:hover:text-gray-800 hover:text-gray-800 tracking-tight-soft hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent"
-                                            onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this post?')) document.getElementById('delete-form-{{ $post->id }}').submit();">
+                                            onclick="event.preventDefault(); if (confirm('Are you sure you want to delete this post?')) document.getElementById('delete-form-{{ htmlentities($post->id) }}').submit();">
                                             Delete
                                         </a>
-                                        <form id="delete-form-{{ $post->id }}"
+                                        <form id="delete-form-{{ htmlentities($post->id) }}"
                                             action="{{ route('post.delete', ['id' => $post->id]) }}" method="POST"
                                             style="display: none;">
                                             @csrf
@@ -116,8 +116,8 @@
                     @for ($page = 1; $page <= $totalPages; $page++)
                         <a href="{{ route('posts', ['page' => $page]) }}">
                             <button type="button"
-                                class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ $page == $currentPage ? 'bg-blue-600 text-white' : '' }}"
-                                title="Page {{ $page }}">{{ $page }}</button>
+                                class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ htmlentities($page) == $currentPage ? 'bg-blue-600 text-white' : '' }}"
+                                title="Page {{ htmlentities($page) }}">{{ htmlentities($page) }}</button>
                         </a>
                     @endfor
 

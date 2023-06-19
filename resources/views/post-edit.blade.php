@@ -21,14 +21,14 @@
                     <label for="title">Title</label>
                     <input type="text" name="title" id="title" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" value="{{ old('title', $post->title) }}" aria-describedby="title-addon" />
                     @error('title')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label for="subtitle">Description</label>
                     <input type="text" name="subtitle" id="subtitle" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" value="{{ old('subtitle', $post->subtitle) }}" aria-describedby="subtitle-addon" />
                     @error('subtitle')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -38,21 +38,21 @@
                         <option @if (old('status', $post->status) === 'draft') selected @endif value="draft">Draft</option>
                     </select>
                     @error('status')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                     @enderror
                 </div>
                 <div class="mb-2">
                     <label for="description">Content</label>
                     <textarea name="description" id="description" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" rows="4">{{ old('description', $post->description) }}</textarea>
                     @error('description')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label for="image">Image</label>
                     <input type="file" name="image" id="image" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" accept="image/*" />
                     @error('image')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                     @enderror
                 </div>
                 <div class="flex justify-center space-x-4">

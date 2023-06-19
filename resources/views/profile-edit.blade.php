@@ -98,19 +98,19 @@
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
               <div class="col-span-full">
                 <label for="name" class="text-sm">Full name</label>
-                <input name="name" id="name" type="text" placeholder="Full name" value="{{ $user->name }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                <input name="name" id="name" type="text" placeholder="Full name" value="{{ htmlentities($user->name) }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
               <div class="col-span-full">
                 <label for="mobile" class="text-sm">Mobile</label>
-                <input name="mobile" id="mobile" type="text" placeholder="+62xxx-xxxx-xxxx" value="{{ $user->mobile }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                <input name="mobile" id="mobile" type="text" placeholder="+62xxx-xxxx-xxxx" value="{{ htmlentities($user->mobile) }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
               <div class="col-span-full">
                 <label for="email" class="text-sm">Email</label>
-                <input name="email" id="email" type="email" placeholder="email@example.com" value="{{ $user->email }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                <input name="email" id="email" type="email" placeholder="email@example.com" value="{{ htmlentities($user->email) }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
               <div class="col-span-full">
                 <label for="location" class="text-sm">Location</label>
-                <input name="location" id="location" type="text" placeholder="Location" value="{{ $user->location }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                <input name="location" id="location" type="text" placeholder="Location" value="{{ htmlentities($user->location) }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
             </div>
           </fieldset>
@@ -122,17 +122,17 @@
             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
               <div class="col-span-full sm:col-span-3">
                 <label for="username" class="text-sm">Username</label>
-                <input name="username" id="username" type="text" placeholder="Username" value="{{ $user->username }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
+                <input name="username" id="username" type="text" placeholder="Username" value="{{ htmlentities($user->username) }}" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">
               </div>
               <div class="col-span-full">
                 <label for="bio" class="text-sm">Bio</label>
-                <textarea name="bio" id="bio" placeholder="" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">{{ $user->bio }}</textarea>
+                <textarea name="bio" id="bio" placeholder="" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow">{{ htmlentities($user->bio) }}</textarea>
               </div>
               <div class="col-span-full">
                 <label for="profile_image" class="text-sm">Photo</label>
                 <div class="flex items-center space-x-2">
                   <div class="w-10 h-10">
-                    <img src="{{ $user->profile_image }}" alt="" class="object-cover w-full h-full rounded-full">
+                    <img src="{{ htmlentities($user->profile_image) }}" alt="" class="object-cover w-full h-full rounded-full">
                   </div>
                   <div>
                     <input type="file" name="profile_image" id="profile_image" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" accept="image/*" />

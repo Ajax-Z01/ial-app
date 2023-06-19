@@ -21,14 +21,14 @@
                           <label for="title">Title</label>
                           <input type="text" name="title" id="title" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Title" aria-label="Title" aria-describedby="title-addon" />
                           @error('title')
-                              <p class="text-red-500 text-sm">{{ $message }}</p>
+                              <p class="text-red-500 text-sm">{{ htmlentities($message) }}</p>
                           @enderror
                       </div>
                       <div class="mb-4">
                           <label for="subtitle">Description</label>
                           <input type="text" name="subtitle" id="subtitle" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Subtitle" aria-label="Subtitle" aria-describedby="subtitle-addon" />
                           @error('subtitle')
-                              <p class="text-red-500 text-sm">{{ $message }}</p>
+                              <p class="text-red-500 text-sm">{{ htmlentities($message) }}</p>
                           @enderror
                       </div>
                       <div class="mb-4">
@@ -38,21 +38,21 @@
                           <option value="publish">Publish</option>
                         </select>
                         @error('status')
-                            <span class="text-red-500 text-xs">{{ $message }}</span>
+                            <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                         @enderror
                       </div>
                       <div class="mb-2">
                         <label for="description">Content</label>
                         <textarea name="description" id="description" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" rows="4" placeholder="Content" aria-label="Content"></textarea>
                         @error('description')
-                              <p class="text-red-500 text-sm">{{ $message }}</p>
+                              <p class="text-red-500 text-sm">{{ htmlentities($message) }}</p>
                           @enderror
                       </div>
                       <div class="mb-4">
                         <label for="image">Image</label>
                         <input type="file" name="image" id="image" class="text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" accept="image/*" />
                         @error('image')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                         @enderror
                       </div>
                       <div class="flex justify-center space-x-4">

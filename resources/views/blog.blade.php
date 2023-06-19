@@ -32,15 +32,15 @@
           @foreach ($posts as $post)
           <div class="bg-gray-100 text-gray-900 mt-3">
             <div class="container grid grid-cols-12 mx-auto bg-gray-50">
-              <div class="bg-no-repeat bg-cover bg-gray-50 col-span-full lg:col-span-4" style="background-image: url('{{ $post->image }}'); background-position: center center; background-blend-mode: multiply; background-size: cover;"></div>
+              <div class="bg-no-repeat bg-cover bg-gray-50 col-span-full lg:col-span-4" style="background-image: url('{{ htmlentities($post->image) }}'); background-position: center center; background-blend-mode: multiply; background-size: cover;"></div>
               <div class="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
                 <div class="flex justify-start">
                   @if ($post->updated_at > now()->subDays(1))
                   <span class="px-2 py-1 text-xs rounded-full bg-blue-600 text-gray-50">New</span>
                   @endif
                 </div>
-                <h1 class="text-3xl font-semibold">{{ $post->title }}</h1>
-                <p class="flex-1 pt-2">{{ $post->description }}</p>
+                <h1 class="text-3xl font-semibold">{{ htmlentities($post->title) }}</h1>
+                <p class="flex-1 pt-2">{{ htmlentities($post->description) }}</p>
                 <a rel="noopener noreferrer" href="{{ route('post', $post->slug) }}" class="inline-flex items-center pt-2 pb-6 space-x-2 text-sm text-blue-600">
                   <span>Read more</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
@@ -52,9 +52,9 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-600">
                       <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="self-center text-sm">{{ $post->author->name }}</span>
+                    <span class="self-center text-sm">{{ htmlentities($post->author->name) }}</span>
                   </div>
-                  <span class="text-xs">{{ $post->updated }}</span>
+                  <span class="text-xs">{{ htmlentities($post->updated) }}</span>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@
             
           @for ($page = 1; $page <= $totalPages; $page++)
             <a href="{{ route('blog', ['page' => $page]) }}">
-              <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ $page == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ $page }}">{{ $page }}</button>
+              <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ htmlentities($page) == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ htmlentities($page) }}">{{ htmlentities($page) }}</button>
             </a>
           @endfor
             

@@ -20,8 +20,8 @@
               <div>
                 <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Users</p>
                 <h5 class="mb-0 font-bold">
-                  {{ $totalUsers }}
-                  <span class="leading-normal text-sm font-weight-bolder text-lime-500">+{{ $newUsersCount }}</span>
+                  {{ htmlentities($totalUsers) }}
+                  <span class="leading-normal text-sm font-weight-bolder text-lime-500">+{{ htmlentities($newUsersCount) }}</span>
                 </h5>
               </div>
             </div>
@@ -44,8 +44,8 @@
               <div>
                 <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Posts</p>
                 <h5 class="mb-0 font-bold">
-                  {{ $totalPosts }}
-                  <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ $newPostsCount }}</span>
+                  {{ htmlentities($totalPosts) }}
+                  <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ htmlentities($newPostsCount) }}</span>
                 </h5>
               </div>
             </div>
@@ -68,8 +68,8 @@
               <div>
                 <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Data</p>
                 <h5 class="mb-0 font-bold">
-                  {{ $totalData }}
-                  <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ $newDataCount }}</span>
+                  {{ htmlentities($totalData) }}
+                  <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ htmlentities($newDataCount) }}</span>
                 </h5>
               </div>
             </div>
@@ -92,8 +92,8 @@
               <div>
                 <p class="mb-0 font-sans font-semibold leading-normal text-sm">Today's Messages</p>
                 <h5 class="mb-0 font-bold">
-                  {{ $totalMessages }}
-                  <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ $newMessagesCount }}</span>
+                  {{ htmlentities($totalMessages) }}
+                  <span class="leading-normal text-lime-500 text-sm font-weight-bolder">+{{ htmlentities($newMessagesCount) }}</span>
                 </h5>
               </div>
             </div>

@@ -15,10 +15,10 @@
       </div>
       <div class="flex flex-col justify-center">
           <div class="flex flex-col justify-center">
-              <h6 class="mb-1 font-normal leading-normal text-sm"><span class="font-semibold">New Conference </span>"{{ substr($conference->title, 0, 10) }}..."</h6>
+              <h6 class="mb-1 font-normal leading-normal text-sm"><span class="font-semibold">New Conference </span>"{{ substr(htmlentities($conference->title), 0, 10) }}..."</h6>
               <p class="mb-0 leading-tight text-xs text-slate-400">
                 <i class="mr-1 fa fa-clock"></i>
-              {{ $conference->updated_at->diffForHumans() }}
+              {{ htmlentities($conference->updated_at->diffForHumans()) }}
               </p>
           </div>
       </div>

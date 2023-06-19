@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <link rel="icon" type="image/png" href="{{ asset('/img/linac-icon.png')}}" />
     <title>IA-Lab Register</title>
     {{-- Vite Js --}}
@@ -100,25 +101,25 @@
                     <div class="mb-4">
                         <input type="text" name="username" id="username" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Username" aria-label="Username" aria-describedby="username-addon" />
                         @error('username')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                         @enderror
                     </div>
                     <div class="mb-4">
                         <input type="text" name="name" id="name" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Name" aria-label="Name" aria-describedby="name-addon" />
                         @error('name')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                         @enderror
                     </div>
                     <div class="mb-4">
                         <input type="email" name="email" id="email" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Email" aria-label="Email" aria-describedby="email-addon" />
                         @error('email')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                         @enderror
                     </div>
                     <div class="mb-2">
                         <input type="password" name="password" id="password" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" placeholder="Password" aria-label="Password" aria-describedby="password-addon" />
                         @error('password')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                         @enderror
                     </div>
                     <div class="text-center">

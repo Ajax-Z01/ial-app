@@ -18,15 +18,15 @@
                 @csrf
                 <div class="mb-4">
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" value="{{ $user->username}}" aria-describedby="username-addon" readonly/>
+                    <input type="text" name="username" id="username" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" value="{{ htmlentities($user->username)}}" aria-describedby="username-addon" readonly/>
                 </div>
                 <div class="mb-4">
                     <label for="name">Full Name</label>
-                    <input type="text" name="name" id="name" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" value="{{ $user->name }}" aria-describedby="name-addon" readonly/>
+                    <input type="text" name="name" id="name" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" value="{{ htmlentities($user->name) }}" aria-describedby="name-addon" readonly/>
                 </div>
                 <div class="mb-4">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" value="{{ $user->email }}" aria-describedby="email-addon" readonly/>
+                    <input type="text" name="email" id="email" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" value="{{ htmlentities($user->email) }}" aria-describedby="email-addon" readonly/>
                 </div>
                 <div class="mb-4">
                     <label for="type">Type</label>
@@ -35,7 +35,7 @@
                         <option @if ($user->type === 'user') selected @endif value="user">User</option>
                     </select>
                     @error('type')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
@@ -45,7 +45,7 @@
                         <option @if ($user->status === 'notapproved') selected @endif value="notapproved">Not Approved</option>
                     </select>
                     @error('status')
-                        <span class="text-red-500 text-xs">{{ $message }}</span>
+                        <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
                     @enderror
                 </div>
                 <div class="flex justify-center space-x-4">

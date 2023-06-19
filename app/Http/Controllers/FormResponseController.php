@@ -44,9 +44,9 @@ class FormResponseController extends Controller
     {
         // Validasi input form
         $validator = Validator::make($request->all(), [
-            'full_name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required',
+            'full_name' => 'required|min:5|max:50|regex:/^[a-zA-Z\s]+$/',
+            'email' => 'required|email|max:50',
+            'message' => 'required|min:5|max:500|regex:/^[a-zA-Z\s]+$/',
         ]);
 
         // Jika validasi gagal, kirimkan pesan error dan redirect kembali ke halaman sebelumnya
@@ -54,7 +54,7 @@ class FormResponseController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        // Buat data form baru
+        // Buat data form baru dengan menggunakan parameterized queries
         $form = new FormResponse();
         $form->full_name = $request->input('full_name');
         $form->email = $request->input('email');
@@ -62,13 +62,14 @@ class FormResponseController extends Controller
         $form->save();
 
         $notification = new Notification();
-        $notification->model()->associate($form); // Menghubungkan dengan model Post
+        $notification->model()->associate($form); // Menghubungkan dengan model FormResponse
         $notification->content = 'New message has been submitted';
         $notification->save();
 
         // Redirect ke halaman sukses dengan pesan success
         return redirect()->route('contact')->with('success', 'Form submitted successfully!');
     }
+
 
     /**
      * Menampilkan halaman form untuk user
@@ -89,9 +90,9 @@ class FormResponseController extends Controller
     {
         // Validasi input form
         $validator = Validator::make($request->all(), [
-            'full_name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required',
+            'full_name' => 'required|min:5|max:50|regex:/^[a-zA-Z\s]+$/',
+            'email' => 'required|email|max:50',
+            'message' => 'required|min:5|max:500|regex:/^[a-zA-Z\s]+$/',
         ]);
 
         // Jika validasi gagal, kirimkan pesan error dan redirect kembali ke halaman sebelumnya
@@ -99,7 +100,7 @@ class FormResponseController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        // Buat data form baru
+        // Buat data form baru dengan menggunakan parameterized queries
         $form = new FormResponse();
         $form->full_name = $request->input('full_name');
         $form->email = $request->input('email');
@@ -107,7 +108,7 @@ class FormResponseController extends Controller
         $form->save();
 
         $notification = new Notification();
-        $notification->model()->associate($form); // Menghubungkan dengan model Post
+        $notification->model()->associate($form); // Menghubungkan dengan model FormResponse
         $notification->content = 'New message has been submitted';
         $notification->save();
 

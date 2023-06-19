@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.png')}}" />
     <title>IA-Lab Login</title>
     {{-- Vite Js --}}
@@ -99,7 +100,7 @@
                       <div class="alert alert-error text-red-500">
                         <ul class="list-disc pl-5">
                           @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                            <li>{{ htmlentities($error) }}</li>
                           @endforeach
                         </ul>
                       </div>

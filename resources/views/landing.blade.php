@@ -82,15 +82,15 @@
         <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
           <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
             <a href="{{ route('post', $post->slug) }}" class="flex flex-wrap no-underline hover:no-underline">
-              <img src="{{ $post->image }}" alt="{{ $post->title }}" class="w-full h-60 object-cover object-center">
+              <img src="{{ htmlentities($post->image) }}" alt="{{ htmlentities($post->title) }}" class="w-full h-60 object-cover object-center">
               <p class="w-full text-gray-600 text-xs md:text-sm px-6">
-                {{ $post->updated }}
+                {{ htmlentities($post->updated) }}
               </p>
               <div class="w-full font-bold text-xl text-gray-800 px-6">
-                {{ $post->title }}
+                {{ htmlentities($post->title) }}
               </div>
               <p class="text-gray-800 text-base px-6 mb-2">
-                {{ $post->description }}...
+                {{ htmlentities($post->description) }}...
               </p>
             </a>
           </div>

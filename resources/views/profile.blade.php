@@ -105,13 +105,13 @@
             </div>
           </div>
           <div class="flex-auto p-4">
-            <p class="leading-normal text-sm">{{ $user->bio }}</p>
+            <p class="leading-normal text-sm">{{ htmlentities($user->bio) }}</p>
             <hr class="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent" />
             <ul class="flex flex-col pl-0 mb-0 rounded-lg">
-              <li class="relative block px-4 py-2 pt-0 pl-0 leading-normal bg-white border-0 rounded-t-lg text-sm text-inherit"><strong class="text-slate-700">Full Name:</strong> &nbsp; {{ $user->name }}</li>
-              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Mobile:</strong> &nbsp; {{ $user->mobile }}</li>
-              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Email:</strong> &nbsp; {{ $user->email }}</li>
-              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Location:</strong> &nbsp; {{ $user->location }}</li>
+              <li class="relative block px-4 py-2 pt-0 pl-0 leading-normal bg-white border-0 rounded-t-lg text-sm text-inherit"><strong class="text-slate-700">Full Name:</strong> &nbsp; {{ htmlentities($user->name) }}</li>
+              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Mobile:</strong> &nbsp; {{ htmlentities($user->mobile) }}</li>
+              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Email:</strong> &nbsp; {{ htmlentities($user->email) }}</li>
+              <li class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit"><strong class="text-slate-700">Location:</strong> &nbsp; {{ htmlentities($user->location) }}</li>
             </ul>
           </div>
         </div>

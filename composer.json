@@ -15,6 +15,7 @@
         "nesbot/carbon": "^2.67",
         "phpoffice/phpspreadsheet": "^1.28",
         "pusher/pusher-php-server": "^7.2",
+        "spatie/laravel-csp": "^2.8",
         "symfony/http-client": "^6.3"
     },
     "require-dev": {

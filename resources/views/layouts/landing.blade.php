@@ -4,9 +4,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.png') }}" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>
       IA-Lab | Internet Accelerator Laboratory 
     </title>
