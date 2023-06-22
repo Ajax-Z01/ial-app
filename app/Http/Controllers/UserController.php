@@ -103,27 +103,37 @@ class UserController extends Controller
 
     public function update_profile(Request $request, $id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
-        $request->validate([
-            'username' => 'required|string|max:255',
-            'name' => 'required|string|max:255',
-            'mobile' => 'nullable|string|max:20',
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|min:5|max:20|alpha_dash',
+            'name' => 'required|min:5|max:50|regex:/^[a-zA-Z\s]+$/',
+            'mobile' => 'nullable|regex:/^[+0-9\s]+$/|max:20',
             'location' => 'nullable|string|max:255',
-            'bio' => 'nullable|string|max:1000',
+            'bio' => 'nullable|string|max:500',
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $user->username = $request->username;
-        $user->name = $request->name;
-        $user->mobile = $request->mobile;
-        $user->location = $request->location;
-        $user->bio = $request->bio;
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-        if ($request->hasFile('profile_image')) {
+        $user->setAttribute('username', $request->username);
+        $user->fill($request->only(['name', 'mobile', 'location', 'bio']));
+
+        if ($request->hasFile('profile_image') && $request->file('profile_image')->isValid()) {
+            $allowedMimes = ['jpeg', 'png', 'jpg'];
+            $validator = Validator::make($request->all(), [
+                'profile_image' => 'image|mimes:' . implode(',', $allowedMimes) . '|max:2048',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
             $name = Str::slug($request->username) . '.' . $request->profile_image->extension();
             $request->profile_image->move(public_path('uploads'), $name);
-            $user->profile_image = '/uploads/' . $name;
+            $user->setAttribute('profile_image', '/uploads/' . $name);
         }
 
         $user->save();

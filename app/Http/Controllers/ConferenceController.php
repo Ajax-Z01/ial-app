@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Conference;
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use App\Mail\ConferenceUpdate;
+use Illuminate\Support\Facades\Mail;
 
 class ConferenceController extends Controller
 {
@@ -62,6 +65,13 @@ class ConferenceController extends Controller
         $notification->model()->associate($conference); // Menghubungkan dengan model Post
         $notification->content = 'Post has been updated.';
         $notification->save();
+
+        // Mengirim email hanya ke pengguna yang telah diapprove
+        $approvedUsers = User::where('status', 'appproved')->get();
+
+        foreach ($approvedUsers as $user) {
+            Mail::to($user->email)->send(new ConferenceUpdate($conference));
+        }
 
         return redirect()->route('video_conference')->with('success', 'Video conference berhasil diubah');
     }

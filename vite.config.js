@@ -6,6 +6,10 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
+            manifest: true,
+            views: 'resources/views/**/*.blade.php',
+            publicDir: 'public',
+            assetsDir: 'assets',
         }),
     ],
 });

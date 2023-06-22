@@ -73,15 +73,15 @@ Route::middleware(['IsApproved'])->group(function () {
     Route::post('/contact_admin/submit', [FormResponseController::class, 'contact_store'])->name('contact.submit');
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
-    Route::get('/profile/edit', [UserController::class, 'edit_profile'])->name('profile.edit');
+    Route::get('/profile-edit', [UserController::class, 'edit_profile'])->name('profile.edit');
     Route::put('/profile/edit/{id}', [UserController::class, 'update_profile'])->whereNumber('id')->name('profile.update');
 });
 
 Route::middleware(['IsAdmin', 'IsApproved'])->group(function () {
     Route::get('/posts', [PostController::class, 'index'])->name('posts');
-    Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
+    Route::get('/posts-create', [PostController::class, 'create'])->name('post.create');
     Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
-    Route::get('/post/{id}/edit', [PostController::class, 'edit'])->whereNumber('id')->name('post.edit');
+    Route::get('/post-{id}-edit', [PostController::class, 'edit'])->whereNumber('id')->name('post.edit');
     Route::put('/post/{id}/edit', [PostController::class, 'update'])->whereNumber('id')->name('post.update');
     Route::delete('/post/{id}/delete', [PostController::class, 'destroy'])->whereNumber('id')->name('post.delete');
 

@@ -50,7 +50,6 @@
             <p>You can now access all the features and resources available on our platform.</p>
             <p>If you have any questions or need assistance, please feel free to contact our support team.</p>
             <p>Thank you for being a part of our community!</p>
-            <p><a href="http://localhost:8000/login" target="_blank" class="button">Visit Website</a></p>
         </div>
     </body>
 </html>
