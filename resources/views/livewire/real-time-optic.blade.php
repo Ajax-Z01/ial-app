@@ -4,7 +4,6 @@
         var liveIndicator = document.getElementById("liveIndicator");
         
         var chartData = JSON.parse('<?php echo $dataOptic ?>');
-        console.log(chartData);
 
         var ctx3a = document.getElementById("chartArusPemayar").getContext("2d");
 
@@ -411,6 +410,6 @@
         // Interval untuk memperbarui data secara berkala
         setInterval(() => {
             Livewire.emit('opticAdded');
-        }, 10000);
+        }, 3000);
     </script>
 </div>

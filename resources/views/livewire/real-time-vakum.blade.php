@@ -4,7 +4,6 @@
         var liveIndicator = document.getElementById("liveIndicator");
 
         var chartData = JSON.parse('<?php echo $dataVakum ?>');
-        console.log(chartData);
 
         var ctx4a = document.getElementById("chartPenning").getContext("2d");
 
@@ -219,6 +218,6 @@
         // Interval untuk memperbarui data secara berkala
         setInterval(() => {
             Livewire.emit('vakumAdded');
-        }, 10000);
+        }, 3000);
     </script>
 </div>

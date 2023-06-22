@@ -218,7 +218,7 @@
       // Interval untuk memperbarui data secara berkala
       setInterval(() => {
         Livewire.emit("filamenAdded");
-      }, 10000);
+      }, 3000);
     </script>
 </div>
   

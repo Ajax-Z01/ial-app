@@ -32,38 +32,12 @@ window.Echo = new Echo({
 
 var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-window.Echo.channel('data-dummy')
-    .listen('.dummy-added', (data_dummy) => {
-        var payload = {
-            data_dummy: data_dummy // Assign the data_dummy value to the payload object
-        };
-        console.log(data_dummy);
-        // Kirim data ke endpoint Laravel menggunakan AJAX
-        $.ajax({
-            url: '/save-dummy',
-            type: 'POST',
-            data: payload,
-            headers: {
-                'X-CSRF-TOKEN': csrfToken // Menyertakan token CSRF dalam header permintaan
-            },
-            success: function(response) {
-                console.log(response);
-                // Handle response jika diperlukan
-            },
-            error: function(xhr, status, error) {
-                console.log(error);
-                // Handle error jika diperlukan
-            }
-        });
-    });
-
 window.Echo.channel('data-filamen')
     .listen('.filamen-added', (data) => {
         var payload = {
             arus_filamen: data.arus_filamen,
             tegangan_potensio: data.tegangan_potensio
         };
-        console.log(payload);
         // Kirim data ke endpoint Laravel menggunakan AJAX
         $.ajax({
             url: '/save-filamen',
@@ -91,7 +65,6 @@ window.Echo.channel('data-optic')
            tegangan_pemayar : data.tegangan_pemayar,
            tegangan_pemfokus : data.tegangan_pemfokus,
         };
-        console.log(payload);
         // Kirim data ke endpoint Laravel menggunakan AJAX
         $.ajax({
             url: '/save-optic',
@@ -117,7 +90,6 @@ window.Echo.channel('data-vakum')
             tekanan_vakum_penning_mbar : data.tekanan_vakum_penning_mbar,
             tekanan_vakum_pirani_mbar : data.tekanan_vakum_pirani_mbar,
         };
-        console.log(payload);
         // Kirim data ke endpoint Laravel menggunakan AJAX
         $.ajax({
             url: '/save-vakum',
