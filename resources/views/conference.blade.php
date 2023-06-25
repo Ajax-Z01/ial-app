@@ -22,7 +22,7 @@
             </div>
             <div class="font-semibold">Description :</div>
             <div class="ml-4 mb-2">
-              <textarea name="description" id="description" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" rows="4">{{ old('description', $conferences->description) }}</textarea>
+              <textarea name="description" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-blue-custom focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow" rows="4">{{ old('description', $conferences->description) }}</textarea>
               @error('description')
                   <span class="text-red-500 text-xs">{{ htmlentities($message) }}</span>
               @enderror

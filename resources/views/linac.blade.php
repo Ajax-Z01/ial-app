@@ -35,8 +35,27 @@
               </p>
             </div>
             <div class="text-gray-800">
-              <p>A linear accelerator (LINAC) is a sophisticated device employed in various fields including medicine, research, and industry to produce high-velocity particle beams. Its primary function is to accelerate particles, such as electrons or ions, utilizing a sequence of lengthy linear accelerator tubes. As these particles traverse through the linear accelerator, they are subjected to radiofrequency resonators situated within the tubes, resulting in the particles gaining additional energy. This acceleration process is reiterated until the particles attain the desired energy level. The utilization of LINAC technology enables scientists, medical professionals, and industrial experts to explore a wide range of applications, from advanced cancer treatments and particle physics research to industrial material analysis and sterilization processes. By harnessing the power of high-speed particle beams, LINAC plays a vital role in pushing the boundaries of scientific discovery and technological innovation across diverse disciplines.</p>
-            </div>
+              <p class="mb-4">The linear accelerator, commonly known as Linac, is a groundbreaking technology that plays a crucial role in scientific research and cancer treatment. This sophisticated machine utilizes high-frequency electromagnetic fields to accelerate charged particles, enabling scientists and medical professionals to unlock new frontiers of knowledge and revolutionize various scientific disciplines. Linac's versatility, precision, and ability to generate high-energy particle beams have made it an indispensable tool in research, cancer treatment, and other cutting-edge applications.</p>
+              <ol class="list-decimal ml-8">
+                <li class="mb-4">
+                  <p>The Fundamentals of Linear Accelerator (Linac) Technology: A linear accelerator operates on the principle of accelerating charged particles, such as electrons or protons, in a straight path using electromagnetic fields. It consists of a series of accelerating structures or cavities that create alternating electric fields, propelling the particles forward. As the particles traverse these cavities, they gain energy, achieving high velocities close to the speed of light.</p>
+                </li>
+                <li class="mb-4">
+                  <p>Advancements in Particle Physics Research: Linear accelerators have played a pivotal role in advancing our understanding of the fundamental building blocks of the universe. In particle physics research, Linacs are used to propel charged particles to high energies, enabling scientists to study particle interactions, investigate the properties of matter, and explore the fundamental forces that govern the universe. Linac technology has been instrumental in experiments conducted at renowned research facilities like CERN, contributing to groundbreaking discoveries, including the Higgs boson.</p>
+                </li>
+                <li class="mb-4">
+                  <p>Application in Cancer Treatment: Linear accelerators have transformed cancer treatment through a technique called external beam radiation therapy. In this application, Linacs are used to deliver precisely targeted beams of high-energy particles, such as X-rays or electrons, to destroy cancerous tumors while sparing healthy surrounding tissues. The ability to shape and modulate the radiation beams allows clinicians to customize treatments, maximizing therapeutic effectiveness and minimizing side effects.</p>
+                </li>
+                <li class="mb-4">
+                  <p>Enhanced Treatment Capabilities: Advancements in Linac technology have revolutionized cancer treatment approaches. Modern Linacs incorporate advanced imaging systems, such as CT scanners, to precisely locate tumors and ensure accurate treatment delivery. Additionally, technologies like intensity-modulated radiation therapy (IMRT) and image-guided radiation therapy (IGRT) further enhance treatment precision, enabling tailored radiation doses and real-time tumor tracking during treatment sessions.</p>
+                </li>
+                <li class="mb-4">
+                  <p>Research and Technological Advancements: Ongoing research aims to improve the efficiency, precision, and accessibility of Linac technology. Innovations such as compact Linacs and mobile units make radiation therapy accessible in remote and underserved areas, expanding cancer treatment options worldwide. Furthermore, efforts to develop advanced imaging techniques, particle beam guidance systems, and treatment planning algorithms continue to refine the capabilities of Linacs, ensuring optimal patient outcomes.</p>
+                </li>
+              </ol>
+              <p class="mt-4">Conclusion:<br>
+              The linear accelerator (Linac) represents a groundbreaking technology that has transformed scientific research and cancer treatment. Its ability to accelerate charged particles to high energies and precisely deliver radiation beams has revolutionized particle physics investigations and improved cancer treatment outcomes. As research and technological advancements continue, the future of Linac technology holds even more promise. By pushing the boundaries of scientific discovery and advancing cancer treatment modalities, Linac technology will continue to contribute to the betterment of human health and the advancement of scientific knowledge.</p>
+            </div>            
             <div class="pt-12 border-t border-gray-300">
               <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
                 <img src="/img/default-profile.png" alt="" class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
@@ -50,13 +69,34 @@
         </div>
       </div>
     </section>
-    <section class="bg-landing py-8">
-      <div class="container mx-auto flex flex-wrap pt-4 pb-12 justify-center">
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?1">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?3">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?4">
+    <section class="bg-landing py-8 text-gray-800">
+      <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+        <p class="text-sm font-medium tracking-wide text-center uppercase">How it works</p>
+        <h2 class="mb-12 text-4xl font-bold leading-tight text-center sm:text-5xl">Frequently Asked Questions</h2>
+        <div class="flex flex-col divide-y divide-gray-300 sm:px-8 lg:px-12 xl:px-32">
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What is IA-Lab?</summary>
+            <div class="px-4 pb-4">
+              <p>IA-Lab is a website that enables users to monitor real-time data acquisition from a linear accelerator system. It provides a user-friendly dashboard featuring data acquisition graphs, instructional videos, and information about upcoming conferences organized by the admin.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">How can I access the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4">
+              <p>To access the IA-Lab dashboard, you need to register on the IA-Lab website. Create an account and log in using your credentials. Once you have registered, your account will need to be approved by the admin. Once your account is approved, you will gain access to the dashboard, which includes data acquisition graphs, instructional videos, and conference information.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What are the benefits of accessing the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4 space-y-2">
+              <p>There are several benefits to accessing the IA-Lab dashboard:</p>
+              <ul class="list-disc list-inside">
+                <li>Real-time data monitoring: The dashboard provides live updates on data acquisition from the linear accelerator system, allowing users to monitor the system's performance.</li>
+                <li>Instructional videos: Users can access videos that demonstrate the operation of the linear accelerator system, providing valuable insights and guidance.</li>
+                <li>Conference information: The dashboard provides information about upcoming conferences organized by the admin, allowing users to stay updated on the latest developments and opportunities in the field.</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </section>

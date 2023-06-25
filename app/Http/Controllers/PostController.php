@@ -66,12 +66,12 @@ class PostController extends Controller
         $post->subtitle = $request->subtitle;
         $post->author_id = $request->author_id;
         $post->description = $request->description;
-        $post->slug = Str::slug($request->slug);
+        $post->slug = Str::slug($request->title);
 
         if ($request->hasFile('image')) {
             $name = Str::slug($request->title) . '.' . $request->image->extension();
             $request->image->move(public_path('uploads'), $name);
-            $post->image = 'uploads/' . $name;
+            $post->image = '/uploads/' . $name;
         }
 
         $post->save();

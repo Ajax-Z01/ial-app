@@ -63,6 +63,8 @@
     <script src="{{ asset('assets/js/switch-mode.js') }}" async></script>
     {{-- flatpickr script --}}
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    {{-- tinimce script --}}
+    <script src="{{ asset('/assets/js/tinymce/tinymce.min.js') }}"></script>
     {{-- script --}}
     <script src="{{ asset('assets/js/script.js') }}"></script>
     {{-- chart script --}}

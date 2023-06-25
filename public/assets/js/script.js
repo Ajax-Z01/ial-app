@@ -128,3 +128,10 @@ function showLoadingScreen() {
     dateFormat: "H:i",
     time_24hr: true
   });
+
+  tinymce.init({
+    selector: '#description',
+    plugins: 'link charmap preview removeformat',
+    toolbar: 'undo redo | bold italic underline | link | removeformat | preview',
+    height: 500,
+});

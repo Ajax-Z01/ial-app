@@ -38,7 +38,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-11 h-11 mr-2 sm:mr-6">
                     <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                   </svg>
-                  <span>6CC7+JQ3, Jl. Babarsari, Depok, Tambak Bayan, Caturtunggal, Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</span>
+                  <span>Jl. Babarsari, Depok, Tambak Bayan, Caturtunggal, Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</span>
                 </p>
                 <p class="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2 sm:mr-6">
@@ -51,7 +51,7 @@
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                   </svg>
-                  <span>ial-prta@brin.com</span>
+                  <span>internetacceleratorlaboratory@gmail.com</span>
                 </p>
               </div>
             </div>
@@ -85,13 +85,34 @@
         </section>
       </div>
     </section>
-    <section class="bg-landing py-8">
-      <div class="container mx-auto flex flex-wrap pt-4 pb-12 justify-center">
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?1">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?3">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?4">
+    <section class="bg-landing py-8 text-gray-800">
+      <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+        <p class="text-sm font-medium tracking-wide text-center uppercase">How it works</p>
+        <h2 class="mb-12 text-4xl font-bold leading-tight text-center sm:text-5xl">Frequently Asked Questions</h2>
+        <div class="flex flex-col divide-y divide-gray-300 sm:px-8 lg:px-12 xl:px-32">
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What is IA-Lab?</summary>
+            <div class="px-4 pb-4">
+              <p>IA-Lab is a website that enables users to monitor real-time data acquisition from a linear accelerator system. It provides a user-friendly dashboard featuring data acquisition graphs, instructional videos, and information about upcoming conferences organized by the admin.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">How can I access the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4">
+              <p>To access the IA-Lab dashboard, you need to register on the IA-Lab website. Create an account and log in using your credentials. Once you have registered, your account will need to be approved by the admin. Once your account is approved, you will gain access to the dashboard, which includes data acquisition graphs, instructional videos, and conference information.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What are the benefits of accessing the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4 space-y-2">
+              <p>There are several benefits to accessing the IA-Lab dashboard:</p>
+              <ul class="list-disc list-inside">
+                <li>Real-time data monitoring: The dashboard provides live updates on data acquisition from the linear accelerator system, allowing users to monitor the system's performance.</li>
+                <li>Instructional videos: Users can access videos that demonstrate the operation of the linear accelerator system, providing valuable insights and guidance.</li>
+                <li>Conference information: The dashboard provides information about upcoming conferences organized by the admin, allowing users to stay updated on the latest developments and opportunities in the field.</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </section>

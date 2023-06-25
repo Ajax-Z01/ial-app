@@ -46,21 +46,22 @@
           @endif
           " href="{{ route('contact') }}">Contact</a>
         </li>
-        <li class="mr-3">
-          <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline
-          @if (Request::is('register'))  font-bold 
-          @else hover:text-gray-700 hover:text-underline
-          @endif
-          " href="{{ route('register') }}">Register</a>
-        </li>
-      </ul>
       @if(auth()->check())
+      </ul>
         <a href="{{ route('dashboard') }}" class="mx-auto lg:mx-0">
             <button id="navAction" class="bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
                 Dashboard
             </button>
         </a>
       @else
+        <li class="mr-3">
+        <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline
+        @if (Request::is('register'))  font-bold 
+        @else hover:text-gray-700 hover:text-underline
+        @endif
+        " href="{{ route('register') }}">Register</a>
+      </li>
+    </ul>
         <a href="{{ route('login') }}" class="mx-auto lg:mx-0">
             <button id="navAction" class="bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out md:text-xl">
                 Login

@@ -12,7 +12,7 @@ class MainController extends Controller
     {
         $posts = Post::where('status', 'publish')->orderByDesc('updated_at')->get()->take(3)->map(function ($post) {
             $post->updated = $post->updated_at->diffForHumans();
-            $post->description = substr($post->description, 0, 200);
+            $post->description = substr($post->description, 0, 300);
             return $post;
         });
         return view('landing', compact('posts'));
@@ -36,7 +36,7 @@ class MainController extends Controller
             ->get()
             ->map(function ($post) {
                 $post->updated = $post->updated_at->diffForHumans();
-                $post->description = substr($post->description, 0, 200);
+                $post->description = substr($post->description, 0, 400);
                 return $post;
             });
 

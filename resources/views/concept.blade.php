@@ -35,8 +35,34 @@
               </p>
             </div>
             <div class="text-gray-800">
-              <p>IA-Lab (Internet Accelerator Laboratory) is an innovative and cutting-edge educational facility that harnesses the power of the internet to provide remote accelerated learning experiences. It operates in alignment with the Teaching Laboratory program, offering students a unique and immersive educational environment. IA-Lab leverages advanced technologies to deliver live video webcasting sessions, allowing students to actively participate in interactive lessons from anywhere in the world. With its state-of-the-art smart Classroom, IA-Lab creates a dynamic and engaging learning atmosphere, enabling students to collaborate, exchange ideas, and explore subjects with the guidance of expert instructors. By combining the convenience of online education with the effectiveness of accelerated learning methods, IA-Lab revolutionizes the way education is accessed and experienced, breaking down geographical barriers and opening up new opportunities for students to thrive in the digital era.</p>
-            </div>
+              <p>
+                &emsp; IA-Lab (Internet Accelerator Laboratory) is an innovative and cutting-edge educational facility that harnesses the power of the internet to provide remote accelerated learning experiences. It operates in alignment with the Teaching Laboratory program, offering students a unique and immersive educational environment.
+              </p><br>
+              <p>
+                &emsp; IA-Lab leverages advanced technologies to deliver live video webcasting sessions, allowing students to actively participate in interactive lessons from anywhere in the world. With its state-of-the-art smart Classroom, IA-Lab creates a dynamic and engaging learning atmosphere, enabling students to collaborate, exchange ideas, and explore subjects with the guidance of expert instructors.
+              </p><br>
+              <p>
+                &emsp; By combining the convenience of online education with the effectiveness of accelerated learning methods, IA-Lab revolutionizes the way education is accessed and experienced, breaking down geographical barriers and opening up new opportunities for students to thrive in the digital era.
+              </p><br>
+              <p>
+                &emsp; IA-Lab Concept is designed to provide students with a seamless and interactive learning environment. Through live video webcasting sessions, students can engage in real-time discussions and receive personalized guidance from experienced instructors. The smart Classroom incorporates advanced technologies, such as virtual reality and augmented reality, to enhance the learning experience and make complex concepts more accessible.
+              </p><br>
+              <p>
+                &emsp; One of the key advantages of IA-Lab is its flexibility. Students can access the platform from anywhere with an internet connection, eliminating the need for physical attendance and allowing for self-paced learning. This flexibility empowers students to manage their own schedules and learn at their own pace, ensuring a personalized and tailored learning experience.
+              </p><br>
+              <p>
+                &emsp; IA-Lab also fosters collaboration among students. Through online forums and discussion boards, students can connect with peers who share similar interests and goals. This collaborative environment promotes knowledge sharing, critical thinking, and problem-solving skills, preparing students for the challenges of the modern workforce.
+              </p><br>
+              <p>
+                &emsp; Furthermore, IA-Lab provides a vast library of resources and materials, including recorded lectures, interactive tutorials, and practice exercises. These resources are accessible 24/7, allowing students to revisit and review content as needed, reinforcing their understanding and mastery of the subject matter.
+              </p><br>
+              <p>
+                &emsp; In conclusion, IA-Lab Concept represents a new era of remote accelerated learning. By leveraging the power of the internet and advanced technologies, IA-Lab offers students a flexible, interactive, and collaborative educational experience. With its emphasis on personalized learning and access to a wide range of resources, IA-Lab empowers students to reach their full potential and succeed in today's digital world.
+              </p><br>
+              <p>
+                &emsp; Note: This text is for illustrative purposes only and may not reflect the actual features and functionalities of IA-Lab.
+              </p>
+            </div>            
             <div class="pt-12 border-t border-gray-300">
               <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
                 <img src="/img/default-profile.png" alt="" class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
@@ -50,13 +76,34 @@
         </div>
       </div>
     </section>
-    <section class="bg-landing py-8">
-      <div class="container mx-auto flex flex-wrap pt-4 pb-12 justify-center">
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?1">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?3">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?4">
+    <section class="bg-landing py-8 text-gray-800">
+      <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+        <p class="text-sm font-medium tracking-wide text-center uppercase">How it works</p>
+        <h2 class="mb-12 text-4xl font-bold leading-tight text-center sm:text-5xl">Frequently Asked Questions</h2>
+        <div class="flex flex-col divide-y divide-gray-300 sm:px-8 lg:px-12 xl:px-32">
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What is IA-Lab?</summary>
+            <div class="px-4 pb-4">
+              <p>IA-Lab is a website that enables users to monitor real-time data acquisition from a linear accelerator system. It provides a user-friendly dashboard featuring data acquisition graphs, instructional videos, and information about upcoming conferences organized by the admin.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">How can I access the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4">
+              <p>To access the IA-Lab dashboard, you need to register on the IA-Lab website. Create an account and log in using your credentials. Once you have registered, your account will need to be approved by the admin. Once your account is approved, you will gain access to the dashboard, which includes data acquisition graphs, instructional videos, and conference information.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What are the benefits of accessing the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4 space-y-2">
+              <p>There are several benefits to accessing the IA-Lab dashboard:</p>
+              <ul class="list-disc list-inside">
+                <li>Real-time data monitoring: The dashboard provides live updates on data acquisition from the linear accelerator system, allowing users to monitor the system's performance.</li>
+                <li>Instructional videos: Users can access videos that demonstrate the operation of the linear accelerator system, providing valuable insights and guidance.</li>
+                <li>Conference information: The dashboard provides information about upcoming conferences organized by the admin, allowing users to stay updated on the latest developments and opportunities in the field.</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </section>

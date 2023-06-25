@@ -13,7 +13,7 @@ class RealTimeVakum extends Component
 
     public function mount()
     {
-        $vakums = Vakum::latest()->limit(50)->get()->reverse();
+        $vakums = Vakum::latest()->limit(20)->get()->reverse();
         $data = [];
 
         foreach ($vakums as $vakum) {
@@ -32,7 +32,7 @@ class RealTimeVakum extends Component
 
     public function refreshDataVakum()
     {
-        $vakums = Vakum::latest()->limit(50)->get()->reverse();
+        $vakums = Vakum::latest()->limit(20)->get()->reverse();
         $data = [];
 
         foreach ($vakums as $vakum) {

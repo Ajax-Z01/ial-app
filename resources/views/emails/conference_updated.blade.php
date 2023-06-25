@@ -8,9 +8,7 @@
 <body>
     <h2>Conference Updated</h2>
     
-    <p>Hi {{ $user->name }},</p>
-    
-    <p>The conference has been updated. Here are the details:</p>
+    <p>The conference of Internet Accelerator Laboratory has been updated. Here are the details:</p>
     
     <ul>
         <li><strong>Title:</strong> {{ $conference->title }}</li>

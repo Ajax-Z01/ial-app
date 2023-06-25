@@ -40,7 +40,7 @@
                   @endif
                 </div>
                 <h1 class="text-3xl font-semibold">{{ htmlentities($post->title) }}</h1>
-                <p class="flex-1 pt-2">{{ htmlentities($post->description) }}</p>
+                <div class="flex-1 pt-2">{!! html_entity_decode($post->description) !!}...</div>
                 <a rel="noopener noreferrer" href="{{ route('post', $post->slug) }}" class="inline-flex items-center pt-2 pb-6 space-x-2 text-sm text-blue-600">
                   <span>Read more</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
@@ -86,13 +86,34 @@
         </div>
       </div>
     </section>
-    <section class="bg-landing py-8">
-      <div class="container mx-auto flex flex-wrap pt-4 pb-12 justify-center">
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?1">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?3">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?4">
+    <section class="bg-landing py-8 text-gray-800">
+      <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+        <p class="text-sm font-medium tracking-wide text-center uppercase">How it works</p>
+        <h2 class="mb-12 text-4xl font-bold leading-tight text-center sm:text-5xl">Frequently Asked Questions</h2>
+        <div class="flex flex-col divide-y divide-gray-300 sm:px-8 lg:px-12 xl:px-32">
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What is IA-Lab?</summary>
+            <div class="px-4 pb-4">
+              <p>IA-Lab is a website that enables users to monitor real-time data acquisition from a linear accelerator system. It provides a user-friendly dashboard featuring data acquisition graphs, instructional videos, and information about upcoming conferences organized by the admin.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">How can I access the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4">
+              <p>To access the IA-Lab dashboard, you need to register on the IA-Lab website. Create an account and log in using your credentials. Once you have registered, your account will need to be approved by the admin. Once your account is approved, you will gain access to the dashboard, which includes data acquisition graphs, instructional videos, and conference information.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What are the benefits of accessing the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4 space-y-2">
+              <p>There are several benefits to accessing the IA-Lab dashboard:</p>
+              <ul class="list-disc list-inside">
+                <li>Real-time data monitoring: The dashboard provides live updates on data acquisition from the linear accelerator system, allowing users to monitor the system's performance.</li>
+                <li>Instructional videos: Users can access videos that demonstrate the operation of the linear accelerator system, providing valuable insights and guidance.</li>
+                <li>Conference information: The dashboard provides information about upcoming conferences organized by the admin, allowing users to stay updated on the latest developments and opportunities in the field.</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </section>

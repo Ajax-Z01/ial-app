@@ -26,17 +26,15 @@
           <img src="{{ htmlentities($post->image) }}" alt="" class="w-full h-60 sm:h-96 bg-white object-contain object-center">
           <div class="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-white">
             <div class="w-full mx-auto space-y-4 text-center">
-              <h1 class="text-4xl font-bold leading-tight md:text-5xl">{{ htmlentities($post->title) }}</h1>
+              <h1 class="text-4xl font-bold leading-tight md:text-5xl">{{ $post->title }}</h1>
               <p class="text-sm text-gray-600">by
-                <a rel="noopener noreferrer" href="javascript:;" class="underline text-blue-600">
+                <a rel="noopener noreferrer" href="javascript:;" class=" text-blue-600">
                   <span itemprop="name">{{ htmlentities($post->author->name) }}</span>
                 </a>on
-                <time datetime="2021-02-12 15:34:18-0200">{{ htmlentities($post->updated) }}</time>
+                <time>{{ htmlentities($post->updated) }}</time>
               </p>
             </div>
-            <div class="text-gray-800">
-              <p>{{ htmlentities($post->description) }}</p>
-            </div>
+            {!! $post->description !!}
             <div class="pt-12 border-t border-gray-300">
               <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
                 <img src="{{ htmlentities($post->author->profile_image) }}" alt="" class="self-center flex-shrink-0 w-24 h-24 object-cover object-center border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
@@ -51,13 +49,34 @@
         </div>
       </div>
     </section>
-    <section class="bg-landing py-8">
-      <div class="container mx-auto flex flex-wrap pt-4 pb-12 justify-center">
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?1">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?2">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?3">
-          <img class="object-cover w-full bg-gray-500 aspect-square" src="https://source.unsplash.com/random/300x300/?4">
+    <section class="bg-landing py-8 text-gray-800">
+      <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+        <p class="text-sm font-medium tracking-wide text-center uppercase">How it works</p>
+        <h2 class="mb-12 text-4xl font-bold leading-tight text-center sm:text-5xl">Frequently Asked Questions</h2>
+        <div class="flex flex-col divide-y divide-gray-300 sm:px-8 lg:px-12 xl:px-32">
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What is IA-Lab?</summary>
+            <div class="px-4 pb-4">
+              <p>IA-Lab is a website that enables users to monitor real-time data acquisition from a linear accelerator system. It provides a user-friendly dashboard featuring data acquisition graphs, instructional videos, and information about upcoming conferences organized by the admin.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">How can I access the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4">
+              <p>To access the IA-Lab dashboard, you need to register on the IA-Lab website. Create an account and log in using your credentials. Once you have registered, your account will need to be approved by the admin. Once your account is approved, you will gain access to the dashboard, which includes data acquisition graphs, instructional videos, and conference information.</p>
+            </div>
+          </details>
+          <details>
+            <summary class="py-2 outline-none cursor-pointer focus:underline">What are the benefits of accessing the IA-Lab dashboard?</summary>
+            <div class="px-4 pb-4 space-y-2">
+              <p>There are several benefits to accessing the IA-Lab dashboard:</p>
+              <ul class="list-disc list-inside">
+                <li>Real-time data monitoring: The dashboard provides live updates on data acquisition from the linear accelerator system, allowing users to monitor the system's performance.</li>
+                <li>Instructional videos: Users can access videos that demonstrate the operation of the linear accelerator system, providing valuable insights and guidance.</li>
+                <li>Conference information: The dashboard provides information about upcoming conferences organized by the admin, allowing users to stay updated on the latest developments and opportunities in the field.</li>
+              </ul>
+            </div>
+          </details>
         </div>
       </div>
     </section>

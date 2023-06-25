@@ -410,6 +410,6 @@
         // Interval untuk memperbarui data secara berkala
         setInterval(() => {
             Livewire.emit('opticAdded');
-        }, 3000);
+        }, 5000);
     </script>
 </div>

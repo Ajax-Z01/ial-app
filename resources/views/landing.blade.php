@@ -37,9 +37,10 @@
               <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
                 IA-Lab Concept
               </h3>
-              <p class="text-gray-600 mb-8">
-                IA-Lab (Internet Accelerator Laboratory) is an innovative and cutting-edge educational facility that harnesses the power of the internet to provide remote accelerated learning experiences. It operates in alignment with the Teaching Laboratory program, offering students a unique and immersive educational environment. IA-Lab leverages advanced technologies to deliver live video webcasting sessions, allowing students to actively participate in interactive lessons from anywhere in the world. With its state-of-the-art smart Classroom, IA-Lab creates a dynamic and engaging learning atmosphere, enabling students to collaborate, exchange ideas, and explore subjects with the guidance of expert instructors. By combining the convenience of online education with the effectiveness of accelerated learning methods, IA-Lab revolutionizes the way education is accessed and experienced, breaking down geographical barriers and opening up new opportunities for students to thrive in the digital era.
-              </p>
+              <p class="text-gray-600  text-justify">
+                IA-Lab (Internet Accelerator Laboratory) is an innovative and cutting-edge educational facility that harnesses the power of the internet to provide remote accelerated learning experiences. It operates in alignment with the Teaching Laboratory program, offering students a unique and immersive educational environment.</p><br>
+              <p class="text-gray-600 mb-8  text-justify">
+                IA-Lab leverages advanced technologies to deliver live video webcasting sessions, allowing students to actively participate in interactive lessons from anywhere in the world. With its state-of-the-art smart Classroom, IA-Lab creates a dynamic and engaging learning atmosphere, enabling students to collaborate, exchange ideas, and explore subjects with the guidance of expert instructors...</p>
               <div class="flex items-center justify-start">
                 <a href="{{ route('concept') }}">
                   <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
@@ -51,11 +52,11 @@
           </div>
         </div>
         <div class="flex flex-wrap">
-          <div class="w-5/6 sm:w-1/2 p-6">
+          <div class="w-full sm:w-1/2 p-6">
             <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
               Linear Accelerator (LINAC)
             </h3>
-            <p class="text-gray-600 mb-8">A linear accelerator (LINAC) is a sophisticated device employed in various fields including medicine, research, and industry to produce high-velocity particle beams. Its primary function is to accelerate particles, such as electrons or ions, utilizing a sequence of lengthy linear accelerator tubes. As these particles traverse through the linear accelerator, they are subjected to radiofrequency resonators situated within the tubes, resulting in the particles gaining additional energy. This acceleration process is reiterated until the particles attain the desired energy level. The utilization of LINAC technology enables scientists, medical professionals, and industrial experts to explore a wide range of applications, from advanced cancer treatments and particle physics research to industrial material analysis and sterilization processes. By harnessing the power of high-speed particle beams, LINAC plays a vital role in pushing the boundaries of scientific discovery and technological innovation across diverse disciplines.</p>
+            <p class="text-gray-600 mb-8  text-justify">The linear accelerator, commonly known as Linac, is a groundbreaking technology that plays a crucial role in scientific research and cancer treatment. This sophisticated machine utilizes high-frequency electromagnetic fields to accelerate charged particles, enabling scientists and medical professionals to unlock new frontiers of knowledge and revolutionize various scientific disciplines. Linac's versatility, precision, and ability to generate high-energy particle beams have made it an indispensable tool in research, cancer treatment, and other cutting-edge applications...</p>
             <div class="flex items-center justify-start">
               <a href="{{ route('linac') }}">
                 <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
@@ -64,7 +65,7 @@
               </a>
             </div>
           </div>
-          <div class="w-full sm:w-1/2 mx-auto my-4">
+          <div class="w-full xl:w-1/2 sm:w-1/2 mx-auto my-4">
             <img class="w-full" src="/img/linac.png">
           </div>
         </div>
@@ -83,18 +84,18 @@
           <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
             <a href="{{ route('post', $post->slug) }}" class="flex flex-wrap no-underline hover:no-underline">
               <img src="{{ htmlentities($post->image) }}" alt="{{ htmlentities($post->title) }}" class="w-full h-60 object-cover object-center">
-              <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              <p class="w-full text-gray-600 text-xs md:text-sm px-6 mt-2">
                 {{ htmlentities($post->updated) }}
               </p>
               <div class="w-full font-bold text-xl text-gray-800 px-6">
                 {{ htmlentities($post->title) }}
               </div>
-              <p class="text-gray-800 text-base px-6 mb-2">
-                {{ htmlentities($post->description) }}...
-              </p>
+              <div class="text-gray-800 text-base px-6">
+                {!! html_entity_decode($post->description) !!}...
+              </div>
             </a>
           </div>
-          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+          <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow px-6">
             <div class="flex items-center justify-start">
               <a href="{{ route('post', $post->slug) }}">
                 <button class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">

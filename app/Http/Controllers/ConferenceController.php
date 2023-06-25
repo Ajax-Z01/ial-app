@@ -67,11 +67,11 @@ class ConferenceController extends Controller
         $notification->save();
 
         // Mengirim email hanya ke pengguna yang telah diapprove
-        $approvedUsers = User::where('status', 'approved')->get();
+        // $approvedUsers = User::where('status', 'approved')->get();
 
-        foreach ($approvedUsers as $user) {
-            Mail::to($user->email)->send(new ConferenceUpdate($conference));
-        }
+        // foreach ($approvedUsers as $user) {
+        //     Mail::to($user->email)->send(new ConferenceUpdate($conference));
+        // }
 
         return redirect()->route('video_conference')->with('success', 'Video conference berhasil diubah');
     }

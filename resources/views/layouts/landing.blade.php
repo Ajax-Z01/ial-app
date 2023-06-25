@@ -10,7 +10,7 @@
     <title>
       IA-Lab | Internet Accelerator Laboratory 
     </title>
-    <meta name="description" content="Simple landing page" />
+    <meta name="description" content="Internet Accelerator Laboratory" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
     {{-- Tailwind CSS --}}
