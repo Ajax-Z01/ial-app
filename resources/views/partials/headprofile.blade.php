@@ -16,13 +16,6 @@
           <div class="flex items-center md:ml-auto md:pr-4">
           </div>
           <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-            {{-- settings --}}
-            <li class="flex items-center px-4">
-              <a href="javascript:;" class="p-0 text-white transition-all text-sm ease-soft-in-out">
-                <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog" aria-hidden="true"></i>
-                <!-- fixed-plugin-button-nav  -->
-              </a>
-            </li>
             <!-- notifications -->
             <livewire:notifications />
             {{-- account dropdown --}}
