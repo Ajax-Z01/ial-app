@@ -17,4 +17,14 @@ class Notifications extends Component
             'notifications' => $notifications,
         ]);
     }
+
+    public function allNotifications()
+    {
+        $notifications = Notification::latest()
+            ->get();
+
+        return view('notifications.notifications', [
+            'notifications' => $notifications,
+        ]);
+    }
 }

@@ -63,7 +63,7 @@ class ConferenceController extends Controller
         // Create notification
         $notification = new Notification();
         $notification->model()->associate($conference); // Menghubungkan dengan model Post
-        $notification->content = 'Post has been updated.';
+        $notification->content = 'Conference has been updated'; // Isi notifikasi
         $notification->save();
 
         // Mengirim email hanya ke pengguna yang telah diapprove

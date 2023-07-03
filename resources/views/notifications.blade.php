@@ -8,44 +8,44 @@
     <div class="flex-none w-full max-w-full px-3">
       <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
         <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-          <h6>Messages</h6>
+          <h6>Notifications</h6>
         </div>
-        <div class="flex items-center md:ml-auto md:pr-4 mt-2">
-          <form action="{{ route('messages') }}" method="GET">
-              <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease-soft">
-                  <span class="text-sm ease-soft leading-5.6 absolute z-10 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
-                      <i class="fas fa-search"></i>
-                  </span>
-                  <input type="text" name="search" class="focus:shadow-soft-primary-outline pl-8.75 text-sm ease-soft w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-custom focus:outline-none focus:transition-shadow" placeholder="Search..." value="{{ request()->input('search') }}" />
-              </div>
-              <button class="hidden" type="submit">Search</button>
-          </form>
-          @if (request()->filled('search'))
-              <a href="{{ route('messages') }}" class="ml-4 text-sm text-gray-500 hover:text-gray-700">Reset Search</a>
-          @endif
-        </div>
-        <div class="flex-auto px-0 pt-0 pb-2">
-          <div class="p-0 overflow-x-auto">
-            @foreach ($messages as $message)
-            <div class="mb-2 container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800">
-              <div class="flex justify-between p-4">
-                <div class="flex space-x-4">
-                  <div>
-                    <h4 class="font-bold">{{ htmlentities($message->full_name) }} ({{ htmlentities($message->email) }})</h4>
-                    <span class="text-xs text-gray-600">{{ htmlentities($message->created_at->diffForHumans()) }}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-4 space-y-2 text-sm text-gray-600">
-                <p>{{ htmlentities($message->message) }}</p>
-              </div>
+        <div class="flex items-center justify-center">
+            <div class="p-0 overflow-x-auto">
+                <table class="items-center w-full mb-12 align-top border-gray-200 text-slate-500">
+                    <thead class="align-bottom">
+                        <tr>
+                            <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Notification</th>
+                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Message</th>
+                            <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Date</th>
+                            <th class="pr-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($notifications as $notification)
+                        @if ( Auth::user()->type == 'admin' )
+                            @if ($notification->model_type === 'App\Models\User')
+                                @include('notifications.user-notif', ['user' => $notification->model])
+                            @elseif ($notification->model_type === 'App\Models\Post')
+                                @include('notifications.post-notif', ['post' => $notification->model])
+                            @elseif ($notification->model_type === 'App\Models\FormResponse')
+                                @include('notifications.message-notif', ['message' => $notification->model])
+                            @endif
+                        @elseif ( Auth::user()->type == 'user' )
+                            @if ($notification->model_type === 'App\Models\Conference')
+                                @include('notifications.conference-notif', ['conference' => $notification->model])
+                            @endif
+                        @endif
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-            @endforeach
-          </div>
-          <div class="mt-6 flex justify-center space-x-1 text-gray-800">
+        </div>
+        @if ( Auth::user()->type == 'admin' )
+        <div class="mt-6 flex justify-center space-x-1 text-gray-800 mb-6">
             {{-- Tombol navigasi awal --}}
             @if ($currentPage > 1)
-                <a href="{{ route('messages', ['page' => 1]) }}">
+                <a href="{{ route('notifications', ['page' => 1]) }}">
                     <button title="First" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
                         &lt;&lt;
                     </button>
@@ -54,7 +54,7 @@
         
             {{-- Tombol navigasi sebelumnya --}}
             @if ($currentPage > 1)
-                <a href="{{ route('messages', ['page' => $currentPage - 1]) }}">
+                <a href="{{ route('notifications', ['page' => $currentPage - 1]) }}">
                     <button title="Previous" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
                         &lt;
                     </button>
@@ -68,7 +68,7 @@
         
             {{-- Halaman sebelum sebelum halaman saat ini --}}
             @if ($currentPage > 2)
-                <a href="{{ route('messages', ['page' => $currentPage - 2]) }}">
+                <a href="{{ route('notifications', ['page' => $currentPage - 2]) }}">
                     <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100">
                         {{ $currentPage - 2 }}
                     </button>
@@ -77,7 +77,7 @@
         
             {{-- Halaman sebelum halaman saat ini --}}
             @if ($currentPage > 1)
-                <a href="{{ route('messages', ['page' => $currentPage - 1]) }}">
+                <a href="{{ route('notifications', ['page' => $currentPage - 1]) }}">
                     <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100">
                         {{ $currentPage - 1 }}
                     </button>
@@ -85,7 +85,7 @@
             @endif
         
             {{-- Halaman saat ini --}}
-            <a href="{{ route('messages', ['page' => $currentPage]) }}">
+            <a href="{{ route('notifications', ['page' => $currentPage]) }}">
                 <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-blue-600 text-white">
                     {{ $currentPage }}
                 </button>
@@ -93,7 +93,7 @@
         
             {{-- Halaman setelah halaman saat ini --}}
             @if ($currentPage < $totalPages)
-                <a href="{{ route('messages', ['page' => $currentPage + 1]) }}">
+                <a href="{{ route('notifications', ['page' => $currentPage + 1]) }}">
                     <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100">
                         {{ $currentPage + 1 }}
                     </button>
@@ -102,7 +102,7 @@
         
             {{-- Halaman setelah setelah halaman saat ini --}}
             @if ($currentPage < $totalPages - 1)
-                <a href="{{ route('messages', ['page' => $currentPage + 2]) }}">
+                <a href="{{ route('notifications', ['page' => $currentPage + 2]) }}">
                     <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100">
                         {{ $currentPage + 2 }}
                     </button>
@@ -116,7 +116,7 @@
         
             {{-- Tombol navigasi berikutnya --}}
             @if ($currentPage < $totalPages)
-                <a href="{{ route('messages', ['page' => $currentPage + 1]) }}">
+                <a href="{{ route('notifications', ['page' => $currentPage + 1]) }}">
                     <button title="Next" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
                         &gt;
                     </button>
@@ -125,14 +125,15 @@
         
             {{-- Tombol navigasi akhir --}}
             @if ($currentPage < $totalPages)
-                <a href="{{ route('messages', ['page' => $totalPages]) }}">
+                <a href="{{ route('notifications', ['page' => $totalPages]) }}">
                     <button title="Last" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
                         &gt;&gt;
                     </button>
                 </a>
             @endif
         </div>
-        
+        @endif
+
         </div>
       </div>
     </div>

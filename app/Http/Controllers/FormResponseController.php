@@ -44,9 +44,9 @@ class FormResponseController extends Controller
     {
         // Validasi input form
         $validator = Validator::make($request->all(), [
-            'full_name' => 'required|min:5|max:50|regex:/^[a-zA-Z\s]+$/',
-            'email' => 'required|email|max:50',
-            'message' => 'required|min:5|max:500|regex:/^[a-zA-Z\s]+$/',
+            'full_name' => 'required|max:25',
+            'email' => 'required|email|max:25',
+            'message' => 'required|max:300',
         ]);
 
         // Jika validasi gagal, kirimkan pesan error dan redirect kembali ke halaman sebelumnya

@@ -10,10 +10,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OpticController;
 use App\Http\Controllers\VakumController;
 use App\Http\Controllers\ChartJSController;
-use App\Http\Controllers\ConferenceController;
 use App\Http\Controllers\FilamenController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ConferenceController;
 use App\Http\Controllers\FormResponseController;
+use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\NotificationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +45,12 @@ Route::get('/concept', [MainController::class, 'concept'])->name('concept');
 
 Route::get('/linac', [MainController::class, 'linac'])->name('linac');
 
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+Route::get('/reset-password', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
 Route::controller(AuthController::class)->group(function () {
     Route::get('login', 'login')->name('login');
     Route::post('login', 'loginPost')->name('login.post');
@@ -52,6 +61,8 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware(['IsApproved'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/notifications', [NotificationsController::class, 'notifications'])->name('notifications');
 
     Route::get('/filamen', [ChartJSController::class, 'filamen'])->name('filamen');
     Route::get('/filamen/export', [FilamenController::class, 'export'])->name('filamen.export');

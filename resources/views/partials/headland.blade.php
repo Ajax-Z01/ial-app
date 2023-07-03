@@ -3,7 +3,7 @@
     <div class="pl-4 flex items-center">
       <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="{{ route('landing') }}">
         <span class="md:text-4xl text-3xl pl-2 flex">
-          <img id="icon" src="{{asset('/img/linac-icon-.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
+          <img id="icon" src="{{asset('img/linac-icon-.png') }}" alt="" class="md:w-10 md:h-10 md:mt-0 w-8 h-8 mt-1 mr-2">
           IA-Lab
         </span>
       </a>

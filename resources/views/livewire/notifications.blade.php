@@ -22,5 +22,8 @@
           @endif
         @endif
       @endforeach
+      <li class="relative text-center">
+        <a href="{{ route('notifications') }}" class="ase-soft py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent hover:bg-gray-200 hover:text-slate-700 lg:transition-colors px-4 duration-300">View All Notifications</a>
+      </li>
     </ul>
   </li>
