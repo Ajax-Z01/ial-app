@@ -1,26 +1,23 @@
-# IA-Lab
+# IA-Lab (Internet Accelerator Laboratory)
 
-Welcome to the IA-Lab GitHub repository! This repository contains the code and resources for the IA-Lab project.
-
-## About IA-Lab
-
-IA-Lab is a project focused on artificial intelligence research and development. It serves as a platform for exploring and implementing various AI algorithms, models, and applications. The goal of IA-Lab is to promote knowledge sharing and collaboration in the field of AI.
+IA-Lab (Internet Accelerator Laboratory) is a website that displays real-time data acquired from a linear accelerator system, including the filament current source system, optical system, and vacuum system. The website also provides general information about linear accelerators.
 
 ## Features
 
-- **AI Algorithms:** Discover a collection of AI algorithms implemented in different programming languages.
-- **Model Implementations:** Explore various AI models and their implementations.
-- **Tutorials and Examples:** Find step-by-step tutorials and examples to learn AI concepts and practical applications.
-- **Resources:** Access additional resources such as datasets, research papers, and related tools.
+- Real-time Data Display: View and monitor the acquired data from the linear accelerator system in real-time.
+- Filament Current Source System: Explore the data related to the filament current source system, including current values and related parameters.
+- Optical System: Access information and data from the optical system, such as beam intensity and optics settings.
+- Vacuum System: Monitor the vacuum system's performance, pressure levels, and related parameters.
+- General Information: Find general information and resources about linear accelerators, their principles, and applications.
 
 ## Getting Started
 
 To get started with IA-Lab, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/IA-Lab/IA-Lab.git`
-2. Navigate to the project directory: `cd IA-Lab`
-3. Explore the different directories and files to find the AI algorithms, models, tutorials, and resources.
-4. Choose the topic you're interested in and dive into the code and documentation.
+2. Set up the required dependencies and environment for the website (provide specific instructions if applicable).
+3. Run the website locally or deploy it to a web server.
+4. Access the website and start exploring the real-time data and general information about linear accelerators.
 
 ## Contributing
 
@@ -38,6 +35,6 @@ IA-Lab is released under the [MIT License](LICENSE). Feel free to use, modify, a
 
 ## Contact
 
-If you have any questions or suggestions regarding IA-Lab, please feel free to contact us at [email@example.com](mailto:email@example.com).
+If you have any questions or suggestions regarding IA-Lab, please feel free to contact us at [internetacceleratorlaboratory@gmail.com](mailto:internetacceleratorlaboratory@gmail.com).
 
-Happy exploring and building AI with IA-Lab!
+Enjoy exploring and working with IA-Lab and the fascinating world of linear accelerators!
