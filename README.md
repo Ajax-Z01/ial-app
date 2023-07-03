@@ -14,7 +14,7 @@ IA-Lab (Internet Accelerator Laboratory) is a website that displays real-time da
 
 To get started with IA-Lab, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/IA-Lab/IA-Lab.git`
+1. Clone the repository: `git clone https://github.com/Ajax-Z01/ial-app.git`
 2. Set up the required dependencies and environment for the website (provide specific instructions if applicable).
 3. Run the website locally or deploy it to a web server.
 4. Access the website and start exploring the real-time data and general information about linear accelerators.
