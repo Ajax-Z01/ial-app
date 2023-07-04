@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.png')}}" />
+    <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.webp')}}" />
     <title>IA-Lab Login</title>
     {{-- Vite Js --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -33,7 +33,7 @@
           <nav class="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 mx-6 my-4 shadow-soft-2xl rounded-blur bg-white/80 backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start">
             <div class="flex items-center justify-between w-full p-0 pl-6 mx-auto flex-wrap-inherit">
               <a class="py-2.375 text-sm mr-4 whitespace-nowrap font-bold text-gray-800 lg:ml-0" href="{{ route('landing') }}">
-                <span class="flex text-xl"><img src="{{ asset('/img/linac-icon.png')}}" alt="" class="w-6 h-6 mr-2 object-contain object-center" loading="lazy">IA-Lab</span>
+                <span class="flex text-xl"><img src="{{ asset('/img/linac-icon.webp')}}" alt="" class="w-6 h-6 mr-2 object-contain object-center" loading="lazy">IA-Lab</span>
               </a>
               <button navbar-trigger class="px-3 py-1 ml-2 leading-none transition-all bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg ease-soft-in-out lg:hidden" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="inline-block mt-2 align-middle bg-center bg-no-repeat bg-cover w-6 h-6 bg-none">
@@ -112,7 +112,7 @@
               </div>
               <div class="w-full max-w-full px-3 lg:flex-0 shrink-0 md:w-6/12">
                 <div class="absolute top-0 hidden w-2/3 h-full -mr-32 overflow-hidden -skew-x-10 -right-40 rounded-bl-xl md:block">
-                  <div class="absolute inset-x-0 top-0 z-0 h-full -ml-16 bg-cover skew-x-10" style="background-image: url('img/linac-login.jpg')"><span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-custom to-gray-custom opacity-60"></span></div>
+                  <div class="absolute inset-x-0 top-0 z-0 h-full -ml-16 bg-cover skew-x-10" style="background-image: url('img/linac-login.webp')"><span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-custom to-gray-custom opacity-60"></span></div>
                 </div>
               </div>
             </div>

@@ -16,7 +16,7 @@ class Posts extends Migration
             $table->unsignedBigInteger('author_id');
             $table->string('title');
             $table->string('subtitle');
-            $table->string('image')->default('/img/default-post.png');
+            $table->string('image')->default('/img/default-post.webp');
             $table->longText('description');
             $table->string('slug');
             $table->enum('status', ['publish', 'draft'])->default('draft');

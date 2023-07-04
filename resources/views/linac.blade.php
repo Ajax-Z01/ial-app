@@ -58,7 +58,7 @@
             </div>            
             <div class="pt-12 border-t border-gray-300">
               <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-                <img src="/img/default-profile.png" alt="" class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
+                <img src="/img/default-profile.webp" alt="" class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
                 <div class="flex flex-col">
                   <h4 class="text-lg font-semibold">Admin Official</h4>
                   <p class="text-gray-600">Welcome to our website, where innovation and creativity converge in elegant design. We bring you harmonious layouts, intuitive navigation, and innovative features. Together, we will create a strong digital identity and make a positive impact for the future. Enjoy an unforgettable experience here!</p>

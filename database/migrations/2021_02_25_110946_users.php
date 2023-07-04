@@ -17,7 +17,7 @@ class Users extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->string('profile_image')->default('/img/default-profile.png');
+            $table->string('profile_image')->default('/img/default-profile.webp');
             $table->string('mobile')->nullable();
             $table->string('location')->nullable();
             $table->longText('bio')->nullable();

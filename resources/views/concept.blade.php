@@ -23,7 +23,7 @@
     <section class="custom-section bg-white border-b py-8">
       <div class="p-5 mx-auto sm:p-10 md:p-16 bg-white text-gray-800">
         <div class="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
-          <img src="/img/rf-linac.jpg" alt="" class="w-full h-60 sm:h-96 bg-white">
+          <img src="/img/rf-linac.webp" alt="" class="w-full h-60 sm:h-96 bg-white">
           <div class="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-white">
             <div class="w-full mx-auto space-y-4 text-center">
               <h1 class="text-4xl font-bold leading-tight md:text-5xl">IA-Lab Concept</h1>
@@ -65,7 +65,7 @@
             </div>            
             <div class="pt-12 border-t border-gray-300">
               <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-                <img src="/img/default-profile.png" alt="" class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
+                <img src="/img/default-profile.webp" alt="" class="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start bg-gray-500 border-gray-300">
                 <div class="flex flex-col">
                   <h4 class="text-lg font-semibold">Admin Official</h4>
                   <p class="text-gray-600">Welcome to our website, where innovation and creativity converge in elegant design. We bring you harmonious layouts, intuitive navigation, and innovative features. Together, we will create a strong digital identity and make a positive impact for the future. Enjoy an unforgettable experience here!</p>

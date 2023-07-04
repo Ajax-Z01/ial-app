@@ -3,7 +3,7 @@
     <div class="h-19.5">
       <i class="absolute top-0 right-0 hidden p-4 opacity-50 cursor-pointer text-slate-400 xl:hidden" sidenav-close></i>
       <a class="block pl-4 pr-8 py-6 m-0 text-sm whitespace-nowrap text-slate-700" href="{{ route('dashboard') }}">
-        <img src="{{asset('img/linac-icon.png') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8 mb-2" alt="main_logo" />
+        <img src="{{asset('img/linac-icon.webp') }}" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8 mb-2" alt="main_logo" />
         <span class="ml-1 text-xl font-semibold transition-all duration-200 ease-nav-brand">IA-Lab Dashboard</span>
       </a>
     </div>

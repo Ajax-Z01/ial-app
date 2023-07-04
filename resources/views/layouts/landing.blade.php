@@ -4,7 +4,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.webp') }}" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>

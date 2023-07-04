@@ -32,7 +32,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'type' => $type[rand(0, 1)],
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'profile_image' => '/img/default-profile.png',
+            'profile_image' => '/img/default-profile.webp',
             'mobile' => fake()->phoneNumber(),
             'location' => fake()->address(),
             'bio' => fake()->text(),

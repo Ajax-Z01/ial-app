@@ -129,7 +129,7 @@
               <div class="h-full bg-gradient-to-tl from-gray-custom to-gray-custom rounded-xl">
                 <img src="{{ asset('img/shapes/waves-white.svg') }}" class="absolute top-0 hidden w-1/2 h-full md:block" alt="waves" />
                 <div class="relative flex items-center justify-center h-full">
-                  <img class="relative z-20 w-full pt-0" src="{{asset('img/linac-icon-.png') }}" alt="rocket" />
+                  <img class="relative z-20 w-full pt-0" src="{{asset('img/linac-icon-.webp') }}" alt="rocket" />
                 </div>
               </div>
             </div>

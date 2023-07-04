@@ -30,7 +30,7 @@
         </div>
         <div class="flex flex-wrap flex-col-reverse sm:flex-row">
           <div class="w-full xl:w-1/2 sm:w-1/2 mx-auto mt-12 my-4">
-            <img class="w-full" src="/img/rf-linac.jpg">
+            <img class="w-full" src="/img/rf-linac.webp">
           </div>
           <div class="w-full md:w-1/2 sm:w-1/2 p-6 mt-6">
             <div class="align-middle">
@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="w-full xl:w-1/2 sm:w-1/2 mx-auto my-4">
-            <img class="w-full" src="/img/linac.png">
+            <img class="w-full" alt="linac" src="/img/linac.webp">
           </div>
         </div>
       </div>
