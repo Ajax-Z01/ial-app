@@ -67,6 +67,8 @@
     <script src="{{ asset('/assets/js/tinymce/tinymce.min.js') }}"></script>
     {{-- script --}}
     <script src="{{ asset('assets/js/script.js') }}"></script>
+    {{-- dashboard script --}}
+    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
     {{-- chart script --}}
     @if (request()->is('filamen'))
     @livewire('real-time-filamen')

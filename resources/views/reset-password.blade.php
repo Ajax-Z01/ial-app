@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.webp')}}" />
     <title>IA-Lab Login</title>
     {{-- Vite Js --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'])
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Font Awesome Icons -->
@@ -23,6 +23,9 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
   </head>
   <body class="m-0 font-sans antialiased font-normal bg-landing text-start text-base leading-default text-slate-500">
+    <div id="loading-screen" class="fixed inset-0 flex items-center justify-center bg-white z-990">
+      <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-blue-600"></div>
+    </div>
     <div class="container sticky top-0 z-sticky">
       <div class="flex flex-wrap -mx-3">
         <div class="w-full max-w-full px-3 flex-0">

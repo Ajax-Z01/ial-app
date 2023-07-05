@@ -33,7 +33,7 @@ Route::get('/', [MainController::class, 'landing'])->name('landing');
 
 Route::get('/news', [MainController::class, 'news'])->name('news');
 
-Route::get('/post-{slug}', [MainController::class, 'post'])->name('post');
+Route::get('/news-{slug}', [MainController::class, 'post'])->name('post');
 
 Route::get('/about', [MainController::class, 'about'])->name('about');
 

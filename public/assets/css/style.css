@@ -45,15 +45,3 @@
         transform: rotate(360deg);
     }
 }
-
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: ;
-    fill: #253f5b;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    z-index: 99;
-}
