@@ -48,7 +48,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('blog') }}">
+                    <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('news') }}">
                       <i class="mr-1 fa-solid fa-newspaper opacity-60"></i>
                       Blog
                     </a>

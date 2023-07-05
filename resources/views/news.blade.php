@@ -62,7 +62,7 @@
           @endforeach
         </div>
         <div class="mt-6 flex justify-center space-x-1 text-gray-800">
-          <a href="{{ route('blog', ['page' => max($currentPage - 1, 1)]) }}">
+          <a href="{{ route('news', ['page' => max($currentPage - 1, 1)]) }}">
             <button title="previous" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
               <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4">
                 <polyline points="15 18 9 12 15 6"></polyline>
@@ -71,12 +71,12 @@
           </a>
             
           @for ($page = 1; $page <= $totalPages; $page++)
-            <a href="{{ route('blog', ['page' => $page]) }}">
+            <a href="{{ route('news', ['page' => $page]) }}">
               <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm border rounded shadow-md bg-gray-50 border-gray-100 {{ htmlentities($page) == $currentPage ? 'bg-blue-600 text-white' : '' }}" title="Page {{ htmlentities($page) }}">{{ htmlentities($page) }}</button>
             </a>
           @endfor
             
-          <a href="{{ route('blog', ['page' => min($currentPage + 1, $totalPages)]) }}">
+          <a href="{{ route('news', ['page' => min($currentPage + 1, $totalPages)]) }}">
             <button title="next" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow-md bg-gray-50 border-gray-100">
               <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4">
                 <polyline points="9 18 15 12 9 6"></polyline>

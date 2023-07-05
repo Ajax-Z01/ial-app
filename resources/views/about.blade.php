@@ -30,45 +30,61 @@
         </div>
         <div class="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
           <div class="flex flex-col lg:flex-row justify-between gap-8">
-              <div class="w-full lg:w-5/12 flex flex-col justify-center">
-                  <p class="font-normal text-base leading-6 text-gray-600 dark:text-white">IA-Lab (Internet Accelerator Laboratory) is a cutting-edge educational institution that leverages the power of the internet to provide innovative and immersive learning experiences. We offer a flexible and dynamic virtual classroom accessible to students worldwide. With advanced technologies, personalized learning, expert instructors, and a vibrant community, IA-Lab is dedicated to delivering excellence in education and empowering students to reach their full potential. Join us on a transformative journey of internet-accelerated learning.</p>
-              </div>
-              <div class="w-full lg:w-8/12">
-                  <img class="w-full h-full" src="https://i.ibb.co/FhgPJt8/Rectangle-116.png" alt="A group of People" />
-              </div>
+            <div class="w-full lg:w-5/12 flex flex-col justify-center">
+              <p class="font-normal text-base leading-6 text-gray-600 dark:text-white">IA-Lab (Internet Accelerator Laboratory) is a cutting-edge educational institution that leverages the power of the internet to provide innovative and immersive learning experiences. We are dedicated to redefining education by embracing advanced technologies, personalized learning, expert instructors, and a vibrant community.</p><br>
+              <p class="font-normal text-base leading-6 text-gray-600 dark:text-white">At IA-Lab, we believe that education should not be limited by physical boundaries. Through our flexible and dynamic virtual classroom, accessible to students worldwide, we offer a transformative learning environment that breaks down traditional barriers. Students can engage in interactive lessons, collaborate with peers, and explore subjects with expert guidance, all from the comfort of their own homes.</p>
+            </div>
+            <div class="w-full lg:w-8/12 flex justify-center items-center">
+              <img class="w-full h-auto" src="/img/aboutus.webp" alt="A group of People" />
+            </div>
           </div>
-  
           <div class="flex lg:flex-row flex-col justify-between gap-8 pt-12">
-              <div class="w-full lg:w-5/12 flex flex-col justify-center">
-                  <h1 class="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 dark:text-white pb-4">Our Story</h1>
-                  <p class="font-normal text-base leading-6 text-gray-600 dark:text-white">IA-Lab is a pioneering educational platform that utilizes the internet to provide a transformative learning experience. With a team of dedicated educators and advanced technologies, we have created a flexible and engaging environment where students can actively participate in interactive lessons, collaborate with peers, and explore subjects with expert guidance. Our mission is to empower learners worldwide by breaking down barriers and unlocking new opportunities for education in the digital age.</p>
+            <div class="w-full lg:w-5/12 flex flex-col justify-center">
+              <h1 class="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 dark:text-white pb-4">Our Story</h1>
+              <p class="font-normal text-base leading-6 text-gray-600 dark:text-white">IA-Lab (Internet Accelerator Laboratory) is the culmination of the final project by Azhar Abdul A'la, a student of Instrumentation Electronics at the Indonesian Polytechnic of Nuclear Technology. With the guidance of Mr. Halim Hamadi and Mr. Taxwim, Azhar successfully completed the project, showcasing his dedication and passion for advancing the field of internet acceleration in education.</p>
+            </div>
+            <div class="w-full lg:w-8/12 lg:pt-8 flex justify-center items-center">
+              <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
+                <div class="p-4 pb-6 flex justify-center flex-col items-center">
+                    <img class="md:block hidden" src="/img/azhar.webp" alt="Azhar Image" />
+                    <img class="md:hidden block" src="/img/azhar.webp" alt="Azhar Image" />
+                    <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Azhar</p>
+                    <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">(Developer)</p>
+                </div>
+                <div class="p-4 pb-6 flex justify-center flex-col items-center">
+                    <img class="md:block hidden" src="/img/halim.webp" alt="Halim Image" />
+                    <img class="md:hidden block" src="/img/halim.webp" alt="Halim Image" />
+                    <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Halim</p>
+                    <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">(Supervisor 1)</p>
+                </div>
+                <div class="p-4 pb-6 flex justify-center flex-col items-center">
+                    <img class="md:block hidden" src="/img/taxwim.webp" alt="Taxwim Image" />
+                    <img class="md:hidden block" src="/img/taxwim.webp" alt="Taxwim Image" />
+                    <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Taxwim</p>
+                    <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">(Supervisor 2)</p>
+                </div>
               </div>
-              <div class="w-full lg:w-8/12 lg:pt-8">
-                  <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
-                      <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                          <img class="md:block hidden" src="https://i.ibb.co/FYTKDG6/Rectangle-118-2.png" alt="Alexa featured Image" />
-                          <img class="md:hidden block" src="https://i.ibb.co/zHjXqg4/Rectangle-118.png" alt="Alexa featured Image" />
-                          <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Alexa</p>
-                      </div>
-                      <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                          <img class="md:block hidden" src="https://i.ibb.co/fGmxhVy/Rectangle-119.png" alt="Olivia featured Image" />
-                          <img class="md:hidden block" src="https://i.ibb.co/NrWKJ1M/Rectangle-119.png" alt="Olivia featured Image" />
-                          <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Olivia</p>
-                      </div>
-                      <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                          <img class="md:block hidden" src="https://i.ibb.co/Pc6XVVC/Rectangle-120.png" alt="Liam featued Image" />
-                          <img class="md:hidden block" src="https://i.ibb.co/C5MMBcs/Rectangle-120.png" alt="Liam featued Image" />
-                          <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Liam</p>
-                      </div>
-                      <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                          <img class="md:block hidden" src="https://i.ibb.co/7nSJPXQ/Rectangle-121.png" alt="Elijah featured image" />
-                          <img class="md:hidden block" src="https://i.ibb.co/ThZBWxH/Rectangle-121.png" alt="Elijah featured image" />
-                          <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Elijah</p>
-                      </div>
-                  </div>
-              </div>
+            </div>
           </div>
-      </div>
+          <div class="flex lg:flex-row flex-col justify-between gap-8 pt-12">
+            <div class="w-full lg:w-5/12 flex flex-col justify-center">
+              <h1 class="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 dark:text-white pb-4">Vision</h1>
+              <p class="font-normal text-base leading-6 text-gray-600 dark:text-white">Our vision is to revolutionize the way education is delivered by providing innovative and immersive learning experiences that leverage the power of the internet. We aim to transform traditional learning methods and harness the full potential of technology to create a dynamic and engaging virtual classroom environment. By embracing advanced technologies and instructional design principles, we strive to deliver educational experiences that are interactive, personalized, and accessible to students worldwide. Through our visionary approach, we aspire to empower learners of all backgrounds to thrive in the digital age and prepare them for the challenges and opportunities of the future.</p>
+            </div>
+            <div class="w-full lg:w-5/12 flex flex-col justify-center">
+              <h1 class="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 dark:text-white pb-4">Mission</h1>
+              <ul class="list-disc list-inside">
+                <li class="font-normal text-base leading-6 text-gray-600 dark:text-white">Provide a flexible and dynamic learning environment for students worldwide.</li>
+                <li class="font-normal text-base leading-6 text-gray-600 dark:text-white">Offer an easily accessible virtual classroom for a wide range of learners.</li>
+                <li class="font-normal text-base leading-6 text-gray-600 dark:text-white">Utilize advanced technologies to enhance personalized learning experiences.</li>
+                <li class="font-normal text-base leading-6 text-gray-600 dark:text-white">Engage expert instructors dedicated to delivering excellence in education.</li>
+                <li class="font-normal text-base leading-6 text-gray-600 dark:text-white">Foster an active and vibrant learning community.</li>
+                <li class="font-normal text-base leading-6 text-gray-600 dark:text-white">Empower students to reach their full potential through transformative education.</li>
+                <li class="font-normal text-base leading-6 text-gray-600 dark:text-white">Break down barriers and provide equal access to education in the digital age.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="bg-landing py-8 text-gray-800">

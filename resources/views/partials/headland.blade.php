@@ -27,10 +27,10 @@
         </li>
         <li class="mr-3">
           <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline
-          @if (Request::is('blog'))  font-bold 
+          @if (Request::is('news'))  font-bold 
           @else hover:text-gray-700 hover:text-underline
           @endif
-          " href="{{ route('blog') }}">Blog</a>
+          " href="{{ route('news') }}">News</a>
         </li>
         <li class="mr-3">
           <a class="toggleColour text-white md:text-xl inline-block py-2 px-4 no-underline

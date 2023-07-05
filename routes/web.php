@@ -31,7 +31,7 @@ use App\Http\Controllers\NotificationsController;
 
 Route::get('/', [MainController::class, 'landing'])->name('landing');
 
-Route::get('/blog', [MainController::class, 'blog'])->name('blog');
+Route::get('/news', [MainController::class, 'news'])->name('news');
 
 Route::get('/post-{slug}', [MainController::class, 'post'])->name('post');
 

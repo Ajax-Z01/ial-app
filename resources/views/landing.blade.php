@@ -30,7 +30,7 @@
         </div>
         <div class="flex flex-wrap flex-col-reverse sm:flex-row">
           <div class="w-full xl:w-1/2 sm:w-1/2 mx-auto mt-12 my-4">
-            <img class="w-full" src="/img/rf-linac.webp">
+            <img class="w-full" src="/img/rf-linac.webp" alt="rf linac image">
           </div>
           <div class="w-full md:w-1/2 sm:w-1/2 p-6 mt-6">
             <div class="align-middle">

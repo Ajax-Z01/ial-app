@@ -18,7 +18,7 @@ class MainController extends Controller
         return view('landing', compact('posts'));
     }
 
-    public function blog(Request $request)
+    public function news(Request $request)
     {
         $request->validate([
             'page' => 'nullable|numeric',
@@ -40,7 +40,7 @@ class MainController extends Controller
                 return $post;
             });
 
-        return view('blog', compact('posts', 'totalPages', 'currentPage'));
+        return view('news', compact('posts', 'totalPages', 'currentPage'));
     }
 
     public function about()

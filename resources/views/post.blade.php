@@ -28,8 +28,7 @@
             <div class="w-full mx-auto space-y-4 text-center">
               <h1 class="text-4xl font-bold leading-tight md:text-5xl">{{ $post->title }}</h1>
               <p class="text-sm text-gray-600">by
-                <a rel="noopener noreferrer" href="javascript:;" class=" text-blue-600">
-                  <span itemprop="name">{{ htmlentities($post->author->name) }}</span>
+                <span class=" text-blue-600" itemprop="name">{{ htmlentities($post->author->name) }}</span>
                 </a>on
                 <time>{{ htmlentities($post->updated) }}</time>
               </p>
