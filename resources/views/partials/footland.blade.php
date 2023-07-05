@@ -70,7 +70,7 @@
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
     <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://polteknuklir.ac.id" class="hover:underline">Politeknik Teknologi Nuklir Indonesia</a>. All Rights Reserved.</span>
   </div>
-  <button onclick="scrollToTop()" class="scroll-to-top fixed bottom-8 right-8 rounded-full p-0 z-50">
+  <button onclick="scrollToTop()" class="scroll-to-top fixed bottom-8 right-8 rounded-full p-0 z-50" aria-label="Scroll to Top">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 512 512"><path fill="#253f5b" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 231c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71V376c0 13.3-10.7 24-24 24s-24-10.7-24-24V193.9l-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 119c9.4-9.4 24.6-9.4 33.9 0L385 231z"/></svg>
   </button>
   <script>

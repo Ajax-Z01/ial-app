@@ -8,6 +8,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <link rel="icon" type="image/png" href="{{ asset('/img/linac-icon.webp')}}" />
     <title>IA-Lab Register</title>
+    <meta name="description" content="Internet Accelerator Laboratory" />
     {{-- Vite Js --}}
     @vite(['resources/css/app.css'])
     <!-- Fonts and icons -->
@@ -50,7 +51,7 @@
             <li>
               <a class="block px-4 py-2 mr-2 font-normal text-white transition-all duration-250 lg-max:opacity-0 lg-max:text-slate-700 ease-soft-in-out text-sm lg:px-2 lg:hover:text-white/75" href="{{ route('news') }}">
                 <i class="mr-1 fa-solid fa-newspaper opacity-60"></i>
-                Blog
+                News
               </a>
             </li>
             <li>
@@ -128,7 +129,7 @@
                     <div class="text-center">
                         <button type="submit" class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-custom to-gray-custom hover:border-slate-700 hover:bg-slate-700 hover:text-white">Sign up</button>
                     </div>
-                    <p class="mt-4 mb-6 leading-normal text-sm">Already have an account? <a href="{{ route('login') }}" class="relative z-10 font-semibold text-transparent bg-gradient-to-tl from-gray-custom to-gray-custom bg-clip-text">Sign in</a></p>
+                    <p class="mt-4 mb-6 leading-normal text-sm text-black">Already have an account? <a href="{{ route('login') }}" class="relative z-10 font-semibold text-transparent bg-gradient-to-tl from-gray-custom to-gray-custom bg-clip-text">Sign in</a></p>
                 </form>                
                 </div>
               </div>
@@ -140,7 +141,7 @@
         <div class="container">
           <div class="flex flex-wrap -mx-3">
             <div class="w-8/12 max-w-full px-3 mx-auto text-center flex-0">
-              <p class="mb-0 text-slate-400 text-sm">
+              <p class="mb-0 text-black text-sm">
                 Copyright ©
                 <script>
                   document.write(new Date().getFullYear());

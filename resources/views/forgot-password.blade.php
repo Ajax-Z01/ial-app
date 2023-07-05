@@ -7,7 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.webp')}}" />
-    <title>IA-Lab Login</title>
+    <title>IA-Lab Forgot Password</title>
+    <meta name="description" content="Internet Accelerator Laboratory" />
     {{-- Vite Js --}}
     @vite(['resources/css/app.css'])
     <!-- Fonts and icons -->
@@ -53,7 +54,7 @@
                   <li>
                     <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('news') }}">
                       <i class="mr-1 fa-solid fa-newspaper opacity-60"></i>
-                      Blog
+                      News
                     </a>
                   </li>
                   <li>
@@ -89,7 +90,7 @@
                 <div class="relative flex flex-col min-w-0 mt-32 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
                     <div class="p-6 pb-0 mb-0 bg-transparent border-b-0 rounded-t-2xl">
                         <h3 class="relative z-10 font-bold text-transparent bg-gradient-to-tl from-gray-custom to-gray-custom bg-clip-text">Forgot Password</h3>
-                        <p class="mb-0">Enter your email to reset your password.</p>
+                        <p class="mb-0 text-black">Enter your email to reset your password.</p>
                       </div>
                   <div class="flex-auto p-6">
                     <form role="form" action="{{ route('password.email') }}" method="POST" class="user">
@@ -124,7 +125,7 @@
       <div class="container">
         <div class="flex flex-wrap -mx-3">
           <div class="w-8/12 max-w-full px-3 mx-auto mt-1 text-center flex-0">
-            <p class="mb-0 text-slate-400 text-sm">
+            <p class="mb-0 text-black text-sm">
               Copyright ©
               <script>
                 document.write(new Date().getFullYear());

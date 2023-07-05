@@ -8,6 +8,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <link rel="icon" type="image/png" href="{{ asset('img/linac-icon.webp')}}" />
     <title>IA-Lab Login</title>
+    <meta name="description" content="Internet Accelerator Laboratory" />
     {{-- Vite Js --}}
     @vite(['resources/css/app.css'])
     <!-- Fonts and icons -->
@@ -53,7 +54,7 @@
                   <li>
                     <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{ route('news') }}">
                       <i class="mr-1 fa-solid fa-newspaper opacity-60"></i>
-                      Blog
+                      News
                     </a>
                   </li>
                   <li>
@@ -113,7 +114,7 @@
                         </ul>
                       </div>
                     @endif
-                    <p class="mb-0">Enter your email and password to sign in</p>
+                    <p class="mb-0 text-black">Enter your email and password to sign in</p>
                   </div>
                   <div class="flex-auto p-6">
                     <form role="form" action="{{ route('login.post') }}" method="post" class="user">
@@ -139,7 +140,7 @@
                     </form>
                   </div>
                   <div class="p-6 px-1 pt-0 text-center bg-transparent border-t-0 border-t-solid rounded-b-2xl lg:px-2">
-                    <p class="mx-auto mb-6 leading-normal text-sm">
+                    <p class="mx-auto mb-6 leading-normal text-sm text-black">
                       Don't have an account?
                       <a href="{{ route('register') }}" class="relative z-10 font-semibold text-transparent bg-gradient-to-tl from-gray-custom to-gray-custom bg-clip-text">Sign up</a>
                     </p>
@@ -160,7 +161,7 @@
       <div class="container">
         <div class="flex flex-wrap -mx-3">
           <div class="w-8/12 max-w-full px-3 mx-auto mt-1 text-center flex-0">
-            <p class="mb-0 text-slate-400 text-sm">
+            <p class="mb-0 text-black text-sm">
               Copyright ©
               <script>
                 document.write(new Date().getFullYear());
